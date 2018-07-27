@@ -68,12 +68,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// configure socketio
-const server = http.Server(app);
-const io = socketio(server);
-app.set('socketio', io);
-
 // port config
+const server = http.Server(app);
 const port = process.env.PORT || 3000; // config variable
 server.listen(port, function() {
   console.log('Server running on port: ' + port);

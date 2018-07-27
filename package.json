@@ -6,7 +6,7 @@
   "author": "6.148 Staff",
   "license": "MIT",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "nodemon src/app.js"
   },
   "dependencies": {
     "connect-ensure-login": "^0.1.1",
