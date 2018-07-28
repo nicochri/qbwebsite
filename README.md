@@ -1,2 +1,2 @@
 # qbwebsite
-# A fresh start to the website, with chri's stuff
+# A fresh start to the website, with chri's stuf
