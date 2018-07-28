@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/courses', function(req, res) {
-  res.sendFile('courses.html', { root: 'src/views' });
+  res.sendFile('mathHL.html', { root: 'src/views' });
 });
 
 router.get('/features', function(req, res) {
