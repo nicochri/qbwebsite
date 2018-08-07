@@ -9,11 +9,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/courses', function(req, res) {
-  res.sendFile('mathHL.html', { root: 'src/views' });
+  res.sendFile('mathsHL.html', { root: 'src/views' });
 });
 
 router.get('/features', function(req, res) {
   res.sendFile('features.html', { root: 'src/views' });
+});
+
+router.get('/questions', function(req, res) {
+  res.sendFile('questions.html', { root: 'src/views' });
 });
 
 router.get('/logout', function(req, res) {

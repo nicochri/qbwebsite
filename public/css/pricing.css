@@ -19,3 +19,48 @@ html {
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+
+/*My Stuff*/
+
+#fullHeight {
+	height: 100vw;
+}
+
+.chapter {
+	padding: 15px;
+	margin: 25px;
+	border: 2px solid;
+	border-color: #f1f1f1;
+	border-radius: 5px;
+	box-shadow: 3px 3px #f1f1f1;
+	transition: border-color .3s;
+}
+
+.chapter:hover {
+	border-color: #20a900;
+}
+
+.linkchapter {
+	color: inherit;
+}
+
+.linkchapter:hover {
+	 color: black;
+	 text-decoration: none;
+}
+
+.list-group-item.list-group-item-action.active {
+	background-color: #20a900;
+	border-color: #20a900;
+
+}
+
+.card.text-center.border-success {
+	border: 2px solid;
+	border-color: #20a900;
+
+}
+
+/*WORK ON CENTERING TEXT IN DIV IN COURSES*/
+
