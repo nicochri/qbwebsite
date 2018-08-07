@@ -62,5 +62,8 @@ html {
 
 }
 
+.list-group-item.flex-grow.chapterDropdown.p-0 {
+	border-top: none;
+}
 /*WORK ON CENTERING TEXT IN DIV IN COURSES*/
 
