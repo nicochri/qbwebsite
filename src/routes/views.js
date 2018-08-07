@@ -6,12 +6,6 @@ const keys = require('../../config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
 const exphbs = require('express-handlebars');
 
-// local dependencies
-const db = require('../db');
-const passport = require('../passport');
-const views = require('../routes/views');
-const api = require('../routes/api');
-
 const router = express();
 
 // Handlebars Middleware - TRAVERSY
@@ -32,7 +26,8 @@ router.get('/features', function(req, res) {
 });
 
 router.get('/account', function(req, res) {
-  res.sendFile('account.html', { root: 'src/views' });
+  // res.sendFile('account.html', { root: 'src/views' });
+  res.render('account');
 });
 
 router.get('/logout', function(req, res) {
@@ -44,10 +39,31 @@ router.get('/heythere', (req, res) => {
   res.render('index', {
     stripePublishableKey: keys.stripePublishableKey
   });
-
 });
 
+// Connecting to the database on the server - https://www.guru99.com/node-js-mongodb.html
+var MongoClient = require('mongodb').MongoClient;
+const mongoURL = process.env.MLAB_URL;
+var str = "";
+
 router.post('/charge', (req, res) => {
+
+
+  MongoClient.connect(mongoURL, function(err, db) {
+    var cursor = db.collection('storymodels').find();
+
+    cursor.each(function(err, item) {
+
+        if (item != null) {
+          str = "Hey there";
+        }
+        console.log(str);
+    });
+  });
+
+
+
+
   const amount = 2500;
 
   stripe.customers.create({
@@ -62,6 +78,22 @@ router.post('/charge', (req, res) => {
   }))
   .then(charge => {
     res.render('success');
+  });
+});
+
+
+
+router.route('/Employeeid').get(function(req, res) {
+  MongoClient.connect(mongoURL, function(err, db) {
+    var cursor = db.collection('storymodels').find();
+
+    cursor.each(function(err, item) {
+
+        if (item != null) {
+          str = str + "    Employee id  " + item.creator_name + "</br>";
+        }
+    });
+    res.send(str);
   });
 });
 

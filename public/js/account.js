@@ -15,9 +15,8 @@ function renderAccountPage(user){
 function accountMain() {
   get('/api/whoami', {}, function(user) {
     renderAccountPage(user);
+    console.log('entered1');
   });
-
-  get('/api/')
 }
 
 accountMain();
