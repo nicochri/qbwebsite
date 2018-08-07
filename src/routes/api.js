@@ -4,7 +4,7 @@ const connect = require('connect-ensure-login');
 
 // models
 const User = require('../models/user');
-const Story = require('../models/story');
+const QBinstance = require('../models/qbinstance');
 
 const router = express.Router();
 
@@ -25,14 +25,13 @@ router.get('/user', function(req, res) {
 });
 
 router.post(
-  '/story',
+  '/qbinstance',
   connect.ensureLoggedIn(),
   function(req, res) {
     User.findOne({ _id: req.user._id },function(err,user) {
-      const newStory = new Story({
+      const newStory = new QBinstance({
         'creator_id': user._id,
-        'creator_name': user.name,
-        'content': req.body.content,
+        'access_code': req.body.content,
       });
 
       user.set({ last_post: req.body.content });

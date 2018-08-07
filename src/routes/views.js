@@ -6,6 +6,12 @@ const keys = require('../../config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
 const exphbs = require('express-handlebars');
 
+// local dependencies
+const db = require('../db');
+const passport = require('../passport');
+const views = require('../routes/views');
+const api = require('../routes/api');
+
 const router = express();
 
 // Handlebars Middleware - TRAVERSY
@@ -38,6 +44,7 @@ router.get('/heythere', (req, res) => {
   res.render('index', {
     stripePublishableKey: keys.stripePublishableKey
   });
+
 });
 
 router.post('/charge', (req, res) => {
@@ -54,7 +61,6 @@ router.post('/charge', (req, res) => {
     customer: customer.id
   }))
   .then(charge => {
-    console.log('This is a fucking alert!');
     res.render('success');
   });
 });
