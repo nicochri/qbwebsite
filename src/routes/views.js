@@ -6,6 +6,10 @@ const keys = require('../../config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
 const exphbs = require('express-handlebars');
 
+// Local dependencies
+const db = require('../db');
+
+// Router
 const router = express();
 
 // Handlebars Middleware - TRAVERSY
@@ -26,16 +30,22 @@ router.get('/features', function(req, res) {
 });
 
 router.get('/account', function(req, res) {
-  // res.sendFile('account.html', { root: 'src/views' });
+  module.exports.currentURL = 'account';
   res.render('account');
+});
+
+router.get('/another', function(req, res) {
+  module.exports.currentURL = 'another';
+  res.render('another');
 });
 
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.render('/');
 });
 
 router.get('/heythere', (req, res) => {
+  currentURL = '/heythere';
   res.render('index', {
     stripePublishableKey: keys.stripePublishableKey
   });
@@ -43,13 +53,15 @@ router.get('/heythere', (req, res) => {
 
 // Connecting to the database on the server - https://www.guru99.com/node-js-mongodb.html
 var MongoClient = require('mongodb').MongoClient;
-const mongoURL = process.env.MLAB_URL;
+
+
+// const mongoURL = process.env.MLAB_URL;
 var str = "";
 
 router.post('/charge', (req, res) => {
 
 
-  MongoClient.connect(mongoURL, function(err, db) {
+  MongoClient.connect(db.mongoURL, function(err, db) {
     var cursor = db.collection('storymodels').find();
 
     cursor.each(function(err, item) {
@@ -84,7 +96,7 @@ router.post('/charge', (req, res) => {
 
 
 router.route('/Employeeid').get(function(req, res) {
-  MongoClient.connect(mongoURL, function(err, db) {
+  MongoClient.connect(db.mongoURL, function(err, db) {
     var cursor = db.collection('storymodels').find();
 
     cursor.each(function(err, item) {

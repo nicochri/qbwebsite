@@ -58,14 +58,15 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
 function(req, res) {
   // Successful authentication, redirect home.
-  res.redirect('/');
+  res.render(views.currentURL);
 });
 
 // 404 route
 app.use(function(req, res, next) {
   const err = new Error(' Not Found');
   err.status = 404;
-  next(err);
+  // next(err);
+  res.render('pagenotfound');
 });
 
 // route error handler
