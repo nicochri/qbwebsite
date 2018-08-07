@@ -9,6 +9,11 @@ const session = require('express-session');
 const cors = require('cors');
 const socketio = require('socket.io');
 
+// Libraries - TRAVERSY
+const keys = require('../config/keys');
+const stripe = require('stripe')(keys.stripeSecretKey);
+const exphbs = require('express-handlebars');
+
 
 // local dependencies
 const db = require('./db');
@@ -19,6 +24,10 @@ const api = require('./routes/api');
 
 // initialize express app
 const app = express();
+
+// Handlebars Middleware - TRAVERSY
+app.engine('handlebars',exphbs({defaultLayout:'main'}));
+app.set('view engine', 'handlebars');
 
 // set POST request body parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -54,7 +63,7 @@ function(req, res) {
 
 // 404 route
 app.use(function(req, res, next) {
-  const err = new Error('Not Found');
+  const err = new Error(' Not Found');
   err.status = 404;
   next(err);
 });

@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const UserModelSchema = new mongoose.Schema ({
   name        	: String,
   gid        	: String,
+  mathHL		: String,
 });
 
 // compile model from schema

@@ -76,7 +76,7 @@ function renderLoggedIN(parentDiv, user) {
 
 	const button = document.createElement('a');
 	button.className = 'btn btn-outline-primary mr-1';
-	button.href = '#';
+	button.href = '/account';
 	button.innerHTML = 'Hello, ' + user.name;
 	buttonsDiv.appendChild(button);
 
