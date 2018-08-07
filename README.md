@@ -1,5 +1,6 @@
-# qbwebsite
-# A fresh start to the website, with chri's stuf
-# THis is the chri branchss
-# And i think it finally worked yay! (hope so)
-# ANOTHER ONE!
+# Instructions for saving on github:
+
+(Make sure you are in the qbwebsite folder)
+1. git add --all
+2. git commit -m "This is your message explaining the changes you made in case you need to go back to an older version"
+3. git push origin chri
