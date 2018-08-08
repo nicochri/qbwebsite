@@ -66,5 +66,10 @@ html {
 	border-top: none;
 }
 
+.scrollingQuestions {
+	height: 400px;
+	overflow-y: scroll;
+}
+
 /*WORK ON CENTERING TEXT IN DIV IN COURSES*/
 
