@@ -96,17 +96,19 @@ router.post('/charge', (req, res) => {
 
 
 router.route('/Employeeid').get(function(req, res) {
-  MongoClient.connect(db.mongoURL, function(err, db) {
-    var cursor = db.collection('storymodels').find();
+  // MongoClient.connect(db.mongoURL, function(err, db) {
+  //   var cursor = db.collection('storymodels').find();
 
-    cursor.each(function(err, item) {
+  //   cursor.each(function(err, item) {
 
-        if (item != null) {
-          str = str + "    Employee id  " + item.creator_name + "</br>";
-        }
-    });
-    res.send(str);
-  });
+  //       if (item != null) {
+  //         str = str + "    Employee id  " + item.creator_name + "</br>";
+  //       }
+  //   });
+  //   res.send(str);
+  // });
+  str = db.getNames();
+  res.send(str);
 });
 
 module.exports = router;
