@@ -16,210 +16,117 @@
 
 <body style="background-color: #f7f7f7">
 
-  	<div id="my-navbar"></div>
+<!-- Navbar -->
+	<div id="my-navbar"></div>
 
-<div class="container">
-	<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Chapter 1</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-
-
-
-
-
-
-
-  </div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">..dfwsg.</div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">..dfweg.</div>
-</div>
-</div>
-
-
-
-
-
-
-  	<div class="container" style="padding: 0px;">
-
-  		<div class="d-flex">
-
-  			<div>
-  				<img src="/static/chapterLogo.png" class="rounded" style="width: 131px; height: 131px;">
+<!-- Top Chapters Bar -->
+	<div class="container p-0">
+		<nav>
+  			<div class="nav nav-tabs" id="nav-tab" role="tablist">
+			    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Chapter 1</a>
+			    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+			    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+			    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+			    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+			    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+			    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
   			</div>
+		</nav>
 
-	  		<div class="list-group rounded ml-3" style="width: 100%">
-	  			<div class="card text-center" onclick="showDiv()">
-					<div class="card-body">
-				    	<h2 class="card-title mb-0">Chapter 1: Algebra</h2>
-				  	</div>
-				  	<div class="card-footer text-muted" style="background-color: #f1f1f1">Stats:</div>
-				</div>
-			</div>
-				
-		</div>
+		<div class="tab-content" id="nav-tabContent">
+  			<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-		<div class="d-flex align-items-center">
-			<div class="col-3 p-0 mr-3 chapterDropdown" style="display: none;">
-				<ul class="list-group card">
-					<li class="list-group-item" style="background-color: #f1f1f1">Math HL Stats</li>
-					<li class="list-group-item text-muted">Chapters Completed</li>
-					<li class="list-group-item text-muted">Overall Completion</li>
-					<li class="list-group-item text-muted">Questions Answered</li>
-					<li class="list-group-item text-muted">Answered Correctly</li>
-				</ul>
-			</div>
-
-		    <div class="list-group-item chapterDropdown p-0" role="tablist" style="display: none; width: 100%;">
-		    	<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Chapter 1: Algebra</a>
-			    <div class="d-flex justify-content-start">
-				    <a class="d-flex parentStats list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Chapter 2: Functions and Equations
-				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
-				    </a>
-				</div>
-			    <div class="d-flex justify-content-start">
-				    <a class="d-flex parentStats list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Chapter 3: Circular Functions and Trigonometry
-				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
-				    </a>
-				</div>
-				<div class="d-flex justify-content-start">
-				    <a class="d-flex parentStats list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Chapter 4: Matrices
-				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
-				    </a>
-				</div>
-				<div class="d-flex justify-content-start">
-				    <a class="d-flex parentStats list-group-item list-group-item-action" href="#">Chapter 5: Vectors
-				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
-				    </a>
-				</div>
-				<div class="d-flex justify-content-start">
-				    <a class="d-flex parentStats list-group-item list-group-item-action" href="#">Chapter 6: Statistics and Probability
-				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
-				    </a>
-				</div>
-				<div class="d-flex justify-content-start">
-				    <a class="d-flex parentStats list-group-item list-group-item-action" href="#">Chapter 7: Calculus
-				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
-				    </a>
-				</div>
-		    </div>
-  		</div>
-
-		<div class="container">
-			<div class="row mt-4">
-			  	<div class="col-3 p-0">
-			    	<div class="list-group scrollingQuestions" id="list-tab" role="tablist">
-				     	<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">1. Factoring</a>
-				     	<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">2. Pascal's triangle</a>
-				     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3. Expressions</a>
-				      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">4. Functions</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">5. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">6. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">7. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">8. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">9. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">10. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">11. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">12. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">13. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">14. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">15. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">16. Binomials</a>
-				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">17. Binomials</a>
-			    	</div>
-			  	</div>
-			    <div class="col-6">
-			    	<div class="container rounded bg-warning">
-					    <div class="tab-content" id="nav-tabContent">
-					    	<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">hello</div>
-					        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">there</div>
-					        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-					        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">..</div>
-					    </div>
+<!-- Chapter 1 Header Section -->
+  				<div class="p-0 mt-4 d-flex justify-content-start">
+		  			<div>
+		  				<img src="/static/chapterLogo.png" class="d-flex rounded" style="width: 131px; height: 131px;">
+		  			</div>
+			  		<div class="rounded ml-3" style="width: 100%">
+			  			<div class="card text-center">
+							<div class="card-body">
+						    	<h2 class="card-title mb-0">Chapter 1: Algebra</h2>
+						  	</div>
+						  	<div class="card-footer text-muted" style="background-color: #f1f1f1">Stats:</div>
+						</div>
 					</div>
-			    </div>
+				</div>
+
+<!-- Scrolling Questions -->
+
+				<div class="row">
+				  	<div class="col-3">
+				    	<div class="list-group scrollingQuestions" id="list-tab" role="tablist">
+					     	<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">1. Factoring</a>
+					     	<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">2. Pascal's triangle</a>
+					     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3. Expressions</a>
+					      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">4. Functions</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">5. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">6. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">7. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">8. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">9. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">10. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">11. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">12. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">13. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">14. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">15. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">16. Binomials</a>
+					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">17. Binomials</a>
+				    	</div>
+				  	</div>
+
+<!-- Question Section with Solution Area -->
+
+			    	<div class="col-6">
+				    	<div class="container rounded bg-warning">
+						    <div class="tab-content" id="nav-tabContent">
+						    	<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">hello</div>
+						        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">there</div>
+						        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+						        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">..</div>
+						    </div>
+						</div>
+				    </div>
 
 <!-- Multiple choice -->
 					
-				<div class="col-3 verticalBreak pr-0">
-					<div class="centerDiv">
-						<div class="btn-group-toggle" data-toggle="buttons">
-							<label class="btn btn-light btn-block">
-						    	<input type="checkbox" checked autocomplete="off"> Checked
-						    </label>
-						</div>
-						<div class="btn-group-toggle" data-toggle="buttons">
-							<label class="btn btn-light btn-block">
-						    	<input type="checkbox" checked autocomplete="off"> Checked
-						    </label>
-						</div>
-						<div class="btn-group-toggle" data-toggle="buttons">
-							<label class="btn btn-light btn-block">
-						    	<input type="checkbox" checked autocomplete="off"> Checked
-						    </label>
-						</div>
-						<div class="btn-group-toggle" data-toggle="buttons">
-							<label class="btn btn-light btn-block">
-						    	<input type="checkbox" checked autocomplete="off"> Checked
-						    </label>
+					<div class="col-3 verticalBreak pr-0">
+						<div class="centerDiv">
+							<div class="btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-light btn-block">
+							    	<input type="checkbox" checked autocomplete="off"> Checked
+							    </label>
+							</div>
+							<div class="btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-light btn-block">
+							    	<input type="checkbox" checked autocomplete="off"> Checked
+							    </label>
+							</div>
+							<div class="btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-light btn-block">
+							    	<input type="checkbox" checked autocomplete="off"> Checked
+							    </label>
+							</div>
+							<div class="btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-light btn-block">
+							    	<input type="checkbox" checked autocomplete="off"> Checked
+							    </label>
+							</div>
 						</div>
 					</div>
+
 				</div>
-
-
-
-<!-- 			    <div class="col-3">
-			    	<div class="custom-controls-stacked centerDiv">
-				  		<label class="custom-control custom-radio mb-0 mr-0">
-				    		<input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
-				    		<span class="custom-control-indicator"></span>
-				    		<span class="custom-control-description">Toggle this custom radio</span>
-				    	</label>
-				    	<label class="custom-control custom-radio m-0">
-				    		<input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
-				    		<span class="custom-control-indicator"></span>
-				    		<span class="custom-control-description">Or toggle this other custom radio</span>
-				    	</label>
-				    	<label class="custom-control custom-radio m-0">
-				    		<input class="custom-control-input" type="radio" name="radio-stacked">
-				    		<span class="custom-control-indicator"></span>
-				    		<span class="custom-control-description">I don't know if this will work</span>
-				    	</label>
-				    	<label class="custom-control custom-radio m-0">
-				    		<input class="custom-control-input" type="radio" name="radio-stacked">
-				    		<span class="custom-control-indicator"></span>
-				    		<span class="custom-control-description">I think it actually worked</span>
-				    	</label> -->
-					
-<!-- Buttons -->
-<!-- 			    		<div class="row justify-content-between ml-2" style="margin-top: 20px;">
-				    		<a class="col-4 btn btn-outline-success" href="#" role="button">Hint</a>
-				    		<a class="col-7 btn btn-outline-success" href="#" role="button">Check Solution</a>
-				    		<a class="btn btn-success btn-block mt-2" href="#" role="button">Submit Answer</a>
-			    		</div> -->
-			    	</div>
-			    </div>
 			</div>
+			<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">..dfwsg.</div>
+			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">..dfweg.</div>	
 		</div>
 	</div>
- </body>
+		
+	
+	
+
+</body>
 
   <script src="/static/js/chapterDropdown.js"></script>
   <script src="/static/js/api.js"></script>
