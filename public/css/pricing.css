@@ -87,5 +87,10 @@ html {
 .parentStats:hover > .hoverStats {
 	visibility: visible;
 }
+
+.verticalBreak {
+	border-left: 1px solid grey;
+}
+
 /*WORK ON CENTERING TEXT IN DIV IN COURSES*/
 
