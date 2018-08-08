@@ -5,9 +5,13 @@ const express = require('express');
 const keys = require('../../config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
 const exphbs = require('express-handlebars');
+const MongoClient = require('mongodb').MongoClient;
 
 // Local dependencies
 const db = require('../db');
+
+//Load the string for the Empoìloyeeid route
+str = db.dbfunction(MongoClient, 'getNames');
 
 // Router
 const router = express();
@@ -30,55 +34,35 @@ router.get('/features', function(req, res) {
 });
 
 router.get('/account', function(req, res) {
-  module.exports.currentURL = 'account';
   res.render('account');
 });
 
 router.get('/another', function(req, res) {
-  module.exports.currentURL = 'another';
   res.render('another');
 });
 
 router.get('/logout', function(req, res) {
   req.logout();
-  res.render('/');
+  res.redirect('/');
 });
 
 router.get('/heythere', (req, res) => {
-  currentURL = '/heythere';
+  currentURL = 'heythere';
   res.render('index', {
     stripePublishableKey: keys.stripePublishableKey
   });
 });
 
-// Connecting to the database on the server - https://www.guru99.com/node-js-mongodb.html
-var MongoClient = require('mongodb').MongoClient;
-
-
-// const mongoURL = process.env.MLAB_URL;
-var str = "";
-
 router.post('/charge', (req, res) => {
-
-
-  MongoClient.connect(db.mongoURL, function(err, db) {
-    var cursor = db.collection('storymodels').find();
-
-    cursor.each(function(err, item) {
-
-        if (item != null) {
-          str = "Hey there";
-        }
-        console.log(str);
-    });
-  });
-
-
-
+  params = {
+    gid: req.body.gid,
+    mathHL: "yes",
+  };
 
   const amount = 2500;
 
   stripe.customers.create({
+
     email: req.body.stripeEmail,
     source: req.body.stripeToken
   })
@@ -89,25 +73,18 @@ router.post('/charge', (req, res) => {
     customer: customer.id
   }))
   .then(charge => {
+    db.dbfunction(MongoClient,'saveNewPurchase',params);
     res.render('success');
   });
 });
 
-
-
 router.route('/Employeeid').get(function(req, res) {
-  // MongoClient.connect(db.mongoURL, function(err, db) {
-  //   var cursor = db.collection('storymodels').find();
-
-  //   cursor.each(function(err, item) {
-
-  //       if (item != null) {
-  //         str = str + "    Employee id  " + item.creator_name + "</br>";
-  //       }
-  //   });
-  //   res.send(str);
-  // });
-  str = db.getNames();
+  // db.dbfunction(MongoClient,'insertQBinstance');
+  params = {
+    gid: "109335468871294481564",
+    mathHL: "yes",
+  }
+  db.dbfunction(MongoClient,'saveNewPurchase',params);
   res.send(str);
 });
 
