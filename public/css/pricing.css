@@ -69,12 +69,27 @@ html {
 }
 
 .verticalBreak {
-	border-left: 1px solid grey;
+	border-left: 2px solid #f1f1f1;
 }
 
-/*.chapterDrop {
-	border: none;
-}*/
+.chapterHeader {
+	color: black;
+}
+
+.chapterHeader:hover {
+	color: #20a900;
+}
+
+.nav-item.nav-link.active {
+	background-color: #20a900;
+	color: white;
+	border-color: #20a900;
+}
+
+/*Connecting chapters from courses to questions page*/
+
+#chapter2 {
+}
 
 /*WORK ON CENTERING TEXT IN DIV IN COURSES*/
 
