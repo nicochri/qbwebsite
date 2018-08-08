@@ -49,13 +49,41 @@
 			</div>
 
 		    <div class="list-group-item chapterDropdown p-0" role="tablist" style="display: none; width: 100%;">
-		    	<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Chapter 1: Algebra</a>
-			    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Chapter 2. Functions and Equations</a>
-			    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Chapter 3: Circular Functions and Trigonometry</a>
-			    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Chapter 4: Matrices</a>
-			    <a class="list-group-item list-group-item-action" href="#">Chapter 5: Vectors</a>
-			    <a class="list-group-item list-group-item-action" href="#">Chapter 6: Statistics and Probability</a>
-			    <a class="list-group-item list-group-item-action" href="#">Chapter 7: Calculus</a>
+		    	<div class="d-flex justify-content-start">
+			    	<a class="d-flex parentStats list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Chapter 1: Algebra
+			    		<div class="d-flex hoverStats ml-5">Stats:</div>
+			    	</a>
+			    </div>
+			    <div class="d-flex justify-content-start">
+				    <a class="d-flex parentStats list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Chapter 2: Functions and Equations
+				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
+				    </a>
+				</div>
+			    <div class="d-flex justify-content-start">
+				    <a class="d-flex parentStats list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Chapter 3: Circular Functions and Trigonometry
+				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
+				    </a>
+				</div>
+				<div class="d-flex justify-content-start">
+				    <a class="d-flex parentStats list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Chapter 4: Matrices
+				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
+				    </a>
+				</div>
+				<div class="d-flex justify-content-start">
+				    <a class="d-flex parentStats list-group-item list-group-item-action" href="#">Chapter 5: Vectors
+				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
+				    </a>
+				</div>
+				<div class="d-flex justify-content-start">
+				    <a class="d-flex parentStats list-group-item list-group-item-action" href="#">Chapter 6: Statistics and Probability
+				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
+				    </a>
+				</div>
+				<div class="d-flex justify-content-start">
+				    <a class="d-flex parentStats list-group-item list-group-item-action" href="#">Chapter 7: Calculus
+				    	<div class="d-flex hoverStats text-muted ml-5">Stats:</div>
+				    </a>
+				</div>
 		    </div>
   		</div>
 
@@ -65,8 +93,8 @@
 			    	<div class="list-group scrollingQuestions" id="list-tab" role="tablist">
 			     	<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">1. Factoring</a>
 			     	<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">2. Pascal's triangle</a>
-			     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3) Expressions</a>
-			      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">4) Functions</a>
+			     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3. Expressions</a>
+			      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">4. Functions</a>
 			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">5. Binomials</a>
 			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">6. Binomials</a>
 			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">7. Binomials</a>
@@ -92,34 +120,61 @@
 			    </div>
 
 <!-- Multiple choice -->
-			    <div class="col-3">
-			    	<div class="custom-controls-stacked">
-				  		<label class="custom-control custom-radio">
+					
+				<div class="col-3">
+					<div class="btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-outline-success"><span class="badge badge-pill badge-dark">0</span>
+					    	<input type="checkbox" checked autocomplete="off"> Checked
+					    </label>
+					</div>
+					<div class="btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-secondary">
+					    	<input type="checkbox" checked autocomplete="off"> Checked
+					    </label>
+					</div>
+					<div class="btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-secondary">
+					    	<input type="checkbox" checked autocomplete="off"> Checked
+					    </label>
+					</div>
+					<div class="btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-secondary">
+					    	<input type="checkbox" checked autocomplete="off"> Checked
+					    </label>
+					</div>
+				</div>
+
+
+
+<!-- 			    <div class="col-3">
+			    	<div class="custom-controls-stacked centerDiv">
+				  		<label class="custom-control custom-radio mb-0 mr-0">
 				    		<input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
 				    		<span class="custom-control-indicator"></span>
 				    		<span class="custom-control-description">Toggle this custom radio</span>
 				    	</label>
-				    	<label class="custom-control custom-radio">
+				    	<label class="custom-control custom-radio m-0">
 				    		<input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
 				    		<span class="custom-control-indicator"></span>
 				    		<span class="custom-control-description">Or toggle this other custom radio</span>
 				    	</label>
-				    	<label class="custom-control custom-radio">
+				    	<label class="custom-control custom-radio m-0">
 				    		<input class="custom-control-input" type="radio" name="radio-stacked">
 				    		<span class="custom-control-indicator"></span>
 				    		<span class="custom-control-description">I don't know if this will work</span>
 				    	</label>
-				    	<label class="custom-control custom-radio">
+				    	<label class="custom-control custom-radio m-0">
 				    		<input class="custom-control-input" type="radio" name="radio-stacked">
 				    		<span class="custom-control-indicator"></span>
 				    		<span class="custom-control-description">I think it actually worked</span>
-				    	</label>
-					</div>
+				    	</label> -->
+					
 <!-- Buttons -->
-			    	<div class="row justify-content-between m-2">
-			    		<a class="col-4 btn btn-outline-success" href="#" role="button">Hint</a>
-			    		<a class="col-7 btn btn-outline-success" href="#" role="button">Check Solution</a>
-			    		<a class="btn btn-success btn-block mt-2" href="#" role="button">Submit Answer</a>
+			    		<div class="row justify-content-between ml-2" style="margin-top: 20px;">
+				    		<a class="col-4 btn btn-outline-success" href="#" role="button">Hint</a>
+				    		<a class="col-7 btn btn-outline-success" href="#" role="button">Check Solution</a>
+				    		<a class="btn btn-success btn-block mt-2" href="#" role="button">Submit Answer</a>
+			    		</div>
 			    	</div>
 			    </div>
 			</div>

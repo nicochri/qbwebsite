@@ -67,9 +67,25 @@ html {
 }
 
 .scrollingQuestions {
-	height: 400px;
+	height: 450px;
 	overflow-y: scroll;
 }
 
+.centerDiv {
+	position: relative;
+	top: 50%;
+	transform: perspective(1px) translateY(-50%);
+}
+
+.parentStats {
+}
+
+.hoverStats {
+	visibility: hidden;
+}
+
+.parentStats:hover > .hoverStats {
+	visibility: visible;
+}
 /*WORK ON CENTERING TEXT IN DIV IN COURSES*/
 
