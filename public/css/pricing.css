@@ -56,12 +56,6 @@ html {
 
 }
 
-.card.text-center.border-success {
-	border: 2px solid;
-	border-color: #20a900;
-
-}
-
 .list-group-item.chapterDropdown.p-0 {
 	border-top: none;
 }

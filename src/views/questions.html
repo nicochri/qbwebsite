@@ -27,11 +27,11 @@
   			</div>
 
 	  		<div class="list-group rounded ml-3" style="width: 100%">
-	  			<div class="card border-success text-center" onclick="showDiv()">
+	  			<div class="card text-center" onclick="showDiv()">
 					<div class="card-body">
 				    	<h2 class="card-title mb-0">Chapter 1: Algebra</h2>
 				  	</div>
-				  	<div class="card-footer border-success text-muted">Stats:</div>
+				  	<div class="card-footer text-muted" style="background-color: #f1f1f1">Stats:</div>
 				</div>
 			</div>
 				
@@ -40,7 +40,7 @@
 		<div class="d-flex align-items-center">
 			<div class="col-3 p-0 mr-3 chapterDropdown" style="display: none;">
 				<ul class="list-group card">
-					<li class="list-group-item" style="background-color: rgba(0,0,0,.03)">Math HL Stats</li>
+					<li class="list-group-item" style="background-color: #f1f1f1">Math HL Stats</li>
 					<li class="list-group-item text-muted">Chapters Completed</li>
 					<li class="list-group-item text-muted">Overall Completion</li>
 					<li class="list-group-item text-muted">Questions Answered</li>
@@ -87,23 +87,23 @@
 			<div class="row mt-4">
 			  	<div class="col-3 p-0">
 			    	<div class="list-group scrollingQuestions" id="list-tab" role="tablist">
-			     	<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">1. Factoring</a>
-			     	<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">2. Pascal's triangle</a>
-			     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3. Expressions</a>
-			      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">4. Functions</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">5. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">6. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">7. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">8. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">9. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">10. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">11. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">12. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">13. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">14. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">15. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">16. Binomials</a>
-			      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">17. Binomials</a>
+				     	<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">1. Factoring</a>
+				     	<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">2. Pascal's triangle</a>
+				     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3. Expressions</a>
+				      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">4. Functions</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">5. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">6. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">7. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">8. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">9. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">10. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">11. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">12. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">13. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">14. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">15. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">16. Binomials</a>
+				      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">17. Binomials</a>
 			    	</div>
 			  	</div>
 			    <div class="col-6">
@@ -120,25 +120,27 @@
 <!-- Multiple choice -->
 					
 				<div class="col-3 verticalBreak pr-0">
-					<div class="btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-light btn-block"><span class="badge badge-pill badge-dark" style="float: left;">0</span>
-					    	<input type="checkbox" checked autocomplete="off"> Checked
-					    </label>
-					</div>
-					<div class="btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-secondary">
-					    	<input type="checkbox" checked autocomplete="off"> Checked
-					    </label>
-					</div>
-					<div class="btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-secondary">
-					    	<input type="checkbox" checked autocomplete="off"> Checked
-					    </label>
-					</div>
-					<div class="btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-secondary">
-					    	<input type="checkbox" checked autocomplete="off"> Checked
-					    </label>
+					<div class="centerDiv">
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-light btn-block">
+						    	<input type="checkbox" checked autocomplete="off"> Checked
+						    </label>
+						</div>
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-light btn-block">
+						    	<input type="checkbox" checked autocomplete="off"> Checked
+						    </label>
+						</div>
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-light btn-block">
+						    	<input type="checkbox" checked autocomplete="off"> Checked
+						    </label>
+						</div>
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-light btn-block">
+						    	<input type="checkbox" checked autocomplete="off"> Checked
+						    </label>
+						</div>
 					</div>
 				</div>
 
@@ -168,11 +170,11 @@
 				    	</label> -->
 					
 <!-- Buttons -->
-			    		<div class="row justify-content-between ml-2" style="margin-top: 20px;">
+<!-- 			    		<div class="row justify-content-between ml-2" style="margin-top: 20px;">
 				    		<a class="col-4 btn btn-outline-success" href="#" role="button">Hint</a>
 				    		<a class="col-7 btn btn-outline-success" href="#" role="button">Check Solution</a>
 				    		<a class="btn btn-success btn-block mt-2" href="#" role="button">Submit Answer</a>
-			    		</div>
+			    		</div> -->
 			    	</div>
 			    </div>
 			</div>
