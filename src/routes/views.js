@@ -54,16 +54,16 @@ router.get('/heythere', (req, res) => {
 });
 
 router.post('/charge', (req, res) => {
-  params = {
-    gid: req.body.gid,
-    mathHL: "yes",
-  };
+  // params = {
+  //   gid: req.body.gid,
+  //   mathHL: "yes",
+  // };
 
   const amount = 2500;
-
+  console.log(req);
   stripe.customers.create({
 
-    email: req.body.stripeEmail,
+    // email: req.body.stripeEmail,
     source: req.body.stripeToken
   })
   .then(customer => stripe.charges.create({
@@ -73,7 +73,7 @@ router.post('/charge', (req, res) => {
     customer: customer.id
   }))
   .then(charge => {
-    db.dbfunction(MongoClient,'saveNewPurchase',params);
+    // db.dbfunction(MongoClient,'saveNewPurchase',params);
     res.render('success');
   });
 });
