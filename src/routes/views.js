@@ -53,29 +53,33 @@ router.get('/heythere', (req, res) => {
   });
 });
 
+// router.post('/charge', (req, res) => {
+//   // params = {
+//   //   gid: req.body.gid,
+//   //   mathHL: "yes",
+//   // };
+
+//   const amount = 2500;
+//   console.log(req);
+//   stripe.customers.create({
+
+//     // email: req.body.stripeEmail,
+//     source: req.body.stripeToken
+//   })
+//   .then(customer => stripe.charges.create({
+//     amount,
+//     description: 'Web Development Ebook',
+//     currency: 'usd',
+//     customer: customer.id
+//   }))
+//   .then(charge => {
+//     // db.dbfunction(MongoClient,'saveNewPurchase',params);
+//     res.render('success');
+//   });
+// });
+
 router.post('/charge', (req, res) => {
-  // params = {
-  //   gid: req.body.gid,
-  //   mathHL: "yes",
-  // };
-
-  const amount = 2500;
-  console.log(req);
-  stripe.customers.create({
-
-    // email: req.body.stripeEmail,
-    source: req.body.stripeToken
-  })
-  .then(customer => stripe.charges.create({
-    amount,
-    description: 'Web Development Ebook',
-    currency: 'usd',
-    customer: customer.id
-  }))
-  .then(charge => {
-    // db.dbfunction(MongoClient,'saveNewPurchase',params);
-    res.render('success');
-  });
+  res.render('success');
 });
 
 router.route('/Employeeid').get(function(req, res) {
