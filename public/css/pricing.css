@@ -101,12 +101,19 @@ html {
 	background-image: url("/static/ring.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
-}	
-
-.circle:hover {
-	background-image: url("/static/hoverCircle.png");
-	transition-duration: .3s;
 }
+
+.circleHover {
+	height: 35px;
+	width: 35px;
+	background-image: url("/static/hoverCircle.png");
+	background-size: 100%;
+	display: none;
+}
+
+	/*background-image: url("/static/hoverCircle.png");*/
+}
+
 /*Connecting chapters from courses to questions page*/
 
 #chapter2 {
