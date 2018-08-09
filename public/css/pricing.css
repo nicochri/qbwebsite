@@ -96,15 +96,16 @@ html {
 }
 
 .circle {
-	height: 150px;
-	width: 150px;
+	height: 35px;
+	width: 35px;
 	background-image: url("/static/ring.png");
-	background-repeat: no-repeat;
 	background-size: 100%;
-}
+	background-repeat: no-repeat;
+}	
 
 .circle:hover {
 	background-image: url("/static/hoverCircle.png");
+	transition-duration: .3s;
 }
 /*Connecting chapters from courses to questions page*/
 
