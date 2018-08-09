@@ -62,7 +62,7 @@ router.post('/charge', (req, res) => {
   const amount = 2500;
   console.log(req.body);
 
-  
+
   stripe.customers.create({
 
     // email: req.body.stripeEmail,
@@ -76,6 +76,7 @@ router.post('/charge', (req, res) => {
   }))
   .then(charge => {
     // db.dbfunction(MongoClient,'saveNewPurchase',params);
+    console.log('just a test');
     res.render('success');
   });
 });
