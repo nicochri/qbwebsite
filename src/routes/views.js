@@ -3,7 +3,7 @@ const express = require('express');
 
 // Libraries - TRAVERSY
 const keys = require('../../config/keys');
-const stripe = require('stripe')(keys.stripeSecretKey);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const exphbs = require('express-handlebars');
 const MongoClient = require('mongodb').MongoClient;
 
@@ -49,7 +49,7 @@ router.get('/logout', function(req, res) {
 router.get('/heythere', (req, res) => {
   currentURL = 'heythere';
   res.render('index', {
-    stripePublishableKey: keys.stripePublishableKey
+    stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
   });
 });
 
