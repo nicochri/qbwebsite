@@ -85,10 +85,12 @@ router.post('/charge', (req, res) => {
   stripe.customers.create({
     email: 'foo-customer@example.com'
   }).then(function(customer){
+    console.log('entered 2');
     return stripe.customers.createSource(customer.id, {
       source: 'tok_visa'
     });
   }).then(function(source) {
+    console.log('entered 3');
     return stripe.charges.create({
       amount: 1600,
       currency: 'usd',
@@ -100,6 +102,7 @@ router.post('/charge', (req, res) => {
     res.render('success');
   }).catch(function(err) {
     // Deal with an error
+    res.render('success');
   });
 
 
