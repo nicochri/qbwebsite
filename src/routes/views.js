@@ -79,7 +79,31 @@ router.get('/heythere', (req, res) => {
 // });
 
 router.post('/charge', (req, res) => {
-  res.render('success');
+  // res.render('success');
+  console.log(req.body)
+
+  stripe.customers.create({
+    email: 'foo-customer@example.com'
+  }).then(function(customer){
+    return stripe.customers.createSource(customer.id, {
+      source: 'tok_visa'
+    });
+  }).then(function(source) {
+    return stripe.charges.create({
+      amount: 1600,
+      currency: 'usd',
+      customer: source.customer
+    });
+  }).then(function(charge) {
+    // New charge created on a new customer
+    console.log('finised');
+    res.render('success');
+  }).catch(function(err) {
+    // Deal with an error
+  });
+
+
+
 });
 
 router.route('/Employeeid').get(function(req, res) {
