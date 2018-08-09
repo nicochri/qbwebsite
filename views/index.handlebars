@@ -31,6 +31,7 @@
   function stripeTokenHandler(token) {
   // Insert the token ID into the form so it gets submitted to the server
   var form = document.getElementById('payment-form');
+
   var hiddenInput = document.createElement('input');
   hiddenInput.setAttribute('type', 'hidden');
   hiddenInput.setAttribute('name', 'stripeToken');
@@ -46,6 +47,18 @@
 
 <div class="container">
   <form action="/charge" method="post" id="payment-form">
+    <script>
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="{{stripePublishableKey}}"
+          data-amount="2500"
+          data-name="Web Development Ebook"
+          data-description="Ebookr written by Brad Traversy"
+          data-locale="auto">
+        </script>
+        <script>
+          document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+        </script>
+        <input type="hidden" id="gid" name="gid" value="">
     <div class="form-row">
       <div id="card-element">
         <!-- a Stripe Element will be inserted here. -->

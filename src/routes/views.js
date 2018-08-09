@@ -53,30 +53,32 @@ router.get('/heythere', (req, res) => {
   });
 });
 
-// router.post('/charge', (req, res) => {
-//   // params = {
-//   //   gid: req.body.gid,
-//   //   mathHL: "yes",
-//   // };
+router.post('/charge', (req, res) => {
+  // params = {
+  //   gid: req.body.gid,
+  //   mathHL: "yes",
+  // };
 
-//   const amount = 2500;
-//   console.log(req);
-//   stripe.customers.create({
+  const amount = 2500;
+  console.log(req.body);
 
-//     // email: req.body.stripeEmail,
-//     source: req.body.stripeToken
-//   })
-//   .then(customer => stripe.charges.create({
-//     amount,
-//     description: 'Web Development Ebook',
-//     currency: 'usd',
-//     customer: customer.id
-//   }))
-//   .then(charge => {
-//     // db.dbfunction(MongoClient,'saveNewPurchase',params);
-//     res.render('success');
-//   });
-// });
+  
+  stripe.customers.create({
+
+    // email: req.body.stripeEmail,
+    source: req.body.stripeToken
+  })
+  .then(customer => stripe.charges.create({
+    amount,
+    description: 'Web Development Ebook',
+    currency: 'usd',
+    customer: customer.id
+  }))
+  .then(charge => {
+    // db.dbfunction(MongoClient,'saveNewPurchase',params);
+    res.render('success');
+  });
+});
 
 // router.post('/charge', (req, res) => {
 //   // res.render('success');
@@ -107,21 +109,25 @@ router.get('/heythere', (req, res) => {
 //   });
 // });
 
-router.post("/charge", (req, res) => {
-  let amount = 500;
+// router.post("/charge", (req, res) => {
+//   let amount = 500;
 
-  stripe.customers.create({
-    source: req.body.stripeToken
-  })
-  .then(customer =>
-    stripe.charges.create({
-      amount,
-      description: "Sample Charge",
-         currency: "usd",
-         customer: customer.id
-    }))
-  .then(charge => res.render("success"));
-});
+//   stripe.customers.create({
+//     source: req.body.stripeToken
+//   })
+//   .then(customer =>
+//     stripe.charges.create({
+//       amount,
+//       description: "Sample Charge",
+//          currency: "usd",
+//          customer: customer.id
+//     }))
+//   .then(charge => res.render("success"));
+// });
+
+// router.post("/charge", (req, res) => {
+//   res.render('success');
+// });
 
 
 
