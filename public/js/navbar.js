@@ -35,7 +35,7 @@ function renderLinks(parentDiv) {
 
 	const link3 = document.createElement('a');
 	link3.className = 'p-2 text-dark';
-	link3.href = '/features';
+	link3.href = '/auth/facebook';
 	link3.innerHTML = 'Features';
 
 	parentDiv.appendChild(navbar);

@@ -61,6 +61,20 @@ function(req, res) {
   res.redirect('/');
 });
 
+// authentication routes
+app.get('/auth/facebook', passport.authenticate('facebook'));
+
+app.get(
+  '/auth/facebook/callback',
+  passport.authenticate(
+    'facebook',
+    { failureRedirect: '/' }
+  ),
+  function(req, res) {
+    res.redirect('/');
+  }
+);
+
 // 404 route
 app.use(function(req, res, next) {
   const err = new Error(' Not Found');
