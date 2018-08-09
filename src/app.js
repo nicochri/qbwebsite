@@ -61,19 +61,19 @@ function(req, res) {
   res.redirect('/');
 });
 
-// authentication routes
-app.get('/auth/facebook', passport.authenticate('facebook'));
+// authentication routes - facebook
+// app.get('/auth/facebook', passport.authenticate('facebook'));
 
-app.get(
-  '/auth/facebook/callback',
-  passport.authenticate(
-    'facebook',
-    { failureRedirect: '/' }
-  ),
-  function(req, res) {
-    res.redirect('/');
-  }
-);
+// app.get(
+//   '/auth/facebook/callback',
+//   passport.authenticate(
+//     'facebook',
+//     { failureRedirect: '/' }
+//   ),
+//   function(req, res) {
+//     res.redirect('/');
+//   }
+// );
 
 // 404 route
 app.use(function(req, res, next) {
