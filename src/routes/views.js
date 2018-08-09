@@ -102,6 +102,7 @@ router.post('/charge', (req, res) => {
     res.render('success');
   }).catch(function(err) {
     // Deal with an error
+    console.log('dealt with an error');
     res.render('success');
   });
 
