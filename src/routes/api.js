@@ -39,6 +39,55 @@ router.get('/whoami', function(req, res) {
   }
 });
 
+router.get('/whoamimod', function(req, res) {
+  params = {
+    gid: 'nada',
+    mathHL: 'you wish',
+  }
+  if (req.isAuthenticated()) {
+    MongoClient.connect(process.env.MLAB_URL, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("catbookdb");
+
+      // Check if the user has already purchased something
+      var query = { gid: params.gid };
+      var user = [];
+      dbo.collection("qbaccess").find(query).toArray(function(err, result) {
+        if (err) throw err;
+       
+        //If user already has a document
+        if (result.length == 1) {
+          console.log('updating user');
+
+          var myquery = { gid: params.gid };
+          var newvalues = { $set: { mathHL: params.mathHL } };
+          dbo.collection("qbaccess").updateOne(myquery, newvalues, function(err, res) {
+            if (err) throw err;
+            console.log("1 document updated");
+        });
+        }
+
+        //If it's the user's first purchase
+        else {
+          var myobj = { gid: params.gid, mathHL: params.mathHL };
+          dbo.collection("qbaccess").insertOne(myobj, function(err, res) {
+            if (err) throw err;
+            console.log("1 document inserted");
+        });
+        }
+        db.close();
+        data = { status: 1 };
+        res.send(data);
+      });
+    });
+
+  }
+  else {
+    data = { authenticated: 0 };
+    res.send(data);
+  }
+});
+
 router.get('/user', function(req, res) {
   User.findOne({ _id: req.query._id }, function(err, user) {
     res.send(user);

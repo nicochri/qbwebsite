@@ -124,13 +124,25 @@ function registerElements(elements, exampleName) {
     stripe.createToken(elements[0], additionalData).then(function(result) {
       // Stop loading!
 
-      example.classList.remove('submitting');
 
       if (result.token) {
         // If we received a token, show the token ID.
         example.querySelector('.token').innerText = result.token.id;
-        post('/api/payment', result.token);
-        example.classList.add('submitted');
+        // post('/api/payment', result.token);
+        // post('api/checkpayment', result.token);
+        get('/api/whoamimod', {}, function(response) {
+          console.log(response);
+          if (response.status == 1) {
+            example.classList.remove('submitting');
+            example.classList.add('submitted');
+          }
+          else {
+            document.getElementById("myPath").setAttribute("d", "M25 25 60 60 M60 25 25 60");
+            document.getElementById("paymentTitle").innerText = "Payment unsuccessful";
+            example.classList.remove('submitting');
+            example.classList.add('submitted');
+          }
+        });
       } else {
         // Otherwise, un-disable inputs.
         enableInputs();
