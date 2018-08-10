@@ -65,6 +65,7 @@
   });
 
   paymentRequest.canMakePayment().then(function(result) {
+    console.log('can now make payment');
     if (result) {
       document.querySelector(".example4 .card-only").style.display = "none";
       document.querySelector(
@@ -80,19 +81,19 @@
 
 
   // Handle form submission.
-  var form = document.getElementById('payment-form');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  // var form = document.getElementById('payment-form');
+  // form.addEventListener('submit', function(event) {
+  //   event.preventDefault();
 
-    stripe.createToken(card).then(function(result) {
-      if (result.error) {
-        // Inform the user if there was an error.
-        var errorElement = document.getElementById('card-errors');
-        errorElement.textContent = result.error.message;
-      } else {
-        // Send the token to your server.
-        stripeTokenHandler(result.token);
-      }
-    });
-  });
+  //   stripe.createToken(card).then(function(result) {
+  //     if (result.error) {
+  //       // Inform the user if there was an error.
+  //       var errorElement = document.getElementById('card-errors');
+  //       errorElement.textContent = result.error.message;
+  //     } else {
+  //       // Send the token to your server.
+  //       post('/api/payment', result.token);
+  //     }
+  //   });
+  // });
 })();
