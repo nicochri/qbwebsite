@@ -144,6 +144,7 @@ function registerElements(elements, exampleName) {
           }
         });
       } else {
+        example.classList.remove('submitting');
         // Otherwise, un-disable inputs.
         enableInputs();
       }

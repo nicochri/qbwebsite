@@ -42,7 +42,7 @@
       <!--Example 4-->
       <div class="cell example example4">
         <form action="/charge" form="POST" id="payment-form">
-          <div id="example4-paymentRequest" style="display: hidden;">
+          <div id="example4-paymentRequest">
             <!--Stripe paymentRequestButton Element inserted here-->
           </div>
           <fieldset>
@@ -106,6 +106,8 @@
   <!-- <script src="/static/js/charge.js"></script> -->
   <!-- <script src="/static/js/account.js"></script> -->
   <!-- <script src="/static/js/payment.js"></script> -->
-
+<script type="text/javascript">
+document.getElementById('example4-paymentRequest').remove()
+</script>
 
 </html>
