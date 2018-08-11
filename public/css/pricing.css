@@ -58,12 +58,12 @@ html {
 }
 
 .scrollingQuestionsList {
-	height: 400px;
+	height: 450px;
 	overflow-y: scroll;
 }
 
 .scrollingQuestions {
-	height: 399px;
+	height: 398px;
 	overflow-y: scroll;
 	direction: ltr;
 }
@@ -115,16 +115,6 @@ html {
 	background-image: url("/static/hoverCircle.png");
 	background-size: 100%;
 	display: none;
-}
-
-/*.blackCircle {
-	height: 35px;
-	width: 35px;
-	background-image: url("/static/blackCircle.png");
-	background-size: 100%;
-}*/
-
-	/*background-image: url("/static/hoverCircle.png");*/
 }
 
 /*Connecting chapters from courses to questions page*/

@@ -66,3 +66,41 @@ function changeBackground4() {
 	el3.style.backgroundImage = "url('/static/ring.png')";
 	el4.style.backgroundImage = "url('/static/clickedCircle.png')";
 }
+
+function innerCircle(optionNumber) {
+	var option1 = document.getElementById('option1');
+	if (optionNumber == 1) {
+		if (!option1.style.backgroundImage.includes("clickedCircle")) {
+			option1.style.backgroundImage = "url('/static/hoverCircle.png')";
+		}
+	}
+
+	else if (optionNumber == 2) {
+		if (!option2.style.backgroundImage.includes("clickedCircle")) {
+			option2.style.backgroundImage = "url('/static/hoverCircle.png')";
+		}
+	}
+
+}
+
+function innerCircleOff(optionNumberOff) {
+	var el1 = document.getElementById('option1');
+	if (optionNumber == 1) {
+		if (!option1.style.backgroundImage.includes("clickedCircle")) {
+			option1.style.backgroundImage = "url('/static/ring.png')";
+		}
+	}
+
+	else if (optionNumber == 2) {
+		if (!option2.style.backgroundImage.includes("clickedCircle")) {
+			option2.style.backgroundImage = "url('/static/hoverCircle.png')";
+		}
+	}
+	
+
+
+}
+
+
+
+
