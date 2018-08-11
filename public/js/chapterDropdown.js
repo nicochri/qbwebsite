@@ -96,10 +96,34 @@ function innerCircleOff(optionNumberOff) {
 			option2.style.backgroundImage = "url('/static/hoverCircle.png')";
 		}
 	}
-	
-
-
 }
+
+// function questionBox(questionNumber) {
+// 	document.getElementsByClassName('showQuestion1')[0].remove();
+// 	document.getElementsByClassName('showQuestion1')[1].remove();
+// 	var h1 = document.getElementById('hint1');
+// 	var cm1 = document.getElementById('commonMistakes1');
+// 	var q2 = document.getElementsByClassName('showQuestion2');
+
+// 	if (questionNumber == 1) {
+// 		document.getElementsByClassName('showQuestion2')[0].remove();
+// 		document.getElementsByClassName('showQuestion2')[1].remove();
+// 	}
+
+// 	else if (questionNumber == 2) {
+// 		document.getElementsByClassName('showQuestion1')[0].remove();
+// 		document.getElementsByClassName('showQuestion1')[1].remove();
+// 	}
+// }
+
+
+
+
+
+
+
+
+
 
 
 

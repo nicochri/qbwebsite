@@ -56,8 +56,8 @@
 				<div class="row mt-3">
 				  	<div class="col-3">
 				    	<div class="list-group scrollingQuestionsList" id="list-tab" role="tablist">
-					     	<a class="list-group-item list-group-item-action active" data-toggle="list" href="#question1" role="tab" aria-controls="home">1. Series</a>
-					     	<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#question2" role="tab" aria-controls="profile">2. Pascal's triangle</a>
+					     	<a class="list-group-item list-group-item-action active" data-toggle="list" href="#question1" role="tab" aria-controls="home" onclick="questionBox(1)">1. Series</a>
+					     	<a class="list-group-item list-group-item-action" data-toggle="list" href="#question2" role="tab" aria-controls="profile" onclick="questionBox(2)">2. Pascal's triangle</a>
 					     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3. Expressions</a>
 					      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">4. Functions</a>
 					      	<a class="list-group-item list-group-item-action" data-toggle="list" href="#">5. Binomials</a>
@@ -76,30 +76,36 @@
 				    	</div>
 				  	</div>
 
-<!-- Question Section with Solution Area -->
-			    	<div class="col-6 pl-0" id="question1">
+<!-- Question Section with Solution Area Q1 -->
+					
+			    	<div class="col-6 pl-0 showQuestion1">
 			    		<div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-			  				<a class="nav-item nav-link active chapterHeader" data-toggle="tab" href="#showQuestion1" role="tab" aria-controls="nav-home" aria-selected="true">Question</a>
+			  				<a class="nav-item nav-link active chapterHeader" data-toggle="tab" href="#question1" role="tab" aria-controls="nav-home" aria-selected="true">Question</a>
 			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#hint1" role="tab" aria-controls="nav-profile" aria-selected="false">Hint</a>
-			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#list-messages" role="tab" aria-controls="nav-contact" aria-selected="false">Common Mistakes</a>
-			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" id="questionSolution" href="#list-settings" role="tab" aria-controls="nav-contact" aria-selected="false">Solution</a>
+			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#commonMistakes1" role="tab" aria-controls="nav-contact" aria-selected="false">Common Mistakes</a>
+			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#solution1" role="tab" aria-controls="nav-contact" aria-selected="false">Solution</a>
   						</div>
 				    	<div class="container rounded bg-white mt-2" style="border: 1px solid; border-color: black;">
 						    <div class="tab-content" id="nav-tabContent">
-						    	<div class="tab-pane fade show active" id="showQuestion1" role="tabpanel" aria-labelledby="list-home-list">
+						    	<div class="tab-pane fade show active" id="question1" role="tabpanel" aria-labelledby="list-home-list">
 						    		<p class="pt-2 lead scrollingQuestions m-0">An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence? An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence? An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence? An infinite geometric sequence </p>
 						    	</div>
 						        <div class="tab-pane fade" id="hint1" role="tabpanel" aria-labelledby="list-profile-list">
 						        	<p class="pt-2 lead scrollingQuestions m-0">An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence?blalbldlal</p>
 						        </div>
-						        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+						        <div class="tab-pane fade" id="commonMistakes1" role="tabpanel" aria-labelledby="list-messages-list">
+						        	<p class="pt-2 lead scrollingQuestions m-0">ewkmffksdkkds</p>
+						        </div>
+						        <div class="tab-pane fade" id="solution1" role="tabpanel" aria-labelledby="list-messages-list">
+						        	<p class="pt-2 lead scrollingQuestions m-0">here should be a solution :)</p>
+						        </div>
 						    </div>
 						</div>
 				    </div>
 
-<!-- Multiple choice -->
+	<!-- Multiple choice Q1-->
 
-					<div class="col-3 verticalBreak">
+					<div class="col-3 verticalBreak showQuestion1">
 						<div class="centerDiv">
 							<div class="btn-group-toggle" data-toggle="buttons">
 								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option1div" onclick="changeBackground1()" onmouseover="innerCircle(1)" onmouseout="innerCircleOff(1)">
@@ -130,18 +136,21 @@
 							</div>
 						</div>
 					</div>
-<!-- Question Section with Solution Area Q2 -->
-			    	<div class="col-6 pl-0" id="question2" style="display: none;">
+				</div>
+
+<!-- Question Section with Solution Area Q2 --><!-- 
+
+			    	<div class="col-6 pl-0 showQuestion2">
 			    		<div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-			  				<a class="nav-item nav-link active chapterHeader" data-toggle="tab" href="#list-home" role="tab" aria-controls="nav-home" aria-selected="true">Question</a>
+			  				<a class="nav-item nav-link active chapterHeader" data-toggle="tab" href="#question2" role="tab" aria-controls="nav-home" aria-selected="true">Question</a>
 			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#list-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Hint</a>
 			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#list-messages" role="tab" aria-controls="nav-contact" aria-selected="false">Common Mistakes</a>
-			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" id="questionSolution" href="#list-settings" role="tab" aria-controls="nav-contact" aria-selected="false">Solution</a>
+			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#list-settings" role="tab" aria-controls="nav-contact" aria-selected="false">Solution</a>
   						</div>
 				    	<div class="container rounded bg-white mt-2" style="border: 1px solid; border-color: black;">
 						    <div class="tab-content" id="nav-tabContent">
-						    	<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-						    		<p class="pt-2 lead scrollingQuestions m-0">An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence? An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence? An</p>
+						    	<div class="tab-pane fade show active" id="question2" role="tabpanel" aria-labelledby="list-home-list">
+						    		<p class="pt-2 lead scrollingQuestions m-0">An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence? An infinite geometric sequence is such that the first term is equal to the sum of the following terms.</p>
 						    	</div>
 						        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
 						        	<p class="pt-2 lead scrollingQuestions m-0">An infinite geometric sequence is such that the first term is equal to the sum of the following terms. What is the common ration of this sequence?</p>
@@ -150,11 +159,11 @@
 						        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">..</div>
 						    </div>
 						</div>
-				    </div>
+				    </div> -->
 
-<!-- Multiple choice Q2 -->
+<!-- Multiple choice Q2 --><!-- 
 
-					<div class="col-3 verticalBreak" style="display: none;">
+					<div class="col-3 verticalBreak showQuestion2">
 						<div class="centerDiv">
 							<div class="btn-group-toggle" data-toggle="buttons">
 								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option1div" onclick="changeBackground1()" onmouseover="innerCircle(1)" onmouseout="innerCircleOff(1)">
@@ -184,11 +193,12 @@
 								<a href="#questionSolution" class="btn btn-light btn-block">Check Solution</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
-			</div>
+			
 			<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">..dfwsg.</div>
 			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">..dfweg.</div>	
+			</div>
 		</div>
 	</div>
 		
