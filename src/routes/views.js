@@ -25,11 +25,6 @@ router.get('/', function(req, res, next) {
   res.sendFile('index.html', { root: 'src/views' });
 });
 
-router.get('/.well-known/acme-challenge/P7k6P6tvYdBJfX64aPAqkaxd58fu1b4OUrsdzDbDjl4', function(req, res, next) {
-  // res.sendFile('index.html', { root: 'src/views' });
-  res.send('P7k6P6tvYdBJfX64aPAqkaxd58fu1b4OUrsdzDbDjl4.dbGIDnRCaqdoRHsLAF_rN8Kd0OxvbzwM4_AV3LcUH-s');
-});
-
 router.get('/courses', function(req, res) {
   res.sendFile('mathHL.html', { root: 'src/views' });
 });
