@@ -61,7 +61,7 @@ function(req, res) {
   res.redirect('/');
 });
 
-authentication routes - facebook
+// authentication routes - facebook
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get(
