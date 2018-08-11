@@ -65,7 +65,7 @@ function(req, res) {
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get(
-  'https://www.ibquestionbanks.org/auth/facebook/callback',
+  '/auth/facebook/callback',
   passport.authenticate(
     'facebook',
     { failureRedirect: '/' }
