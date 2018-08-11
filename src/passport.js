@@ -37,7 +37,7 @@ passport.use(new GoogleStrategy({
 passport.use(new fbp.Strategy({
   clientID: '309614212914414',
   clientSecret: '6d25ee268ae57d8558d18efda4d3f5a4',
-  callbackURL: '/auth/facebook/callback'
+  callbackURL: 'https://www.ibquestionbanks.org/auth/facebook/callback'
 }, function(accessToken, BrefreshToken, profile, done) {
   User.findOne({'gid': profile.id }, function(err, user) {
     if (err) return done(err);
