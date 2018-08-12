@@ -124,15 +124,20 @@ function registerElements(elements, exampleName) {
     stripe.createToken(elements[0], additionalData).then(function(result) {
       // Stop loading!
 
-
       if (result.token) {
         // If we received a token, show the token ID.
         example.querySelector('.token').innerText = result.token.id;
-        // post('/api/payment', result.token);
-        // post('api/checkpayment', result.token);
-        get('/api/whoamimod', {}, function(response) {
-          console.log(response);
-          if (response.status == 1) {
+        // Send token and handle result
+
+        const data = {
+            content: 'hey disable',
+            tok: 'fdgdfgdfgdfgsfsfdfgibberish',
+            stripeToken: result.token.id,
+        };
+
+        get('/api/whoamimod', data, function(apiResponse) {
+          console.log(apiResponse);
+          if (apiResponse.dbSave && apiResponse.stripeCharge) {
             example.classList.remove('submitting');
             example.classList.add('submitted');
           }
@@ -143,9 +148,10 @@ function registerElements(elements, exampleName) {
             example.classList.add('submitted');
           }
         });
-      } else {
-        example.classList.remove('submitting');
+      } 
+      else {
         // Otherwise, un-disable inputs.
+        example.classList.remove('submitting');
         enableInputs();
       }
     });
