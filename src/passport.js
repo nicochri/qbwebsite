@@ -1,8 +1,9 @@
+// import dependencies
 const passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 const fbp = require('passport-facebook');
 
-
+// import models
 const User = require('./models/user');
 
 // set up passport configs
@@ -35,8 +36,8 @@ passport.use(new GoogleStrategy({
 }));
 
 passport.use(new fbp.Strategy({
-  clientID: '309614212914414',
-  clientSecret: '6d25ee268ae57d8558d18efda4d3f5a4',
+  clientID: process.env.FACEBOOK_CLIENT_ID,
+  clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
   callbackURL: 'https://www.ibquestionbanks.org/auth/facebook/callback'
 }, function(accessToken, BrefreshToken, profile, done) {
   User.findOne({'gid': profile.id }, function(err, user) {
