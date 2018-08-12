@@ -6,6 +6,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const express = require('express');
 const session = require('express-session');
+var sslRedirect = require('heroku-ssl-redirect');
 const cors = require('cors');
 const socketio = require('socket.io');
 
@@ -36,14 +37,16 @@ app.use(bodyParser.json());
 // enable Cross Origin Requests (CORS)
 app.use(cors());
 
-app.configure('production', => {
-  app.use((req, res, next) => {
-    if (req.header('x-forwarded-proto') !== 'https')
-      res.redirect(`https://${req.header('host')}${req.url}`)
-    else
-      next()
-  })
-})
+app.use(sslRedirect());
+
+// app.configure('production', => {
+//   app.use((req, res, next) => {
+//     if (req.header('x-forwarded-proto') !== 'https')
+//       res.redirect(`https://${req.header('host')}${req.url}`)
+//     else
+//       next()
+//   })
+// })
 
 // set up sessions
 app.use(session({
