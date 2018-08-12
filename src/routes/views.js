@@ -47,7 +47,6 @@ router.get('/logout', function(req, res) {
 });
 
 router.get('/heythere', (req, res) => {
-  currentURL = 'heythere';
   res.render('index', {
     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
   });
