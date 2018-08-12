@@ -36,6 +36,15 @@ app.use(bodyParser.json());
 // enable Cross Origin Requests (CORS)
 app.use(cors());
 
+app.configure('production', => {
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https')
+      res.redirect(`https://${req.header('host')}${req.url}`)
+    else
+      next()
+  })
+})
+
 // set up sessions
 app.use(session({
   secret: process.env.SESSION_SECRET,
