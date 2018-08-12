@@ -117,6 +117,22 @@ html {
 	display: none;
 }
 
+.btn-mathHL {
+	background-color: #20a900;
+	border-color: #20a900;
+	color: white;
+}
+
+.btn-mathHL:hover {
+	color: white;
+	opacity: .9;
+	transition-duration: .5s;
+}
+
+.card-body {
+	text-align: center;
+}
+
 /*Connecting chapters from courses to questions page*/
 
 #chapter2 {
