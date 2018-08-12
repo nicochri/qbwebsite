@@ -22,52 +22,65 @@ router.get('/whoami', function(req, res) {
 });
 
 router.get('/whoamimod', function(req, res) {
+  // should put everything in if req.isAuthenticated()
+
+  result = {
+    dbsave: 0,
+    stripecharge: 0,
+  };
+
   params = {
-    gid: 'nada',
+    gid: 'nada boys',
     mathHL: 'you wish',
-  }
-  if (req.isAuthenticated()) {
-    MongoClient.connect(process.env.MLAB_URL, function(err, db) {
+  };
+
+  console.log('1')
+
+  MongoClient.connect(process.env.MLAB_URL, function(err, db) {
+    if (err) throw err;
+    
+    if (1) throw "hello";
+
+    console.log('2')
+
+
+    var dbo = db.db("catbookdb");
+
+    // Check if the user has already purchased something
+    var query = { gid: params.gid };
+    var user = [];
+     
+    dbo.collection("qbaccess").find(query).toArray(function(err, result) {
+      
       if (err) throw err;
-      var dbo = db.db("catbookdb");
-
-      // Check if the user has already purchased something
-      var query = { gid: params.gid };
-      var user = [];
-      dbo.collection("qbaccess").find(query).toArray(function(err, result) {
-        if (err) throw err;
-       
-        //If user already has a document
-        if (result.length == 1) {
-          console.log('updating user');
-
-          var myquery = { gid: params.gid };
-          var newvalues = { $set: { mathHL: params.mathHL } };
-          dbo.collection("qbaccess").updateOne(myquery, newvalues, function(err, res) {
-            if (err) throw err;
-            console.log("1 document updated");
+     
+      //If user already has a document
+      if (result.length == 1) {
+        var myquery = { gid: params.gid };
+        var newvalues = { $set: { mathHL: params.mathHL } };
+        dbo.collection("qbaccess").updateOne(myquery, newvalues, function(err, res) {
+          if (err) throw err;
+          else { result.dbsave = 1; console.log("1 document updated"); }
         });
-        }
+      }
 
-        //If it's the user's first purchase
-        else {
-          var myobj = { gid: params.gid, mathHL: params.mathHL };
-          dbo.collection("qbaccess").insertOne(myobj, function(err, res) {
-            if (err) throw err;
-            console.log("1 document inserted");
-        });
-        }
-        db.close();
-        data = { status: 1 };
-        res.send(data);
+      //If it's the user's first purchase
+      else {
+        var myobj = { gid: params.gid, mathHL: params.mathHL };
+        dbo.collection("qbaccess").insertOne(myobj, function(err, res) {
+          if (err) throw err;
+          console.log("1 document inserted");
       });
+      }
+      db.close();
+      data = { status: 1 };
+      res.send(data);
+      return
+      console.log('im after here');
     });
+  });
 
-  }
-  else {
-    data = { authenticated: 0 };
-    res.send(data);
-  }
+  console.log('3')
 });
 
 router.get('/user', function(req, res) {
