@@ -9,7 +9,7 @@ const User = require('./models/user');
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID, // config variables
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: '/auth/google/callback'
+  callbackURL: 'https://www.ibquestionbanks.org/auth/google/callback'
 }, function(accessToken, refreshToken, profile, done) {
   User.findOne({
     'gid': profile.id
