@@ -107,4 +107,3 @@ function dbfunction(MongoClient, functionName, params) {
 }
 
 module.exports = db;
-module.exports.dbfunction = dbfunction;

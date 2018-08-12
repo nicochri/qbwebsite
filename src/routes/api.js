@@ -1,33 +1,15 @@
 // dependencies
 const express = require('express');
 const connect = require('connect-ensure-login');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const MongoClient = require('mongodb').MongoClient;
+const db = require('../db');
 
 // models
 const User = require('../models/user');
 const QBinstance = require('../models/qbinstance');
 
-// COPY PASTE
-// dependencies
-
-// Libraries - TRAVERSY
-const keys = require('../../config/keys');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const exphbs = require('express-handlebars');
-const MongoClient = require('mongodb').MongoClient;
-
-// Local dependencies
-const db = require('../db');
-
-//Load the string for the Empoìloyeeid route
-str = db.dbfunction(MongoClient, 'getNames');
-
-
-
-
 const router = express.Router();
-
-// router.engine('handlebars',exphbs({defaultLayout:'main'}));
-// router.set('view engine', 'handlebars');
 
 // api endpoints
 router.get('/whoami', function(req, res) {

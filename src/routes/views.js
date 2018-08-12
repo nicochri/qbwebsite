@@ -2,16 +2,12 @@
 const express = require('express');
 
 // Libraries - TRAVERSY
-const keys = require('../../config/keys');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const exphbs = require('express-handlebars');
 const MongoClient = require('mongodb').MongoClient;
 
 // Local dependencies
 const db = require('../db');
-
-//Load the string for the Empoìloyeeid route
-str = db.dbfunction(MongoClient, 'getNames');
 
 // Router
 const router = express();
@@ -23,6 +19,7 @@ router.set('view engine', 'handlebars');
 // public endpoints
 router.get('/', function(req, res, next) {
   res.sendFile('index.html', { root: 'src/views' });
+  // res.render('another', {layout: 'halla'});
 });
 
 router.get('/courses', function(req, res) {

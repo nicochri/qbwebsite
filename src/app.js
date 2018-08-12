@@ -11,8 +11,7 @@ const cors = require('cors');
 const socketio = require('socket.io');
 
 // Libraries - TRAVERSY
-const keys = require('../config/keys');
-const stripe = require('stripe')(keys.stripeSecretKey);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const exphbs = require('express-handlebars');
 
 
@@ -21,7 +20,6 @@ const db = require('./db');
 const passport = require('./passport');
 const views = require('./routes/views');
 const api = require('./routes/api');
-
 
 // initialize express app
 const app = express();
@@ -78,6 +76,27 @@ app.get(
     res.redirect('/');
   }
 );
+
+function partialsHelper (request, response, next) {
+        response.renderPage = function (template, options, callback) {
+            var partials = (options && options.partials) || {};
+
+            partials.footer = path.join("partials", "footer");
+            partials.header = path.join("partials", "header");
+            options.partials = partials;
+
+            //disable cache for dynamic content
+            if (request.method === "GET") {
+                response.setHeader("Cache-Control", "no-cache");
+            }
+            // TODO: figure about max-age for cachable content
+
+            return response.render(template, options, callback);
+        };
+        return next();
+    }
+
+app.use(partialsHelper);
 
 // 404 route
 app.use(function(req, res, next) {
