@@ -130,6 +130,20 @@ html {
 	transition-duration: .5s;
 }
 
+.btn-chemHL {
+	color: white;
+	background-color: #d62007;
+	border-color: #d62007;
+}
+
+.btn-chemHL:hover {
+	color: white;
+	background-color: #d62007;
+	border-color: #d62007;
+	opacity: .8;
+	transition-duration: .5s;
+}
+
 .card-body {
 	text-align: center;
 }
