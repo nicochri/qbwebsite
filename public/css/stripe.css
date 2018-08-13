@@ -1,0 +1,328 @@
+
+/*STRIPE*/
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+
+ body, html {
+  height: 100%;
+  background-color: #f7f8f9;
+  color: #6b7c93;
+}
+
+*, label {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  font-variant: normal;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+  background: #32325d;
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  float: left;
+  margin-left: 12px;
+  margin-top: 31px;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
+  background-color: #43458b;
+}
+
+form {
+  padding: 30px;
+  height: 120px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#card-errors {
+  height: 20px;
+  padding: 4px 0;
+  color: #fa755a;
+}
+
+.form-row {
+  width: 70%;
+  float: left;
+}
+
+.token {
+  color: #32325d;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 500;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#stripe-token-handler {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  padding: 20px 30px;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+  background-color: white;
+}
+
+#stripe-token-handler.is-hidden {
+  opacity: 0;
+  transform: translateY(-80px);
+}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+
+#card-element {
+	width: 100%;
+}
+
+.StripeElement {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.ElementsApp, .ElementsApp .InputElement {
+  color: #32325d;line-height: 24px;font-family: "Helvetica Neue", Helvetica, sans-serif;font-size: 16px;height: 24px;-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ElementsApp:not(.is-autofilled) .InputElement:-webkit-autofill {
+  color: #32325d;
+  -webkit-text-fill-color: #32325d;
+}
+.ElementsApp .InputElement + .Input-placeholder--ie {
+  opacity: 1;color: #aab7c4;
+}
+.ElementsApp .InputElement::-webkit-input-placeholder {
+  opacity: 1;color: #aab7c4;
+}
+.ElementsApp .InputElement::-moz-placeholder {
+  opacity: 1;color: #aab7c4;
+}
+.ElementsApp .InputElement:-ms-input-placeholder {
+  opacity: 1;color: #aab7c4;
+}
+.ElementsApp .InputElement::placeholder {
+  opacity: 1;color: #aab7c4;
+}
+.ElementsApp .InputElement.is-invalid {
+  color: #fa755a;
+}
+.ElementsApp:not(.is-autofilled) .InputElement.is-invalid:-webkit-autofill {
+  color: #fa755a;
+  -webkit-text-fill-color: #fa755a;
+}
+.ElementsApp.is-invalid .Icon-fill--invalid {
+  fill: #fa755a;
+}
+
+
+
+/* base*/
+
+
+
+
+
+
+
+/* new*/
+
+
+
+
+.example.example4 {
+  background-color: #f6f9fc;
+}
+
+.example.example4 * {
+  font-family: Inter UI, Open Sans, Segoe UI, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.example.example4 form {
+  max-width: 496px !important;
+  padding: 0 15px;
+}
+
+.example.example4 form > * + * {
+  margin-top: 20px;
+}
+
+.example.example4 .container {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.example.example4 fieldset {
+  border-style: none;
+  padding: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+  background: rgba(18, 91, 152, 0.05);
+  border-radius: 8px;
+}
+
+.example.example4 fieldset legend {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #8898aa;
+  padding: 3px 10px 7px;
+}
+
+.example.example4 .card-only {
+  display: block;
+}
+.example.example4 .payment-request-available {
+  display: none;
+}
+
+.example.example4 fieldset legend + * {
+  clear: both;
+}
+
+.example.example4 input, .example.example4 button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+  color: #fff;
+}
+
+.example.example4 input:-webkit-autofill {
+  transition: background-color 100000000s;
+  -webkit-animation: 1ms void-animation-out;
+}
+
+.example.example4 #example4-card {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.example.example4 input {
+  -webkit-animation: 1ms void-animation-out;
+}
+
+.example.example4 input::-webkit-input-placeholder {
+  color: #9bacc8;
+}
+
+.example.example4 input::-moz-placeholder {
+  color: #9bacc8;
+}
+
+.example.example4 input:-ms-input-placeholder {
+  color: #9bacc8;
+}
+
+.example.example4 button {
+  display: block;
+  width: 100%;
+  height: 37px;
+  background-color: #d782d9;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.example.example4 button:active {
+  background-color: #b76ac4;
+}
+
+.example.example4 .error svg .base {
+  fill: #e25950;
+}
+
+.example.example4 .error svg .glyph {
+  fill: #f6f9fc;
+}
+
+.example.example4 .error .message {
+  color: #e25950;
+}
+
+.example.example4 .success .icon .border {
+  stroke: #ffc7ee;
+}
+
+.example.example4 .success .icon .checkmark {
+  stroke: #d782d9;
+}
+
+.example.example4 .success .title {
+  color: #32325d;
+}
+
+.example.example4 .success .message {
+  color: #8898aa;
+}
+
+.example.example4 .success .reset path {
+  fill: #d782d9;
+}
+
+

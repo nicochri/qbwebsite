@@ -12,7 +12,7 @@ router.set('view engine', 'handlebars');
 // public endpoints
 router.get('/', function(req, res, next) {
   // res.sendFile('index.html', { root: 'src/views' });
-  res.render('another', {layout: 'halla'});
+  res.render('home', {layout: 'halla'});
 });
 
 router.get('/courses', function(req, res) {
