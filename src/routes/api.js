@@ -7,39 +7,11 @@ const db = require('../db');
 
 // models
 const User = require('../models/user');
-const QBinstance = require('../models/qbinstance');
 
+// create router
 const router = express.Router();
-console.log(Date.now());
-// api endpoints
-router.get('/whoami', function(req, res) {
-  if (req.isAuthenticated()){
-    res.send(req.user);
-  }
-  else{
-    res.send({});
-  }
-});
 
-// function chargeMoney(stripeToken, res) {
-//   let amount = 555;
-
-//   stripe.customers.create({
-//     source: 'stripeToken'
-//   })
-//   .then(customer =>
-//     stripe.charges.create({
-//       amount,
-//       description: "Sample Charge",
-//          currency: "usd",
-//          customer: customer.id
-//     }))
-//   .then(charge => 
-//     console.log('Stripe charged money at: ', Date.now()),
-//     res.send({dude: 'hva sker a', timeSent: Date.now()})
-//   );
-// }
-
+// herper functions
 function chargeMoney(stripeToken, apiResponse, res) {
   stripe.customers.create({
     email: 'foo-customer@example.com'
@@ -66,20 +38,24 @@ function chargeMoney(stripeToken, apiResponse, res) {
   });
 }
 
+// api endpoints
+router.get('/whoami', function(req, res) {
+  if (req.isAuthenticated()){
+    res.send(req.user);
+  }
+  else{
+    res.send({});
+  }
+});
+
 router.get('/whoamimod', function(req, res) {
   // console.log(req.query);
   // TODO should put everything in if req.isAuthenticated()!! ***
-
-  // Prepare the result object
-  stripeFinished = 0;
-  mongodbFinished = 0;
 
   apiResponse = {
     dbSave: 0,
     stripeCharge: 0,
   };
-
-
 
   // Save to the database
   params = {
@@ -117,7 +93,6 @@ router.get('/whoamimod', function(req, res) {
       db.close();
 
       if (1) { // TODO actually check if it saved it before charging the card
-        console.log('im in here');
         // Charge on stripe
         chargeMoney(req.query.stripeToken, apiResponse, res);
       }
@@ -126,63 +101,12 @@ router.get('/whoamimod', function(req, res) {
       }
     });
   });
-
 });
 
 router.get('/user', function(req, res) {
   User.findOne({ _id: req.query._id }, function(err, user) {
     res.send(user);
   });
-});
-
-router.post(
-  '/qbinstance',
-  connect.ensureLoggedIn(),
-  function(req, res) {
-    User.findOne({ _id: req.user._id },function(err,user) {
-      const newStory = new QBinstance({
-        'creator_id': user._id,
-        'access_code': req.body.content,
-      });
-
-      console.log('im in here boys');
-
-      user.set({ last_post: req.body.content });
-      user.save(); // this is OK, because the following lines of code are not reliant on the state of user, so we don't have to shove them in a callback. 
-
-      newStory.save(function(err,story) {
-        // configure socketio
-        if (err) console.log(err);
-      });
-
-      res.send({});
-    });
-  }
-);
-
-
-router.post('/payment', function(req, res) {
-  console.log(req.params);
-  params = {
-    gid: 'just a random id you know DIFF ID',
-    mathHL: "FUCKING HELL",
-  };
-  let amount = 500;
-
-  stripe.customers.create({
-    source: req.body.id
-  })
-  .then(customer =>
-    stripe.charges.create({
-      amount,
-      description: "Sample Charge",
-         currency: "usd",
-         customer: customer.id
-    }))
-  .then(charge => 
-    db.dbfunction(MongoClient,'saveNewPurchase',params),
-    console.log('payment processed correctly'),
-    );
 });
 
 module.exports = router;

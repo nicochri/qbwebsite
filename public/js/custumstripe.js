@@ -78,8 +78,6 @@ function registerElements(elements, exampleName) {
   // Listen on the form's 'submit' handler...
   form.addEventListener('submit', function(e) {
 
-    console.log('form even added');
-
     e.preventDefault();
 
     // Trigger HTML5 validation UI on the form if any of the inputs fail
@@ -177,13 +175,4 @@ function registerElements(elements, exampleName) {
   });
 }
 
-console.log('424242424242424242');
-console.log('proper-cherckmar', 'M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338');
-console.log('error checkmark', 'M25 25 60 60 M60 25 25 60');
-
-function stripeTokenHandler(token) {
-  post('/api/payment', token);
-}
-
-
-
+console.log('custumstripe.js: 424242424242424242');
