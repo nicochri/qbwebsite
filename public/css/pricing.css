@@ -125,7 +125,8 @@ html {
 
 .btn-mathHL:hover {
 	color: white;
-	opacity: .9;
+	background-color: #20a900;
+	opacity: .8;
 	transition-duration: .5s;
 }
 
