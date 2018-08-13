@@ -3,102 +3,29 @@
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
-/*CODE https://codepen.io/anon/pen/BPbxOr*/
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-.g-sign-in-button {
-  margin: 10px;
-  display: inline-block;
-  width: 240px;
-  height: 40px;
-  background-color: #4285f4;
-  color: #fff;
-  border-radius: 1px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
-  transition: background-color .218s, border-color .218s, box-shadow .218s;
-}
-.g-sign-in-button:hover {
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 3px 3px rgba(66,133,244,.3);
-  box-shadow: 0 0 3px 3px rgba(66,133,244,.3);
-}
-.g-sign-in-button:active {
-  background-color: #3367D6;
-  transition: background-color 0.2s;
-}
-.g-sign-in-button .content-wrapper {
-  height: 100%;
-  width: 100%;
-  border: 1px solid transparent;
-}
-.g-sign-in-button img {
-    width: 18px;
-    height: 18px;
-}
-.g-sign-in-button .logo-wrapper {
-   padding: 15px;
-   padding-top: 11px;
-   background:#fff;
-   width: 48px;
-   height: 100%;
-   border-radius: 1px; 
-   display: inline-block;
-}
-.g-sign-in-button .text-container {
-    font-family: Roboto,arial,sans-serif;
-    font-weight: 500;
-    letter-spacing: .21px;
-    font-size: 16px;
-    line-height: 48px;
-    vertical-align: top;
-    border: none;
-    display: inline-block;
-    text-align: center;
-    width: 180px;
+ .dropdown-menu-right {
+    right:0;
+    left:auto;
 }
 
-/*alert*/
-.example button {
-  float: left;
-  background-color: #4E3E55;
-  color: white;
-  border: none;
-  box-shadow: none;
-  font-size: 17px;
-  font-weight: 500;
-  font-weight: 600;
-  border-radius: 3px;
-  padding: 15px 35px;
-  margin: 26px 5px 0 5px;
-  cursor: pointer; 
+.google-signin-link {
+  height: 50px;
+   width: 260px; 
+   background-color: #4285f4; 
+   border-color: #4285f4; 
 }
-.example button:focus{
-  outline: none; 
-}
-.example button:hover{
-  background-color: #33DE23; 
-}
-.example button:active{
-  background-color: #81ccee; 
+.google-signin-link:hover {
+     background-color: #1266f1;
+     border-color: #1266f1;
 }
 
-.swal-footer{
-  overflow: auto;
+.facebook-signin-link {
+  height: 50px;
+   width: 260px; 
+   background-color: #38569E; 
+   border-color: #38569E; 
 }
-
-.swal-button-container{
-  float: right;
+.facebook-signin-link:hover {
+     background-color: #2d4373;
+     border-color: #2d4373;
 }
-
-
-
-
-
-
-
-
-
-
-
