@@ -3,7 +3,8 @@
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
- .dropdown-menu-right {
+
+.dropdown-menu-right {
     right:0;
     left:auto;
 }

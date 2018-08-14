@@ -15,19 +15,14 @@
   <link rel="shortcut icon" href="/static/logo.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
 
-
-
 </head>
 
 <body>
-<div class="target"></div>
+<div class="target">Hey there</div>
 
   {{{body}}}
 
 
-$.get('/views/pagenotfound.handlebars', function (data) {
-    var template=Handlebars.compile(data);
-    $('.target').html(template);
-}, 'html')
+
 
 </html>

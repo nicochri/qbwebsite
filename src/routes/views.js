@@ -6,13 +6,12 @@ const exphbs = require('express-handlebars');
 const router = express();
 
 // Handlebars Middleware - TRAVERSY
-router.engine('handlebars',exphbs({defaultLayout:'main'}));
+router.engine('handlebars',exphbs({defaultLayout:'test'}));
 router.set('view engine', 'handlebars');
 
 // public endpoints
 router.get('/', function(req, res, next) {
-  // res.sendFile('index.html', { root: 'src/views' });
-  res.render('home', {layout: 'halla'});
+  res.render('home', {layout: 'test'});
 });
 
 router.get('/courses', function(req, res) {
@@ -20,15 +19,15 @@ router.get('/courses', function(req, res) {
 });
 
 router.get('/features', function(req, res) {
-  res.sendFile('features.html', { root: 'src/views' });
+  res.render('features');
 });
 
 router.get('/account', function(req, res) {
   res.render('account');
 });
 
-router.get('/another', function(req, res) {
-  res.render('another');
+router.get('/payment', function(req, res) {
+  res.render('payment');
 });
 
 router.get('/logout', function(req, res) {

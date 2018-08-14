@@ -53,6 +53,7 @@ app.use(passport.session());
 app.use('/', views);
 app.use('/api', api );
 app.use('/static', express.static('public'));
+app.use('/mytemplates', express.static('templates'))
 
 // authentication routes
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
