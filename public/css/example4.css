@@ -1,6 +1,11 @@
 .example.example4 {
   background-color: #f6f9fc;
 }
+#getstarted {
+  text-decoration-color: red;
+  color: red;
+}
+
 
 .example.example4 * {
   font-family: Inter UI, Open Sans, Segoe UI, sans-serif;
@@ -96,13 +101,13 @@
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
-  opacity: 1.0;
+  opacity: 0.8;
   transition: opacity .25s;
 }
 
 .example.example4 button:hover {
   transition: opacity .25s;
-  opacity: 0.8;
+  opacity: 1.0;
 }
 
 .example.example4 button:active {

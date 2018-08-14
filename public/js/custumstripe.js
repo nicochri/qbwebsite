@@ -138,7 +138,7 @@ function registerElements(elements, exampleName) {
           if (apiResponse.dbSave && apiResponse.stripeCharge) {
             document.getElementById("statusCircle").setAttribute("style", "stroke: rgba(228,244,219,1);");
             document.getElementById("myPath").setAttribute("style", "stroke: rgba(165,220,134,1);");
-            // document.getElementById("resetLink").remove();
+            document.getElementById("resetButton").remove();
             // document.getElementById("resetLink").setAttribute("href", "/account");
             example.classList.remove('submitting');
             example.classList.add('submitted');

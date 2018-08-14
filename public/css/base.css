@@ -92,7 +92,7 @@ body {
   width: 100%;
 }
 
-.container,
+/*.container,
 .container-lg {
   max-width: 1040px;
 }
@@ -100,7 +100,7 @@ body {
 .container-wide,
 .container-xl {
   max-width: 1160px;
-}
+}*/
 
 .common-SuperTitle {
   font-weight: 300;
