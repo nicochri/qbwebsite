@@ -40,40 +40,40 @@
   /**
    * Payment Request Element
   //  */
-  // var paymentRequest = stripe.paymentRequest({
-  //   country: "US",
-  //   currency: "usd",
-  //   total: {
-  //     amount: 2000,
-  //     label: "Total"
-  //   }
-  // });
-  // paymentRequest.on("token", function(result) {
-  //   var example = document.querySelector(".example4");
-  //   example.querySelector(".token").innerText = result.token.id;
-  //   example.classList.add("submitted");
-  //   result.complete("success");
-  // });
+  var paymentRequest = stripe.paymentRequest({
+    country: "US",
+    currency: "usd",
+    total: {
+      amount: 2000,
+      label: "Total"
+    }
+  });
+  paymentRequest.on("token", function(result) {
+    var example = document.querySelector(".example4");
+    example.querySelector(".token").innerText = result.token.id;
+    example.classList.add("submitted");
+    result.complete("success");
+  });
 
-  // var paymentRequestElement = elements.create("paymentRequestButton", {
-  //   paymentRequest: paymentRequest,
-  //   style: {
-  //     paymentRequestButton: {
-  //       type: "donate"
-  //     }
-  //   }
-  // });
+  var paymentRequestElement = elements.create("paymentRequestButton", {
+    paymentRequest: paymentRequest,
+    style: {
+      paymentRequestButton: {
+        type: "donate"
+      }
+    }
+  });
 
-  // paymentRequest.canMakePayment().then(function(result) {
-  //   if (result) {
-  //     document.querySelector(".example4 .card-only").style.display = "none";
-  //     document.querySelector(
-  //       ".example4 .payment-request-available"
-  //     ).style.display =
-  //       "block";
-  //     paymentRequestElement.mount("#example4-paymentRequest");
-  //   }
-  // });
+  paymentRequest.canMakePayment().then(function(result) {
+    if (result) {
+      document.querySelector(".example4 .card-only").style.display = "none";
+      document.querySelector(
+        ".example4 .payment-request-available"
+      ).style.display =
+        "block";
+      // paymentRequestElement.mount("#example4-paymentRequest");
+    }
+  });
 
-  // registerElements([card, paymentRequestElement], "example4");
+  registerElements([card, paymentRequestElement], "example4");
 })();
