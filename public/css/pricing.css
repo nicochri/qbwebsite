@@ -36,8 +36,9 @@ html * {
 	border: 2px solid;
 	border-color: #f1f1f1;
 	border-radius: 5px;
-	box-shadow: 3px 3px #f1f1f1;
+	box-shadow: 3px 2px #f1f1f1;
 	transition: border-color .3s;
+	background-color: white;
 }
 
 .chapter:hover {
@@ -151,6 +152,9 @@ html * {
 	text-align: center;
 }
 
+.flex-grow {
+	flex: 1 0 auto;
+}
 /*Connecting chapters from courses to questions page*/
 
 #chapter2 {
