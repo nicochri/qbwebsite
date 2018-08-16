@@ -46,6 +46,13 @@ html * {
 	box-shadow: none;
 }
 
+.sidebarCourse {
+	border-radius: 5px;
+	border-color: #20a900;
+	background-color: #20a900;
+	color: white;
+}
+
 .linkchapter {
 	color: inherit;
 }
