@@ -4,25 +4,34 @@ const exphbs = require('express-handlebars');
 
 // Router
 const router = express();
+var currentEndpoint = 'home';
 
 // Handlebars Middleware - TRAVERSY
 router.engine('handlebars',exphbs({defaultLayout:'test'}));
 router.set('view engine', 'handlebars');
+// {layout: 'test'}
 
 // public endpoints
 router.get('/', function(req, res, next) {
-  res.render('home', {layout: 'test'});
-});
-
-router.get('/courses', function(req, res) {
-  res.sendFile('mathHL.html', { root: 'src/views' });
+  res.render('home');
 });
 
 router.get('/features', function(req, res) {
-  res.render('features');
+  module.exports.currentEndpoint = 'features'
+  res.render('features');//hello htee
 });
 
 router.get('/account', function(req, res) {
+  res.render('account');
+});
+
+router.get('/auth/facebook/loggedIn/', function(req, res) {
+  // console.log('currentPage:', req.params.currentPage)
+  res.redirect('/');
+});
+
+router.get('/auth/facebook/loggedIn/:currentPage', function(req, res) {
+  // console.log('currentPage:', req.params.currentPage)
   res.render('account');
 });
 
@@ -39,6 +48,10 @@ router.get('/heythere', (req, res) => {
   res.render('index', {
     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
   });
+});
+
+router.get('/mathHL', (req, res) => {
+  res.render()
 });
 
 module.exports = router;

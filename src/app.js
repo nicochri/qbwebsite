@@ -25,7 +25,7 @@ const api = require('./routes/api');
 const app = express();
 
 // Handlebars Middleware - TRAVERSY
-app.engine('handlebars',exphbs({defaultLayout:'main'}));
+app.engine('handlebars',exphbs({defaultLayout:'test'}));
 app.set('view engine', 'handlebars');
 
 // set POST request body parser
@@ -53,7 +53,6 @@ app.use(passport.session());
 app.use('/', views);
 app.use('/api', api );
 app.use('/static', express.static('public'));
-app.use('/mytemplates', express.static('templates'))
 
 // authentication routes
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
@@ -61,7 +60,7 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
 function(req, res) {
   // Successful authentication, redirect home.
-  res.redirect('/');
+  res.render('home');
 });
 
 // authentication routes - facebook
@@ -74,37 +73,17 @@ app.get(
     { failureRedirect: '/' }
   ),
   function(req, res) {
-    res.redirect('/');
+    // res.render(views.currentEndpoint, {url: 'loggedIn/' + views.currentEndpoint, data: 'Logged in'});
+    res.redirect('/')
   }
 );
-
-function partialsHelper (request, response, next) {
-        response.renderPage = function (template, options, callback) {
-            var partials = (options && options.partials) || {};
-
-            partials.footer = path.join("partials", "footer");
-            partials.header = path.join("partials", "header");
-            options.partials = partials;
-
-            //disable cache for dynamic content
-            if (request.method === "GET") {
-                response.setHeader("Cache-Control", "no-cache");
-            }
-            // TODO: figure about max-age for cachable content
-
-            return response.render(template, options, callback);
-        };
-        return next();
-    }
-
-app.use(partialsHelper);
 
 // 404 route
 app.use(function(req, res, next) {
   const err = new Error(' Not Found');
   err.status = 404;
-  // next(err);
-  res.render('pagenotfound');
+  next(err);
+  // res.render('pagenotfound');
 });
 
 // route error handler

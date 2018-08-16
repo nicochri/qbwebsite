@@ -23,15 +23,39 @@
   <title>QuestionBanks</title>
   <link rel="shortcut icon" href="/static/logo.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
+
+  
+  <script type="text/javascript">
+    get('/api/whoami', {}, function(user) {
+      if (user._id) {
+        document.getElementById('LogInStatusHead').innerHTML = 'in';
+      }
+      else {
+        document.getElementById('LogInStatusHead').innerHTML = 'out';
+      }
+  });
+  </script>
+
+  <script>
+   function load_js()
+   {
+      var head= document.getElementsByTagName('head')[0];
+      var script= document.createElement('script');
+      script.src= '/static/js/modernNavbar.js';
+      head.appendChild(script);
+   }
+   load_js();
+</script>
+
 </head>
-      
+
 <body>
+
+<div id="LogInStatusHead"></div>
+
 {{!-- COMPUTER NAVBAR --}}
 <nav class="navbar navbar-expand-md navbar-light bg-white box-shadow d-none d-md-block">
-  <div class="container d-flex justify-content-between" style="
-    padding-left: 15px;
-    padding-right: 15px;
-">
+  <div class="container d-flex justify-content-between" style="padding-left: 15px; padding-right: 15px;">
     <div class="1">
     <a class="navbar-brand" href="/">
       <img src="/static/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -41,8 +65,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     </div>
-      {{!-- <div class=" collapse navbar-collapse" id="navbarSupportedContent"> --}}
-        <div class="2">
+      <div class="2">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,11 +96,17 @@
         </ul>
         </div>
         {{!-- START SIGN IN --}}
-        <div class="dropdown">
-          <button type="button" class="btn btn-outline-success" style="width: 200px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown" id="signinDiv">
+          <a class="LoggedIn" href="/logout">
+            <button type="button" class="btn btn-outline-danger LoggedIn d-none" href="/logout" style="width: 100px;">
+              Log out
+            </button>
+          </a>
+
+          <button type="button" class="btn btn-outline-success LoggedOut d-none" style="width: 200px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sign in
           </button>
-          <div class="dropdown-menu dropdown-menu-right mt-0">
+          <div class="dropdown-menu dropdown-menu-right mt-0 LoggedOut d-none">
             <div class="mt-2 mx-2">
               <a class="d-flex align-items-center text-align-center btn btn-outline-primary mx-2 mt-1 mb-1 text-white google-signin-link" href="/auth/google"><img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
                 <div style="margin-left: 33px;">Log in with Google</div>
@@ -92,10 +121,10 @@
             </div>
           </div>
         </div>
-      {{!-- </div> --}}
   </div>
 </nav>
 
+<script type="text/javascript">console.log('WARNING: MOBILE NAVBAR IS NOT SMART YET!');</script>
 {{!-- MOBILE NAVBAR --}}
 <nav class="navbar navbar-expand-md navbar-light bg-white box-shadow d-xl-none d-md-none d-lg-none">
   <div class="container d-flex justify-content-between">
@@ -150,6 +179,9 @@
 </nav>
 
 {{{body}}}
-</body>
 
+
+
+</body>
+  <script src="/static/js/modernNavbar.js"></script>
 </html>

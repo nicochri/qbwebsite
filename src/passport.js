@@ -5,12 +5,12 @@ const fbp = require('passport-facebook');
 
 // import models
 const User = require('./models/user');
-
+// https://www.ibquestionbanks.org/auth/google/callback
 // set up passport configs
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID, // config variables
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: 'https://www.ibquestionbanks.org/auth/google/callback'
+  callbackURL: 'http://localhost:3000/auth/google/callback'
 }, function(accessToken, refreshToken, profile, done) {
   User.findOne({
     'gid': profile.id
@@ -34,7 +34,8 @@ passport.use(new GoogleStrategy({
     }
   });
 }));
-
+// https://www.ibquestionbanks.org/auth/facebook/callback
+// http://localhost:3000/auth/facebook/callback
 passport.use(new fbp.Strategy({
   clientID: process.env.FACEBOOK_CLIENT_ID,
   clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
