@@ -1,7 +1,7 @@
-html {
+/*html {
   font-size: 14px;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px;) {
   html {
     font-size: 16px;
   }
@@ -14,9 +14,177 @@ html {
 .card-deck .card {
   min-width: 220px;
 }
+html * {
+	font-family: Roboto !important;
+}
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
+*/
+/*My Stuff*/
+
+
+#fullHeight {
+	height: 100vw;
+}
+
+.chapter {
+	padding: 15px;
+	margin: 25px;
+	border: 2px solid;
+	border-color: #f1f1f1;
+	border-radius: 5px;
+	box-shadow: 3px 2px #f1f1f1;
+	transition: border-color .3s;
+	background-color: white;
+}
+
+.chapter:hover {
+	border-color: #20a900;
+	box-shadow: none;
+}
+
+.sidebarCourse {
+	border-radius: 5px;
+	border-color: #20a900;
+	background-color: #20a900;
+	color: white;
+}
+
+.borderless {
+	border: none;
+	background-color: #20a900;
+	color: white;
+}
+
+.sidebarLink {
+	text-decoration: underline;
+	color: white;
+}
+
+.sidebarLink:hover {
+	color: black;
+}
+
+.lock {
+	width: 50px;
+	height: 50px;
+	border: 2px solid #ffc500;
+}
+
+.linkchapter {
+	color: inherit;
+}
+
+.linkchapter:hover {
+	 color: black;
+	 text-decoration: none;
+}
+
+.list-group-item.list-group-item-action.active {
+	background-color: #20a900;
+	border-color: #20a900;
+
+}
+
+.scrollingQuestionsList {
+	height: 450px;
+	overflow-y: scroll;
+}
+
+.scrollingQuestions {
+	height: 398px;
+	overflow-y: scroll;
+	direction: ltr;
+}
+
+.centerDiv {
+	position: relative;
+	top: 50%;
+	transform: perspective(1px) translateY(-50%);
+}
+
+.verticalBreak {
+	border-left: 2px solid #f1f1f1;
+}
+
+.chapterHeader {
+	color: black;
+}
+
+.chapterHeader:hover {
+	color: #20a900;
+}
+
+.nav-item.nav-link.active {
+	background-color: #20a900;
+	color: white;
+	border-color: #20a900;
+}
+
+.btn.btn-light.btn-block {
+	background-color: #f7f7f7;
+	border-color: #f7f7f7;
+}
+
+.btn.btn-light.btn-block:hover {
+	background-color: #f1f1f1;
+}
+
+.circle {
+	height: 35px;
+	width: 35px;
+	background-image: url("/static/ring.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.circleHover {
+	height: 35px;
+	width: 35px;
+	background-image: url("/static/hoverCircle.png");
+	background-size: 100%;
+	display: none;
+}
+
+.btn-mathHL {
+	background-color: #20a900;
+	border-color: #20a900;
+	color: white;
+}
+
+.btn-mathHL:hover {
+	color: white;
+	background-color: #20a900;
+	opacity: .8;
+	transition-duration: .5s;
+}
+
+.btn-chemHL {
+	color: white;
+	background-color: #d62007;
+	border-color: #d62007;
+}
+
+.btn-chemHL:hover {
+	color: white;
+	background-color: #d62007;
+	border-color: #d62007;
+	opacity: .8;
+	transition-duration: .5s;
+}
+
+.card-body {
+	text-align: center;
+}
+
+.flex-grow {
+	flex: 1 0 auto;
+}
+/*Connecting chapters from courses to questions page*/
+
+#chapter2 {
+}

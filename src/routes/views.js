@@ -32,6 +32,16 @@ router.get('/payment', function(req, res) {
   res.render('payment');
 });
 
+router.get('/courses', function(req, res) {
+  module.exports.currentEndpoint = '/courses';
+  res.render('courses');
+});
+
+router.get('/questions', function(req, res) {
+  module.exports.currentEndpoint = '/questions';
+  res.render('questions');
+});
+
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
