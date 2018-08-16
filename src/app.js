@@ -60,7 +60,7 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
 function(req, res) {
   // Successful authentication, redirect home.
-  res.redirect('/');
+  res.redirect(views.currentEndpoint);
 });
 
 // authentication routes - facebook
@@ -73,8 +73,8 @@ app.get(
     { failureRedirect: '/' }
   ),
   function(req, res) {
-    // res.render(views.currentEndpoint, {url: 'loggedIn/' + views.currentEndpoint, data: 'Logged in'});
-    res.redirect('/')
+    res.redirect(views.currentEndpoint);
+    // res.redirect('/')
   }
 );
 

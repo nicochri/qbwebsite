@@ -13,39 +13,28 @@ router.set('view engine', 'handlebars');
 
 // public endpoints
 router.get('/', function(req, res, next) {
+  module.exports.currentEndpoint = '/';
   res.render('home');
 });
 
 router.get('/features', function(req, res) {
-  module.exports.currentEndpoint = 'features'
-  res.render('features');//hello htee
+  module.exports.currentEndpoint = '/features';
+  res.render('features');
 });
 
 router.get('/account', function(req, res) {
+  module.exports.currentEndpoint = '/account';
   res.render('account');
 });
 
 router.get('/payment', function(req, res) {
-  res.render('payment');
-});
-
-router.get('/paymerwerent', function(req, res) {
+  module.exports.currentEndpoint = '/payment';
   res.render('payment');
 });
 
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
-});
-
-router.get('/heythere', (req, res) => {
-  res.render('index', {
-    stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
-  });
-});
-
-router.get('/mathHL', (req, res) => {
-  res.render()
 });
 
 module.exports = router;

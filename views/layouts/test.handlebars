@@ -24,14 +24,10 @@
   <link rel="shortcut icon" href="/static/logo.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
 
-  
-
-
-
 </head>
 
 <body id="body" class="d-none">
-  
+
 {{!-- COMPUTER NAVBAR --}}
 <nav class="navbar navbar-expand-md navbar-light bg-white box-shadow d-none d-md-block">
   <div class="container d-flex justify-content-between" style="padding-left: 15px; padding-right: 15px;">
@@ -164,18 +160,7 @@
 </body>
 
     <script src="/static/js/modernNavbar.js"></script>
-    
-    <script type="text/javascript">
-    get('/api/whoami', {}, function(user) {
-      if (user._id) {
-        document.getElementById('body').classList.remove('d-none')
-        mainNewNavbar('in');
-      }
-      else {
-        document.getElementById('body').classList.remove('d-none');
-        mainNewNavbar('out');
-      }
-  });
-  </script>
+    <script src="/static/js/index.js"></script>
+
 
 </html>

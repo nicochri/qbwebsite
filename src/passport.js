@@ -5,12 +5,23 @@ const fbp = require('passport-facebook');
 
 // import models
 const User = require('./models/user');
-// https://www.ibquestionbanks.org/auth/google/callback
+
+// different callbacks if on localhost
+const onLocalhost = 1;
+if (onLocalhost) {
+  googleCallbackURL = 'http://localhost:3000/auth/google/callback';
+  facebookCallbackURL = 'http://localhost:3000/auth/facebook/callback';
+}
+else {
+  googleCallbackURL = 'https://www.ibquestionbanks.org/auth/google/callback';
+  facebookCallbackURL = 'https://www.ibquestionbanks.org/auth/facebook/callback';
+}
+
 // set up passport configs
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID, // config variables
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: 'https://www.ibquestionbanks.org/auth/google/callback'
+  callbackURL: googleCallbackURL
 }, function(accessToken, refreshToken, profile, done) {
   User.findOne({
     'gid': profile.id
@@ -34,12 +45,11 @@ passport.use(new GoogleStrategy({
     }
   });
 }));
-// https://www.ibquestionbanks.org/auth/facebook/callback
-// http://localhost:3000/auth/facebook/callback
+
 passport.use(new fbp.Strategy({
   clientID: process.env.FACEBOOK_CLIENT_ID,
   clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-  callbackURL: 'https://www.ibquestionbanks.org/auth/facebook/callback'
+  callbackURL: facebookCallbackURL
 }, function(accessToken, BrefreshToken, profile, done) {
   User.findOne({'gid': profile.id }, function(err, user) {
     if (err) return done(err);
