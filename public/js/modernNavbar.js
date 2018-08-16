@@ -13,9 +13,10 @@ function renderLoggedIn(user) {
 	els[1].remove();
 }
 
-function mainNewNavbar() {
-	var status = document.getElementById('LogInStatusHead').innerHTML;
+function mainNewNavbar(status) {
+	// var status = document.getElementById('LogInStatusHead').innerHTML;
 	if (status == 'in') {
+		console.log('I AM FULLY AWARE THAT I AM IN');
 		// add logged in elements  
 		var loggedInElements = document.getElementsByClassName('LoggedIn');
 		var numElements = loggedInElements.length;
@@ -31,6 +32,7 @@ function mainNewNavbar() {
 		}
 	}
 	else {
+		console.log('I AM FULLY AWAARE THAT I AM OUT');
 		// remove logged in elements  
 		var loggedInElements = document.getElementsByClassName('LoggedIn');
 		var numElements = loggedInElements.length;

@@ -25,16 +25,6 @@ router.get('/account', function(req, res) {
   res.render('account');
 });
 
-router.get('/auth/facebook/loggedIn/', function(req, res) {
-  // console.log('currentPage:', req.params.currentPage)
-  res.redirect('/');
-});
-
-router.get('/auth/facebook/loggedIn/:currentPage', function(req, res) {
-  // console.log('currentPage:', req.params.currentPage)
-  res.render('account');
-});
-
 router.get('/payment', function(req, res) {
   res.render('payment');
 });

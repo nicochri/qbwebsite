@@ -25,33 +25,13 @@
   <link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
 
   
-  <script type="text/javascript">
-    get('/api/whoami', {}, function(user) {
-      if (user._id) {
-        document.getElementById('LogInStatusHead').innerHTML = 'in'
-        // try {mainNewNavbar();}
-        // catch(err) { alert(err.message);}
-      }
-      else {
-        document.getElementById('LogInStatusHead').innerHTML = 'out';
-        // try {mainNewNavbar();}
-        // catch(err) { alert(err.message);}
-      }
-  });
-  </script>
 
 
 
 </head>
 
-<body>
-<script type="text/javascript">
-function myFunction() {
-  alert('hey everybody!');
-}
-</script>
-<div id="LogInStatusHead" onchange="myFunction()"></div>
-
+<body id="body" class="d-none">
+  
 {{!-- COMPUTER NAVBAR --}}
 <nav class="navbar navbar-expand-md navbar-light bg-white box-shadow d-none d-md-block">
   <div class="container d-flex justify-content-between" style="padding-left: 15px; padding-right: 15px;">
@@ -182,6 +162,20 @@ function myFunction() {
 <script type="text/javascript"> console.log('page was loaded');</script>
 
 </body>
-  <script src="/static/js/modernNavbar.js"></script>
-  <script type="text/javascript">mainNewNavbar()</script>
+
+    <script src="/static/js/modernNavbar.js"></script>
+    
+    <script type="text/javascript">
+    get('/api/whoami', {}, function(user) {
+      if (user._id) {
+        document.getElementById('body').classList.remove('d-none')
+        mainNewNavbar('in');
+      }
+      else {
+        document.getElementById('body').classList.remove('d-none');
+        mainNewNavbar('out');
+      }
+  });
+  </script>
+
 </html>
