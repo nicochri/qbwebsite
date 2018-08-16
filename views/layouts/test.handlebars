@@ -28,30 +28,29 @@
   <script type="text/javascript">
     get('/api/whoami', {}, function(user) {
       if (user._id) {
-        document.getElementById('LogInStatusHead').innerHTML = 'in';
+        document.getElementById('LogInStatusHead').innerHTML = 'in'
+        // try {mainNewNavbar();}
+        // catch(err) { alert(err.message);}
       }
       else {
         document.getElementById('LogInStatusHead').innerHTML = 'out';
+        // try {mainNewNavbar();}
+        // catch(err) { alert(err.message);}
       }
   });
   </script>
 
-  <script>
-   function load_js()
-   {
-      var head= document.getElementsByTagName('head')[0];
-      var script= document.createElement('script');
-      script.src= '/static/js/modernNavbar.js';
-      head.appendChild(script);
-   }
-   load_js();
-</script>
+
 
 </head>
 
 <body>
-
-<div id="LogInStatusHead"></div>
+<script type="text/javascript">
+function myFunction() {
+  alert('hey everybody!');
+}
+</script>
+<div id="LogInStatusHead" onchange="myFunction()"></div>
 
 {{!-- COMPUTER NAVBAR --}}
 <nav class="navbar navbar-expand-md navbar-light bg-white box-shadow d-none d-md-block">
@@ -180,8 +179,9 @@
 
 {{{body}}}
 
-
+<script type="text/javascript"> console.log('page was loaded');</script>
 
 </body>
   <script src="/static/js/modernNavbar.js"></script>
+  <script type="text/javascript">mainNewNavbar()</script>
 </html>

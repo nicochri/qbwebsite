@@ -39,6 +39,10 @@ router.get('/payment', function(req, res) {
   res.render('payment');
 });
 
+router.get('/paymerwerent', function(req, res) {
+  res.render('payment');
+});
+
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
