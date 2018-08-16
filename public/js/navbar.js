@@ -9,7 +9,7 @@ function renderLogo(parentDiv) {
 	imageLink.href = '/';
 
 	const image = document.createElement('img');
-	image.src = '/static/logo.png';
+	image.src = '/static/lighter.png';
 	image.width = '30';
 	image.height = '30';
 	image.className = 'd-inline-block align-top';
