@@ -53,6 +53,21 @@ html * {
 	color: white;
 }
 
+.borderless {
+	border: none;
+	background-color: #20a900;
+	color: white;
+}
+
+.sidebarLink {
+	text-decoration: underline;
+	color: white;
+}
+
+.sidebarLink:hover {
+	color: black;
+}
+
 .linkchapter {
 	color: inherit;
 }
