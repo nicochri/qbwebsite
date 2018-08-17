@@ -63,6 +63,6 @@ function updateHeights() {
 	element.setAttribute("style", getNewHeightStyle(element));
 }
 
-window.onload = function () { updateHeights(); }
-updateHeights();
-window.onresize = updateHeights;
+// window.onload = function () { updateHeights(); }
+// updateHeights();
+// window.onresize = updateHeights;
