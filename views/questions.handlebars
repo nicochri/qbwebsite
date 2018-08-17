@@ -30,12 +30,32 @@
 						</div>
 					</div>
 				</div>
+				{{!-- MY SCROLLING QUESTIONS --}}
+				<div class="row mt-3">
+				  <div class="col-3">
+				    <div class="list-group" id="list-tab" role="tablist">
+				    	{{!-- INSERT QUESTIONS HERE --}}
+				        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+				        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+				      	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+				      	<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+				    </div>
+				  </div>
+				  <div class="col-9">
+				    <div class="tab-content" id="nav-tabContent">
+				      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"><div class="bg-danger">My own div</div></div>
+				      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">YOU</div>
+				      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">LOVELY</div>
+				      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">PERSON</div>
+				    </div>
+				  </div>
+				</div>
 
 <!-- Scrolling Questions -->
 
 				<div class="row mt-3">
-				  	<div class="col-3">
-				    	<div class="list-group scrollingQuestionsList" id="list-tab" role="tablist">
+				  	<div class="col-3" id="sidebarDiv">
+				    	<div class="list-group scrollingQuestionsList" id="list-tab" role="tablist" style="border-bottom: 4px solid #dfdfdf; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 					     	<a class="list-group-item list-group-item-action active" data-toggle="list" href="#question1" role="tab" aria-controls="home" onclick="questionBox(1)">1. Series</a>
 					     	<a class="list-group-item list-group-item-action" data-toggle="list" href="#question2" role="tab" aria-controls="profile" onclick="questionBox(2)">2. Pascal's triangle</a>
 					     	<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">3. Expressions</a>
@@ -57,8 +77,8 @@
 				  	</div>
 
 <!-- Question Section with Solution Area Q1 -->
-				<div class="Q&A col-6">	
-			    	<div class="col-8 pl-0 showQuestion1">
+					
+			    	<div class="col-6 pl-0 showQuestion1">
 			    		<div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
 			  				<a class="nav-item nav-link active chapterHeader" data-toggle="tab" href="#question1" role="tab" aria-controls="nav-home" aria-selected="true">Question</a>
 			    			<a class="nav-item nav-link chapterHeader" data-toggle="tab" href="#hint1" role="tab" aria-controls="nav-profile" aria-selected="false">Hint</a>
@@ -85,28 +105,28 @@
 
 	<!-- Multiple choice Q1-->
 
-					<div class="col-4 verticalBreak showQuestion1">
+					<div class="col-3 verticalBreak showQuestion1">
 						<div class="centerDiv">
 							<div class="btn-group-toggle" data-toggle="buttons">
-								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option1div" onclick="changeBackground1()" onmouseover="innerCircle(1)" onmouseout="innerCircleOff(1)">
+								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option1div" onclick="changeBackground1()" >
 									<div class="circle" id="option1"></div>
 							    	<div class="pl-3" type="radio">Checked</div>
 							    </div>
 							</div>
 							<div class="btn-group-toggle" data-toggle="buttons">
-								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option2div" onclick="changeBackground2()" onmouseover="innerCircle(2)" onmouseout="innerCircleOff(2)">
+								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option2div" onclick="changeBackground2()" >
 									<div class="circle" id="option2"></div>
 							    	<div class="pl-3" type="radio">Checked</div>
 							    </div>
 							</div>
 							<div class="btn-group-toggle form-check" data-toggle="buttons">
-								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option3div" onclick="changeBackground3()" onmouseover="innerCircle(3)" onmouseout="innerCircleOff(3)">
+								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option3div" onclick="changeBackground3()" >
 									<div class="circle" id="option3"></div>
 							    	<div class="pl-3" type="radio">Checked</div>
 							    </div>
 							</div>
 							<div class="btn-group-toggle" data-toggle="buttons">
-								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option4div" onclick="changeBackground4()" onmouseover="innerCircle(4)" onmouseout="innerCircleOff(4)">
+								<div class="d-flex justify-content-start align-items-center btn btn-light btn-block mb-3 no-hover" id="option4div" onclick="changeBackground4()">
 									<div class="circle" id="option4"></div>
 							    	<div class="pl-3" type="radio">Checked</div>
 							    </div>
@@ -116,7 +136,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+
 
 				</div>
 				</div>
@@ -127,4 +147,5 @@
 		</div>
 	</div>
 		
-
+<script src="/static/js/questions.js"></script>
+<script src="/static/js/insertQuestions.js"></script>
