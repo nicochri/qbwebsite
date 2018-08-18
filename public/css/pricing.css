@@ -111,6 +111,14 @@ html * {
     transition: opacity 0.3s ease-in-out;
 }
 
+.p {
+	position: relative;
+}
+
+.sidebarMathHL.p:hover {
+	transform: scale(1,1);
+}
+
 .sidebarMathHL:hover {
 	transform: scale(1.02,1.02);
 }
