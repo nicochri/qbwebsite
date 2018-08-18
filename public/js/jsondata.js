@@ -10,6 +10,6 @@
   	"title": "Wassup", 
   	"text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
   	"solution": ":)",
-    "options": {"A": "1", "B": "2", "C": "3", "D": "4"}
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"}
   }
 }
