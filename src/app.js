@@ -44,13 +44,13 @@ app.use('/api', api );
 app.use('/static', express.static('public'));
 
 // authentication routes
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+// app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
-function(req, res) {
-  // Successful authentication, redirect home.
-  res.redirect('/');
-});
+// app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
+// function(req, res) {
+//   // Successful authentication, redirect home.
+//   res.redirect('/');
+// });
 
 // 404 route
 app.use(function(req, res, next) {
