@@ -1,18 +1,16 @@
 <!-- Top Chapter Selection Bar -->
 <div class="container mt-3">
+	{{!-- CHAPTER LINKS --}}
 	<nav>
 		<div class="nav nav-tabs" id="nav-tab" role="tablist">
-			<a class="nav-item nav-link active chapterHeader" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Chapter 1</a>
-			<a class="nav-item nav-link chapterHeader" id="nav-profile-tab chapter2" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Chapter 2</a>
-			<a class="nav-item nav-link chapterHeader" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Chapter 3</a>
-			<a class="nav-item nav-link chapterHeader" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Chapter 4</a>
-			<a class="nav-item nav-link chapterHeader" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Chapter 5</a>
-			<a class="nav-item nav-link chapterHeader" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Chapter 6</a>
-			<a class="nav-item nav-link chapterHeader" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Chapter 7</a>
+			<a class="nav-item nav-link active chapterHeader" id="nav-chapter1-tab" data-toggle="tab" href="#nav-chapter1" role="tab" aria-controls="nav-chapter1" aria-selected="true">Chapter 1</a>
+			<a class="nav-item nav-link chapterHeader" id="nav-chapter2-tab" data-toggle="tab" href="#nav-chapter2" role="tab" aria-controls="nav-chapter2" aria-selected="false">Chapter 2</a>
 		</div>
 	</nav>
-	<div class="tab-content" id="nav-tabContent">
-		<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+	{{!-- CHAPTER SECTIONS --}}
+	<div class="tab-content" id="nav-tabContent-chapter">
+		{{!-- CHAPTER 1 --}}
+		<div class="tab-pane fade show active" id="nav-chapter1" role="tabpanel" aria-labelledby="nav-chapter1-tab">
 			{{!-- CHAPTER 1 HEADING --}}
 			<div class="p-0 mt-3 d-flex justify-content-start">
 				<div>
@@ -27,7 +25,7 @@
 					</div>
 				</div>
 			</div>
-			{{!-- MY SCROLLING QUESTIONS --}}
+			{{!-- QUESTIONS SECTION --}}
 			<div class="row mt-3">
 				<div class="col-3">
 					<div class="list-group" id="list-tab" role="tablist">
@@ -37,6 +35,18 @@
 				<div class="col-6 bg-grey">
 					<div class="tab-content" id="nav-tabContent-questions">
 						{{!-- INSERTING THE QUESTION PARAGRAPHS HERE --}}
+						<ul class="nav nav-pills nav-fill nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" id="question-tab" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution" role="tab" aria-controls="solution" aria-selected="false">Solution</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="questionABBA" role="tabpanel" aria-labelledby="question-tab"></div>
+							<div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab"></div>
+						</div>
 					</div>
 				</div>
 				<div class="col-3">
@@ -48,9 +58,8 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">..dfwsg.</div>
-		<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">..dfweg.</div>
+		{{!-- CHAPTER 2 --}}
+		<div class="tab-pane fade" id="nav-chapter2" role="tabpanel" aria-labelledby="nav-chapter2-tab">This is the second chapter.</div>
 	</div>
 </div>
 <script src="/static/js/questions.js"></script>

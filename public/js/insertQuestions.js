@@ -16,9 +16,15 @@ function addQuestion(questionId, questionNumber, question) {
 	questionDiv.setAttribute("role", "tabpanel");
 	questionDiv.setAttribute("aria-controls", "list-" + questionId + "-list");
 
-	var questionPar = document.createElement("p");
-	questionPar.setAttribute("id", "header");
-	questionPar.innerHTML = question.text;
+	var questionParagraph = document.createElement("p");
+	questionParagraph.setAttribute("id", "thequestion");
+	questionParagraph.setAttribute("style", "display: block;");
+	questionParagraph.innerHTML = question.text;
+
+	var solutionParagraph = document.createElement("p");
+	solutionParagraph.setAttribute("id", "thesolution");
+	solutionParagraph.setAttribute("style", "display: none;");
+	solutionParagraph.innerHTML = question.solution;
 
 	if (questionNumber == 1) {
 		questionSidebar.classList.add("active");
@@ -34,15 +40,33 @@ function addQuestion(questionId, questionNumber, question) {
 	//Append elements
     $('#list-tab').append(questionSidebar);
     $('#nav-tabContent-questions').append(questionDiv);
-	$('#list-' + questionId).append(questionPar);
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub,questionPar]);
+	$('#list-' + questionId).append(questionParagraph);
+	$('#list-' + questionId).append(solutionParagraph);
+
+	//Render them nicely
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,questionParagraph]);
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,solutionParagraph]);
 
     //Change option values if question is clicked
     $("#" + "list-" + questionId + "-list").click(function(){
+    	$('#thesolution').html(question.solution);
+
 	    $('#optionA').html(question.options.A);
 		$('#optionB').html(question.options.B);
 		$('#optionC').html(question.options.C);
 		$('#optionD').html(question.options.D);
+	});
+
+    //If question is selected
+	$("#question-tab").click(function() {
+		questionParagraph.setAttribute("style", "display: block;");
+		solutionParagraph.setAttribute("style", "display: none;");
+	});
+
+	//If solution is selected
+	$("#solution-tab").click(function() {
+		questionParagraph.setAttribute("style", "display: none;");
+		solutionParagraph.setAttribute("style", "display: block;");
 	});
 }
 
