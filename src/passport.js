@@ -24,15 +24,17 @@ passport.use(new GoogleStrategy({
   callbackURL: googleCallbackURL
 }, function(accessToken, refreshToken, profile, done) {
   User.findOne({
-    'gid': profile.id
+    'uid': profile.id
   }, function(err, user) {
     if (err) return done(err);
 
     if (!user) {
       const user = new User({
         name: profile.displayName,
-        gid:  profile.id,
-        mathHL: 'no',
+        uid:  profile.id,
+        email: profile.emails[0].value,
+        method: 'google',
+        mathHL: 'n',
       });
 
       user.save(function(err) {
@@ -49,16 +51,19 @@ passport.use(new GoogleStrategy({
 passport.use(new fbp.Strategy({
   clientID: process.env.FACEBOOK_CLIENT_ID,
   clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-  callbackURL: facebookCallbackURL
+  callbackURL: facebookCallbackURL,
+  profileFields: ['emails'] // TODO: CHECK USER ACTUALLY HAS EMAIL
 }, function(accessToken, BrefreshToken, profile, done) {
-  User.findOne({'gid': profile.id }, function(err, user) {
+  User.findOne({'uid': profile.id }, function(err, user) {
     if (err) return done(err);
-    console.log(profile);
+
     if (!user) {
       user = new User({
         name: profile.displayName,
-        gid: profile.id,
-        mathHL: "This user was created through facebook",
+        uid: profile.id,
+        email: profile.emails[0].value,
+        method: 'facebook',
+        mathHL: 'n',
       });
 
       user.save(function(err) {

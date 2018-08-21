@@ -103,6 +103,20 @@ router.get('/whoamimod', function(req, res) {
   });
 });
 
+router.get('/questions', function(req, res) {
+  if (req.isAuthenticated()){
+    if (req.user.mathHL == 'y') {
+      // res.send({TODO: SEND THE MATHS HL QUESTIONS})
+    }
+    else {
+      res.send({})
+    }
+  }
+  else{
+    res.send({});
+  }
+});
+
 router.get('/user', function(req, res) {
   User.findOne({ _id: req.query._id }, function(err, user) {
     res.send(user);

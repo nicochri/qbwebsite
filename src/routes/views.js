@@ -4,7 +4,6 @@ const exphbs = require('express-handlebars');
 
 // Router
 const router = express();
-var currentEndpoint = 'home';
 
 // Handlebars Middleware - TRAVERSY
 router.engine('handlebars',exphbs({defaultLayout:'test'}));
@@ -43,6 +42,7 @@ router.get('/questions', function(req, res) {
 });
 
 router.get('/logout', function(req, res) {
+  module.exports.currentEndpoint = '/';
   req.logout();
   res.redirect('/');
 });

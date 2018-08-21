@@ -1,4 +1,5 @@
 <!-- Top Chapter Selection Bar -->
+<div class="d-none" id="questionspageloaded">The questions page has been loaded</div>
 <div class="container mt-3">
 	{{!-- CHAPTER LINKS --}}
 	<nav>
@@ -32,7 +33,12 @@
 						{{!-- INSERTING THE SIDERBAR QUESTIONS HERE --}}
 					</div>
 				</div>
-				<div class="col-6 bg-grey">
+				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
+				<div class="col-9" id="forceSignIn">
+					Sign in to see the questions.
+				</div>
+				{{!-- IF THE USER IS SIGNED IN DISPLAY QANDACOL AND OPTIONCOL --}}
+				<div class="col-6 bg-grey d-none" id="QandACol">
 					<div class="tab-content" id="nav-tabContent-questions">
 						{{!-- INSERTING THE QUESTION PARAGRAPHS HERE --}}
 						<ul class="nav nav-pills nav-fill nav-tabs" id="myTab" role="tablist">
@@ -44,12 +50,12 @@
 							</li>
 						</ul>
 						<div class="tab-content" id="myTabContent">
-							<div class="tab-pane fade show active" id="questionABBA" role="tabpanel" aria-labelledby="question-tab"></div>
+							<div class="tab-pane fade show active" id="question" role="tabpanel" aria-labelledby="question-tab"></div>
 							<div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab"></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-3">
+				<div class="col-3 d-none" id="optionCol">
 					<button type="button" class="btn btn-outline-primary btn-lg btn-block" id="optionA"></button>
 					<button type="button" class="btn btn-outline-primary btn-lg btn-block" id="optionB"></button>
 					<button type="button" class="btn btn-outline-primary btn-lg btn-block" id="optionC"></button>
