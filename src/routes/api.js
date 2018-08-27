@@ -51,7 +51,6 @@ router.get('/whoami', function(req, res) {
 router.get('/whoamimod', function(req, res) {
   // console.log(req.query);
   // TODO should put everything in if req.isAuthenticated()!! ***
-
   apiResponse = {
     dbSave: 0,
     stripeCharge: 0,
@@ -103,16 +102,80 @@ router.get('/whoamimod', function(req, res) {
   });
 });
 
+router.get('/whoamimodv2', function(req, res) {
+  if (req.isAuthenticated()) {
+    if (req.user.mathHL == 'n') {
+      var myquery = { _id: req.user._id };
+      var newvalues = { $set: {mathHL: "y"} };
+      
+      User.updateOne(myquery, newvalues, function(err, res) {
+        if (err) throw err;
+        console.log("1 document updated");
+      });
+    }
+  }
+  else {
+    console.log('youre not logged in dude');
+    res.send({});
+  }
+});
+
+router.get('/payment', function(req, res) {
+  if (req.isAuthenticated()) {
+    if (req.user.mathHL == 'n') {
+      apiResponse = {dbSave: 0, stripeCharge: 0, alreadyPaid: 0};
+      //Charge the custumer
+      stripe.customers.create({
+        email: 'foo-customer@example.com'
+      }).then(function(customer){
+        return stripe.customers.createSource(customer.id, {
+          source: req.params.stripeToken
+        });
+      }).then(function(source) {
+        return stripe.charges.create({
+          amount: 1600,
+          currency: 'usd',
+          customer: source.customer
+        });
+      }).then(function() {
+        // Store info
+        apiResponse.stripeCharge = 1;
+
+        var myquery = { _id: req.user._id };
+        var newvalues = { $set: {mathHL: "y"} };
+        
+        User.updateOne(myquery, newvalues, function(err, res) {
+          if (err) throw err;
+          console.log("The user has successully bought a mathHL questionbank.");
+          apiResponse.dbSave = 1;
+          res.send(apiResponse)
+        });
+      }).catch(function(err) {
+        // Deal with an error
+        console.log('dealt with an error in the chargeMoney method');
+        console.log(err);
+        res.send(apiResponse);
+      });
+    }
+    else {
+      console.log('User already has access to this questionbank');
+      res.send({dbSave: 0, stripeCharge: 0, alreadyPaid: 1});
+    }
+  }
+  else {
+    console.log('User has to log in to pay');
+    res.send({dbSave: 0, stripeCharge: 0, alreadyPaid: 0});
+  }
+});
+
 router.get('/questions', function(req, res) {
   if (req.isAuthenticated()){
     if (req.user.mathHL == 'y') {
       // res.send({TODO: SEND THE MATHS HL QUESTIONS})
-    }
-    else {
-      res.send({})
+
     }
   }
-  else{
+  else {
     res.send({});
   }
 });
