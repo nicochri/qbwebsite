@@ -28,14 +28,26 @@
 			</div>
 			{{!-- QUESTIONS SECTION --}}
 			<div class="row mt-3">
-				<div class="col-3" id="sidebarDiv" style="max-height: 400px; overflow-y: auto;">
-					<div class="list-group" id="list-tab" role="tablist">
+				<div class="col-3" id="sidebarDiv">
+					<div class="list-group scrollingQuestionsList" id="list-tab" role="tablist">
 						{{!-- INSERTING THE SIDERBAR QUESTIONS HERE --}}
 					</div>
 				</div>
 				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
 				<div class="col-9" id="forceSignIn">
-					Sign in to see the questions.
+					<div class="cn rounded" style="height: 100%; border: 2px solid #dfdfdf;">
+						<div class="inner">
+							<p class="text-center mb-2">Sign in to see the questions.</p>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
+								<img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 25px;">Sign in with Facebook</div>
+							</a>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary mt-2 text-white google-signin-link" href="/auth/google">
+								<img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 33px;">Sign in with Google</div>
+							</a>
+						</div>
+					</div>
 				</div>
 				{{!-- IF THE USER IS SIGNED IN DISPLAY QANDACOL AND OPTIONCOL --}}
 				<div class="col-6 bg-grey d-none" id="QandACol">
@@ -68,6 +80,11 @@
 		<div class="tab-pane fade" id="nav-chapter2" role="tabpanel" aria-labelledby="nav-chapter2-tab">This is the second chapter.</div>
 	</div>
 </div>
+<script>
+	$(window).bind("load", function() {
+   document.getElementById('body').classList.remove('d-none');
+});
+</script>
 <script src="/static/js/questions.js"></script>
 <script src="/static/js/insertQuestions.js"></script>
 <script src="/static/js/questionPageSize.js"></script>

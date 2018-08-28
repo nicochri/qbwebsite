@@ -99,6 +99,11 @@ body {
 .scrollingQuestionsList {
 	height: 100%;
 	overflow-y: scroll;
+	border-bottom: 3px solid #dfdfdf;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top: 1px solid #dfdfdf;
+	border-radius: 3px;
 }
 
 .scrollingQuestions {
@@ -200,5 +205,10 @@ body {
 	color: #20a900 !important;
 }
 
+.cn {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
 
 

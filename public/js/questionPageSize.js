@@ -53,17 +53,13 @@ function getNewHeightStyle(obj) {
 
 function updateHeights() {
 	var element = document.getElementById('sidebarDiv');
-	console.log(getNewHeightStyle(element));
 	element.setAttribute("style", getNewHeightStyle(element));
+    // var element2 = document.getElementById('forceSignIn');
+    // element2.setAttribute("style", getNewHeightStyle(element2));
+    // var element3 = document.getElementsByClassName('cn')[0];
+    // element3.setAttribute("style", getNewHeightStyle(element3));
 }
 
-function updateHeights2() {
-    console.log('yes babae');
-    var element = document.getElementById('sidebarDiv');
-    console.log(getNewHeightStyle(element));
-    element.setAttribute("style", getNewHeightStyle(element));
-}
-
-window.onload = function () { updateHeights2(); }
+window.onload = function () { updateHeights(); }
 updateHeights();
 window.onresize = updateHeights;

@@ -9,7 +9,7 @@ function main() {
 			}
 		}
 		else {
-			document.getElementById('body').classList.remove('d-none');
+			// document.getElementById('body').classList.remove('d-none');
 			renderNavbar('out');
 			if (document.getElementById('questionspageloaded') != null) {
 				renderQuestions('out');	
