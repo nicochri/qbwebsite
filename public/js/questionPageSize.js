@@ -1,5 +1,3 @@
-
-
 function GetTextboxCordinates() {
             var txt = document.getElementById("txtText");
             var p = GetScreenCordinates(txt);
@@ -59,6 +57,13 @@ function updateHeights() {
 	element.setAttribute("style", getNewHeightStyle(element));
 }
 
-// window.onload = function () { updateHeights(); }
-// updateHeights();
-// window.onresize = updateHeights;
+function updateHeights2() {
+    console.log('yes babae');
+    var element = document.getElementById('sidebarDiv');
+    console.log(getNewHeightStyle(element));
+    element.setAttribute("style", getNewHeightStyle(element));
+}
+
+window.onload = function () { updateHeights2(); }
+updateHeights();
+window.onresize = updateHeights;
