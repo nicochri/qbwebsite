@@ -192,5 +192,13 @@ body {
 }
 /*Connecting chapters from courses to questions page*/
 
-#chapter2 {
+
+.nav-link.active.qanda {
+	/*background-color: #20a900 !important;*/
+	/*color: white !important;*/
+	/*border-color: #20a900 !important;*/
+	color: #20a900 !important;
 }
+
+
+

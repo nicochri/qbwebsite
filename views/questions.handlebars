@@ -41,12 +41,12 @@
 				<div class="col-6 bg-grey d-none" id="QandACol">
 					<div class="tab-content" id="nav-tabContent-questions">
 						{{!-- INSERTING THE QUESTION PARAGRAPHS HERE --}}
-						<ul class="nav nav-pills nav-fill nav-tabs" id="myTab" role="tablist">
+						<ul class="nav nav-fill nav-tabs" id="myTab" role="tablist">
 							<li class="nav-item">
-								<a class="nav-link active" id="question-tab" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
+								<a class="nav-link active chapterHeader qanda" id="question-tab" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution" role="tab" aria-controls="solution" aria-selected="false">Solution</a>
+								<a class="nav-link chapterHeader qanda" id="solution-tab" data-toggle="tab" href="#solution" role="tab" aria-controls="solution" aria-selected="false">Solution</a>
 							</li>
 						</ul>
 						<div class="tab-content" id="myTabContent">
@@ -56,11 +56,11 @@
 					</div>
 				</div>
 				<div class="col-3 d-none" id="optionCol">
-					<button type="button" class="btn btn-outline-primary btn-lg btn-block" id="optionA"></button>
-					<button type="button" class="btn btn-outline-primary btn-lg btn-block" id="optionB"></button>
-					<button type="button" class="btn btn-outline-primary btn-lg btn-block" id="optionC"></button>
-					<button type="button" class="btn btn-outline-primary btn-lg btn-block" id="optionD"></button>
-					<button type="button" class="btn btn-primary btn-lg btn-block">Check answer</button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="optionA"></button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="optionB"></button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="optionC"></button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="optionD"></button>
+					<button type="button" class="btn btn-dark btn-lg btn-block" id="checkAnswer">Check answer</button>
 				</div>
 			</div>
 		</div>

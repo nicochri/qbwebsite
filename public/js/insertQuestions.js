@@ -1,3 +1,29 @@
+function resetOptionButtons() {
+    $('#optionA').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+    $('#optionB').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+    $('#optionC').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+    $('#optionD').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+
+    $('#optionA').prop('disabled', false);
+    $('#optionB').prop('disabled', false);
+    $('#optionC').prop('disabled', false);
+    $('#optionD').prop('disabled', false);
+
+    $('#optionA').css('opacity', 1.00);
+    $('#optionB').css('opacity', 1.00);
+    $('#optionC').css('opacity', 1.00);
+    $('#optionD').css('opacity', 1.00);
+
+    $('#checkAnswer').prop('disabled', true);
+    $('#checkAnswer').css('opacity', 0.65);
+
+    $('#solution-tab').css("pointer-events","none");
+	$('#solution-tab').addClass('disabled');
+	$('#question-tab').trigger('click');
+}
+
+var correctOptionGlobal = 'undefined';
+
 function addQuestion(questionId, questionNumber, question) {
 	//Create question sidebar element
 	var questionSidebar = document.createElement("a");
@@ -31,10 +57,13 @@ function addQuestion(questionId, questionNumber, question) {
 		questionDiv.classList.add("active");
 		questionDiv.classList.add("show");
 
+		resetOptionButtons();
 		$('#optionA').html(question.options.A);
 		$('#optionB').html(question.options.B);
 		$('#optionC').html(question.options.C);
 		$('#optionD').html(question.options.D);
+
+		correctOptionGlobal = question.correctOption;
 	}
 
 	//Append elements
@@ -51,10 +80,13 @@ function addQuestion(questionId, questionNumber, question) {
     $("#" + "list-" + questionId + "-list").click(function(){
     	$('#thesolution').html(question.solution);
 
+    	resetOptionButtons()
 	    $('#optionA').html(question.options.A);
 		$('#optionB').html(question.options.B);
 		$('#optionC').html(question.options.C);
 		$('#optionD').html(question.options.D);
+
+		correctOptionGlobal = question.correctOption;
 	});
 
     //If question is selected
@@ -87,16 +119,3 @@ $(document).ready(function(){
     	}
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
