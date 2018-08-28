@@ -1,3 +1,105 @@
+<!-- var red = '#F79C82';
+var lightRed = '#FDE6E0';
+var grey = '#8A90A4';
+var blue = '#89C2EF';
+var green = '#95D9AD';
+var lightGrey = '#969CAE'; -->
+
+<div class="flex flex-center justify-center" style="height 100px;">
+
+  <svg viewBox="0 0 100 100" width="180px" fill="none">
+    
+    <path d="M50,0 L50,100" stroke="#FDE6E0" stroke-width="0.5" />
+    <path d="M0,50 L100,50" stroke="#FDE6E0" stroke-width="0.5" />
+    <circle id="circle" cx="50" cy="50" r="40" stroke="#89C2EF" />
+    
+    <path id="line"
+          d="M50,50 L90,50" 
+          stroke="#F79C82" />
+    <circle id="marker-1"
+          cx="50" cy="50" r="1" 
+          stroke="#F79C82" fill="white" />
+    <circle id="marker-2"
+          cx="90" cy="50" r="3" 
+          stroke="#fff" fill="#F79C82" />
+    
+    <text id="angle"
+        x="55" y="58" 
+        font-family="monospace" 
+        font-size="0"
+        fill="#8A90A4">
+      θ = 0 rads
+    </text>
+    <text id="radius"
+        x="55" y="64" 
+        font-family="monospace" 
+        font-size="0"
+        fill="#8A90A4">
+      r = 40
+    </text>
+  </svg>
+
+</div>
+<script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js'></script>
+<script >var line = document.getElementById('line');
+var marker1 = document.getElementById('marker-1');
+var marker2 = document.getElementById('marker-2');
+var angle = document.getElementById('angle');
+var radius = document.getElementById('radius');
+
+var steps = new Array(32).fill(0);
+
+var tl = new TimelineMax({
+  repeat: -1,
+  yoyo: true,
+  repeatDelay: 1 });
+
+
+steps.forEach(function (_, idx) {
+  var t = -3 * Math.PI * (idx + 1) / (1.5 * steps.length);
+  var l = getLoc(40, t);
+  var tm = 3 / steps.length;
+  var step = 360 / (steps.length - 1);
+
+  tl.to(line, tm, {
+    attr: { d: 'M50,50 L' + l.join(',') } },
+  idx * tm).
+  to(marker2, tm, {
+    attr: { cx: l[0], cy: l[1] },
+    onUpdate: function onUpdate() {
+      angle.textContent = '\u03B8 = ' + (step * idx).toFixed(2) + '\xB0';
+    } },
+  idx * tm);
+});
+
+steps.forEach(function (_, idx) {
+  var r = 40 - 30 * idx / steps.length;
+  var l = getLoc(r, 0);
+  var tm = 1 / steps.length;
+
+  tl.to(line, tm, {
+    attr: { d: 'M50,50 L' + l.join(',') } },
+  3.5 + idx * tm).
+  to(circle, tm, {
+    attr: { r: r } },
+  3.5 + idx * tm).
+  to(marker2, tm, {
+    attr: { cx: l[0], cy: l[1] },
+    onUpdate: function onUpdate() {
+      radius.textContent = 'r = ' + Math.round(r);
+    } },
+  3.5 + idx * tm);
+});
+
+
+
+function getLoc(r, t) {
+  return [50 + r * Math.cos(t), 50 + r * Math.sin(t)];
+}
+//# sourceURL=pen.js
+</script>
+
+
 <!-- Top Chapter Selection Bar -->
 <div class="d-none" id="questionspageloaded">The questions page has been loaded</div>
 <div class="container mt-3">
@@ -85,6 +187,7 @@
    document.getElementById('body').classList.remove('d-none');
 });
 </script>
+
 <script src="/static/js/questions.js"></script>
 <script src="/static/js/insertQuestions.js"></script>
 <script src="/static/js/questionPageSize.js"></script>
