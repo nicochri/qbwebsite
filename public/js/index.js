@@ -5,14 +5,14 @@ function main() {
 			document.getElementById('body').classList.remove('d-none')
 			renderNavbar('in');
 			if (document.getElementById('questionspageloaded') != null) {
-				renderQuestions('in');				
+				renderQuestions('in', user);				
 			}
 		}
 		else {
 			// document.getElementById('body').classList.remove('d-none');
 			renderNavbar('out');
 			if (document.getElementById('questionspageloaded') != null) {
-				renderQuestions('out');	
+				renderQuestions('out', user);	
 				console.log('rendering questions when not logged in');			
 			}
 		}

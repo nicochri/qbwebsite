@@ -105,17 +105,21 @@ function addQuestion(questionId, questionNumber, question) {
 $(document).ready(function(){
 	var questionNumber = 1;
 
-	$.getJSON( "/static/js/jsondata.js", function( data ) {
-    	$.each(data, function(key, val) {
-    		addQuestion(key, questionNumber, val);
-    		questionNumber = questionNumber + 1;
-    	});
-    });
-
-    // NEW
-    get('/api/questions', {}, function(questions) {
-    	if (Object.keys(questions).length > 0) {
-    		console.log('insert questions');
-    	}
-    });
+	if (!userGlobal.mathHL || userGlobal.mathHL == 'n') {
+		$.getJSON( "/static/js/jsondata.js", function( data ) {
+	    	$.each(data, function(key, val) {
+	    		addQuestion(key, questionNumber, val);
+	    		questionNumber = questionNumber + 1;
+	    	});
+	    });
+	}
+	else {
+		console.log('he has access to all questions');
+		$.getJSON( "/static/js/jsondata2.js", function( data ) {
+	    	$.each(data, function(key, val) {
+	    		addQuestion(key, questionNumber, val);
+	    		questionNumber = questionNumber + 1;
+	    	});
+	    });
+	}
 });

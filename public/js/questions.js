@@ -1,4 +1,8 @@
-function renderQuestions(logInsStatus) {
+var selectedOptionGlobal = 'undefined';
+var userGlobal = {};
+
+function renderQuestions(logInsStatus, user) {
+    userGlobal = user;
     if (logInsStatus == 'in') {
         document.getElementById('QandACol').classList.remove('d-none');
         document.getElementById('optionCol').classList.remove('d-none');
@@ -10,8 +14,6 @@ function renderQuestions(logInsStatus) {
         document.getElementById('forceSignIn').classList.remove('d-none');
     }
 }
-
-var selectedOptionGlobal = 'undefined';
 
 // Add functionality to the option buttons
 $('#optionA').click(function() {
