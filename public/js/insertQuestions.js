@@ -14,8 +14,13 @@ function resetOptionButtons() {
     $('#optionC').css('opacity', 1.00);
     $('#optionD').css('opacity', 1.00);
 
+    $('#optionA').css('box-shadow', '0 0 0 0.2rem white');
+    $('#optionB').css('box-shadow', '0 0 0 0.2rem white');
+    $('#optionC').css('box-shadow', '0 0 0 0.2rem white');
+    $('#optionD').css('box-shadow', '0 0 0 0.2rem white');
+
     $('#checkAnswer').prop('disabled', true);
-    $('#checkAnswer').css('opacity', 0.65);
+    $('#checkAnswer').css('opacity', 1.00);
 
     $('#solution-tab').css("pointer-events","none");
 	$('#solution-tab').addClass('disabled');
@@ -27,13 +32,20 @@ var correctOptionGlobal = 'undefined';
 function addQuestion(questionId, questionNumber, question) {
 	//Create question sidebar element
 	var questionSidebar = document.createElement("a");
-	questionSidebar.setAttribute("class", "list-group-item list-group-item-action");
+	questionSidebar.setAttribute("class", "list-group-item list-group-item-action " + question.difficulty);
 	questionSidebar.setAttribute("id", "list-" + questionId + "-list");
 	questionSidebar.setAttribute("data-toggle", "list");
 	questionSidebar.setAttribute("href", "#list-" + questionId);
 	questionSidebar.setAttribute("role", "tab");
 	questionSidebar.setAttribute("aria-controls", "settings");
-	questionSidebar.innerHTML = questionNumber + ". " + question.title;
+	questionSidebar.innerHTML = question.title;
+
+	//Create question badge
+	var questionBadge = document.createElement("span");
+	questionBadge.setAttribute('style', 'width: 25px; vertical-align: top; margin-top: 3px; margin-right: 8px;');
+	console.log(question.difficulty);
+	questionBadge.setAttribute('class', 'badge badge-' + question.difficulty);
+	questionBadge.innerHTML = questionNumber;
     
 	//Create question div
 	var questionDiv = document.createElement("a");
@@ -71,6 +83,7 @@ function addQuestion(questionId, questionNumber, question) {
     $('#nav-tabContent-questions').append(questionDiv);
 	$('#list-' + questionId).append(questionParagraph);
 	$('#list-' + questionId).append(solutionParagraph);
+	$("#list-" + questionId + "-list").prepend(questionBadge);
 
 	//Render them nicely
     MathJax.Hub.Queue(["Typeset",MathJax.Hub,questionParagraph]);

@@ -4,7 +4,8 @@
   	"text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
   	"options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "success"
   },
 
   "2": {
@@ -12,7 +13,8 @@
   	"text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
   	"solution": ":)",
     "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
-    "correctOption": "B"
+    "correctOption": "B",
+    "difficulty": "success"
   },
 
   "3": {
@@ -20,7 +22,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "success"
   },
 
   "4": {
@@ -28,7 +31,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "success"
   },
 
   "5": {
@@ -36,7 +40,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "success"
   },
 
   "6": {
@@ -44,7 +49,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "warning"
   },
 
   "7": {
@@ -52,7 +58,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "warning"
   },
 
   "8": {
@@ -60,7 +67,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "warning"
   },
 
   "9": {
@@ -68,7 +76,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "warning"
   },
 
   "10": {
@@ -76,7 +85,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "warning"
   },
 
   "11": {
@@ -84,7 +94,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "warning"
   },
 
   "12": {
@@ -92,7 +103,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "danger"
   },
 
   "13": {
@@ -100,7 +112,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "danger"
   },
 
   "14": {
@@ -108,7 +121,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "danger"
   },
 
   "15": {
@@ -116,7 +130,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "danger"
   },
 
   "16": {
@@ -124,7 +139,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "danger"
   },
 
   "17": {
@@ -132,7 +148,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "danger"
   },
 
   "18": {
@@ -140,7 +157,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "dark"
   },
 
   "19": {
@@ -148,7 +166,8 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "dark"
   },
 
   "20": {
@@ -156,6 +175,7 @@
     "text": "This is the first wuestions When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$",
     "solution": "This is the first loaded solution from the json file",
     "options": {"A": "10", "B": "12", "C": "30", "D": "44"},
-    "correctOption": "A"
+    "correctOption": "A",
+    "difficulty": "dark"
   }
 }

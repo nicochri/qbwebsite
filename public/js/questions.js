@@ -69,6 +69,8 @@ $('#checkAnswer').click(function() {
             $('#option' + selectedOptionGlobal).removeClass('btn-secondary').addClass('btn-danger');
         }
 
+        $('#option' + correctOptionGlobal).css('box-shadow', '0 0 0 0.2rem rgba(40,167,69,0.5)');
+
         $('#option' + correctOptionGlobal).prop('disabled', true);
         $('#option' + correctOptionGlobal).css('opacity', 1.00);
 

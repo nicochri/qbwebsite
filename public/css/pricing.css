@@ -90,10 +90,40 @@ body {
 	 text-decoration: none;
 }
 
-.list-group-item.list-group-item-action.active {
-	background-color: #20a900;
-	border-color: #20a900;
+.list-group-item.list-group-item-action.active.success {
+	background-color: #d4edd9;
+	border-color: #dfdfdf;
+}
 
+.list-group-item.list-group-item-action.active.warning {
+	background-color: #fcf3cd;
+	border-color: #dfdfdf;
+}
+
+.list-group-item.list-group-item-action.active.danger {
+	background-color: #f8d7da;
+	border-color: #dfdfdf;
+}
+
+.list-group-item.list-group-item-action.active.dark {
+	background-color: #d6d8d9;
+	border-color: #dfdfdf;
+}
+
+.list-group-item.active.success {
+	color: #205824;
+}
+
+.list-group-item.active.warning {
+	color: #856403;
+}
+
+.list-group-item.active.danger {
+	color: #721c24;
+}
+
+.list-group-item.active.dark {
+	color: #1d1c4b;
 }
 
 .scrollingQuestionsList {
@@ -210,5 +240,82 @@ body {
   justify-content: center;
   align-items: center; 
 }
+
+.btn-outline-secondary {
+	background-color: #f8f8ff;
+	border-color: black;
+	color: black;
+}
+
+.btn-outline-secondary:hover:enabled {
+	background-color: #eaeaf9 !important;
+	border-color: black !important;
+	color: black !important;
+}
+
+.btn-outline-secondary:hover:disabled {
+	border-color: black !important;
+}
+
+.btn-outline-secondary:focus {
+	background-color: #eaeaf9 !important;
+	border-color: #155724 !important;
+	color: black !important;
+	box-shadow: 0 0 0 0.2rem rgba(0,0,0,.5) !important;
+}
+
+.btn-outline-secondary:active {
+	background-color: #eaeaf9 !important;
+	border-color: #155724 !important;
+	color: black !important;
+	box-shadow: 0 0 0 0.2rem rgba(0,0,0,.5) !important;
+}
+
+.btn-secondary {
+	background-color: #eaeaf9 !important;
+	border-color: #155724 !important;
+	color: black !important;
+	box-shadow: 0 0 0 0.2rem rgba(86,62,124,0.6) !important;
+}
+
+.btn-outline-secondary:disabled {
+	background-color: #f8f8ff;
+	border-color: black;
+	color: black;
+}
+
+/*.optionButton {
+	background-color: white;
+	border-color: #563d7c;
+	color: #563d7c;
+}*/
+
+/*.optionButton:hover {
+	background-color: #f5efff;
+	color: black;
+}*/
+
+/*.optionButton:focus {
+	background-color: #cbbde2;
+	box-shadow: 0 0 0 0.2rem rgba(86,61,124,0.5);
+	color: black;
+}*/
+/*
+.optionButton:hover:enabled {
+	background-color: #cbbde2;
+	box-shadow: 0 0 0 0.2rem rgba(86,61,124,0.5);
+	color: black;
+}
+
+.optionButton:hover:disabled {
+	color: inherit;
+	/*opacity: 0.65;*/
+/*}*
+
+/*.optionButton:active {
+	background-color: #cbbde2 !important;
+	box-shadow: 0 0 0 0.2rem rgba(86,61,124,0.5) !important;
+	color: black !important;
+}*/
 
 
