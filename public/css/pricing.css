@@ -129,7 +129,7 @@ body {
 .scrollingQuestionsList {
 	height: 100%;
 	overflow-y: scroll;
-	border-bottom: 3px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	border-top: 1px solid #dfdfdf;
@@ -153,17 +153,17 @@ body {
 }
 
 .chapterHeader {
-	color: black;
+	color: rgba(73,80,87,0.6);
 }
 
 .chapterHeader:hover {
-	color: #20a900;
+	color: rgba(73,80,87,1.0);
 }
 
-.nav-item.nav-link.active {
-	background-color: #20a900;
+.nav-item.nav-link.active.mathHL {
+	background-color: #333333;
 	color: white;
-	border-color: #20a900;
+	border-color: #dddddd;
 }
 
 .btn.btn-light.btn-block {
@@ -239,6 +239,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; 
+}
+
+.badge-warning {
+	color: white;
 }
 
 .btn-outline-secondary {

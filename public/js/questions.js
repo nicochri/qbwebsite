@@ -63,6 +63,12 @@ $('#checkAnswer').click(function() {
         if (selectedOptionGlobal == correctOptionGlobal) {
             $('#option' + correctOptionGlobal).removeClass('btn-secondary').addClass('btn-success');
             
+            //Send data to database
+            const data = {
+                questionId: currentQuestionId,
+                correct: 'y',
+            };
+            post('/api/story', data);
         }
         else {
             $('#option' + correctOptionGlobal).removeClass('btn-outline-secondary').addClass('btn-success');
@@ -81,7 +87,7 @@ $('#checkAnswer').click(function() {
         for (var i = 0; i < 4; i++) {
             if (possibleOptions[i] != selectedOptionGlobal && possibleOptions[i] != correctOptionGlobal) {
                 $('#option' + possibleOptions[i]).prop('disabled', true);
-                $('#option' + possibleOptions[i]).css('opacity', 0.65);
+                $('#option' + possibleOptions[i]).css('opacity', 1.00);
             }
         }
 

@@ -7,6 +7,7 @@ const db = require('../db');
 
 // models
 const User = require('../models/user');
+const Story = require('../models/story');
 
 // create router
 const router = express.Router();
@@ -185,5 +186,28 @@ router.get('/user', function(req, res) {
     res.send(user);
   });
 });
+
+router.post(
+  '/story',
+  connect.ensureLoggedIn(),
+  function(req, res) {
+    const newStory = new Story({
+      'user_id': req.user._id,
+      'question_id': req.body.questionId,
+      'correct': req.body.correct,
+    });
+  
+    newStory.save(function(err,story) {
+      User.findOne({ _id: req.user._id },function(err,user) {
+        user.last_post = req.body.content;
+        user.save(); // this is OK, because the following lines of code are not reliant on the state of user, so we don't have to shove them in a callback. 
+        });
+        // configure socketio
+      if (err) console.log(err);
+    });
+
+    res.send({});
+  }
+);
 
 module.exports = router;

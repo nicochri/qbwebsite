@@ -46,7 +46,7 @@ function getNewHeightStyle(obj) {
         }
     }
 
-	var newHeight = window.innerHeight - p.y - 25;
+	var newHeight = window.innerHeight - p.y - 20;
     newHeightStyle = "height: " + newHeight.toString() + 'px;';
     return newHeightStyle;
 }
@@ -54,10 +54,8 @@ function getNewHeightStyle(obj) {
 function updateHeights() {
 	var element = document.getElementById('sidebarDiv');
 	element.setAttribute("style", getNewHeightStyle(element));
-    // var element2 = document.getElementById('forceSignIn');
-    // element2.setAttribute("style", getNewHeightStyle(element2));
-    // var element3 = document.getElementsByClassName('cn')[0];
-    // element3.setAttribute("style", getNewHeightStyle(element3));
+    var element2 = document.getElementById('questionStats');
+    element2.setAttribute("style", getNewHeightStyle(element2) + ' overflow-y: auto;');
 }
 
 window.onload = function () { updateHeights(); }

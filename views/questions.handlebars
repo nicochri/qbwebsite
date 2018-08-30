@@ -4,8 +4,8 @@
 	{{!-- CHAPTER LINKS --}}
 	<nav>
 		<div class="nav nav-tabs" id="nav-tab" role="tablist">
-			<a class="nav-item nav-link active chapterHeader" id="nav-chapter1-tab" data-toggle="tab" href="#nav-chapter1" role="tab" aria-controls="nav-chapter1" aria-selected="true">Chapter 1</a>
-			<a class="nav-item nav-link chapterHeader" id="nav-chapter2-tab" data-toggle="tab" href="#nav-chapter2" role="tab" aria-controls="nav-chapter2" aria-selected="false">Chapter 2</a>
+			<a class="nav-item nav-link active chapterHeader mathHL" id="nav-chapter1-tab" data-toggle="tab" href="#nav-chapter1" role="tab" aria-controls="nav-chapter1" aria-selected="true">Chapter 1</a>
+			<a class="nav-item nav-link chapterHeader mathHL" id="nav-chapter2-tab" data-toggle="tab" href="#nav-chapter2" role="tab" aria-controls="nav-chapter2" aria-selected="false">Chapter 2</a>
 		</div>
 	</nav>
 	{{!-- CHAPTER SECTIONS --}}
@@ -22,7 +22,7 @@
 						<div class="card-body">
 							<h2 class="card-title mb-0">Chapter 1: Algebra</h2>
 						</div>
-						<div class="card-footer text-muted" style="background-color: #f1f1f1">Stats:</div>
+						<div class="card-footer text-muted" style="background-color: #f1f1f1">Sequences and Series | Logarithms | Functions</div>
 					</div>
 				</div>
 			</div>
@@ -68,11 +68,43 @@
 					</div>
 				</div>
 				<div class="col-3 d-none" id="optionCol">
-					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionA"></button>
-					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionB"></button>
-					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionC"></button>
-					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD"></button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionA"><br></button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionB"><br></button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionC"><br></button>
+					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD"><br></button>
 					<button type="button" class="btn btn-dark btn-lg btn-block" id="checkAnswer">Check answer</button>
+					{{!-- QUESTION STATS DIV --}}
+					<div class="card mt-3" id="questionStats">
+						<div class="card-header">
+							<h5 class="mb-0 text-center">Question Stats</h5>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
+								Answered
+							</li>
+							<li class="list-group-item">
+								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
+								Correct
+							</li>
+							<li class="list-group-item">
+								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
+								Correct (Global)
+							</li>
+							<li class="list-group-item">
+								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
+								Time
+							</li>
+							<li class="list-group-item">
+								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
+								Time (Global)
+							</li>
+							<li class="list-group-item">
+								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
+								Difficulty
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -85,7 +117,6 @@
 document.getElementById('body').classList.remove('d-none');
 });
 </script>
-
 <script src="/static/js/questions.js"></script>
 <script src="/static/js/insertQuestions.js"></script>
 <script src="/static/js/questionPageSize.js"></script>

@@ -27,6 +27,7 @@ function resetOptionButtons() {
 	$('#question-tab').trigger('click');
 }
 
+var currentQuestionId = 'undefined';
 var correctOptionGlobal = 'undefined';
 
 function addQuestion(questionId, questionNumber, question) {
@@ -76,6 +77,7 @@ function addQuestion(questionId, questionNumber, question) {
 		$('#optionD').html(question.options.D);
 
 		correctOptionGlobal = question.correctOption;
+		currentQuestionId = questionId;
 	}
 
 	//Append elements
@@ -100,6 +102,7 @@ function addQuestion(questionId, questionNumber, question) {
 		$('#optionD').html(question.options.D);
 
 		correctOptionGlobal = question.correctOption;
+		currentQuestionId = questionId;
 	});
 
     //If question is selected

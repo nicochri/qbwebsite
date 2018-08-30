@@ -1,6 +1,9 @@
+userGlobal = {};
+
 function main() {
     get('/api/whoami', {}, function(user) {
 		if (user._id) {
+			userGlobal = user;
 			console.log(user);
 			document.getElementById('body').classList.remove('d-none')
 			renderNavbar('in');
