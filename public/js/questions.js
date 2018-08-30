@@ -60,23 +60,25 @@ $('#optionD').click(function() {
 
 $('#checkAnswer').click(function() {
     if (selectedOptionGlobal != 'undefined' && correctOptionGlobal != 'undefined') {
+        //Prepare db data
+        const dbData = {
+            questionId: currentQuestionId,
+            correct: 'undefined',
+        };       
+
+        //See if correct
         if (selectedOptionGlobal == correctOptionGlobal) {
             $('#option' + correctOptionGlobal).removeClass('btn-secondary').addClass('btn-success');
-            
-            //Send data to database
-            const data = {
-                questionId: currentQuestionId,
-                correct: 'y',
-            };
-            post('/api/story', data);
+            dbData.correct = 'y';
         }
         else {
             $('#option' + correctOptionGlobal).removeClass('btn-outline-secondary').addClass('btn-success');
             $('#option' + selectedOptionGlobal).removeClass('btn-secondary').addClass('btn-danger');
+            dbData.correct = 'n';
         }
 
+        //update visuals
         $('#option' + correctOptionGlobal).css('box-shadow', '0 0 0 0.2rem rgba(40,167,69,0.5)');
-
         $('#option' + correctOptionGlobal).prop('disabled', true);
         $('#option' + correctOptionGlobal).css('opacity', 1.00);
 
@@ -97,5 +99,11 @@ $('#checkAnswer').click(function() {
         $('#solution-tab').css("pointer-events","auto");
         $('#solution-tab').removeClass("disabled");
         $('#solution-tab').trigger('click');
+
+        //DB updates
+        post('/api/story', dbData);
+        QBUserData.push({ question_id: currentQuestionId, correct: dbData.correct });
+
+        updateQuestionStats(currentQuestionId);
     }
 })

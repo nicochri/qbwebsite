@@ -52,12 +52,31 @@ function getNewHeightStyle(obj) {
 }
 
 function updateHeights() {
-	var element = document.getElementById('sidebarDiv');
-	element.setAttribute("style", getNewHeightStyle(element));
-    var element2 = document.getElementById('questionStats');
-    element2.setAttribute("style", getNewHeightStyle(element2) + ' overflow-y: auto;');
+    if (currentChapterGlobal == 1) {
+    	var element = document.getElementById('sidebarDiv');
+    	element.setAttribute("style", getNewHeightStyle(element));
+        var element2 = document.getElementById('questionStats');
+        element2.setAttribute("style", getNewHeightStyle(element2) + ' overflow-y: auto; max-height: 234px;');
+
+        //Set the other sidebars to the same height as well
+        var elements = document.getElementsByClassName('fillScreenHeight');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].setAttribute("style", elements[i].style.cssText + ' ' + getNewHeightStyle(element));
+        }
+    }
+    else if (currentChapterGlobal == 2) {
+        //Set the other sidebars to the same height as well
+        var elements = document.getElementsByClassName('fillScreenHeight');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].setAttribute("style", elements[i].style.cssText + ' ' + getNewHeightStyle(elements[i]));
+        }
+
+        var element = document.getElementById('sidebarDiv');
+        element.setAttribute("style", getNewHeightStyle(elements[0]));
+        var element2 = document.getElementById('questionStats');
+        element2.setAttribute("style", getNewHeightStyle(elements[0]) + ' overflow-y: auto; max-height: 234px;');
+    }
 }
 
 window.onload = function () { updateHeights(); }
-updateHeights();
 window.onresize = updateHeights;

@@ -29,6 +29,38 @@ function resetOptionButtons() {
 
 var currentQuestionId = 'undefined';
 var correctOptionGlobal = 'undefined';
+var QBUserData = [];
+
+function updateQuestionStats(questionId) {
+	//Counters
+	timesAnswered = 0;
+	correctCount = 0;
+	
+	//Count
+	for (var i = 0; i < QBUserData.length; i++) {
+	    if (QBUserData[i].question_id == questionId) {
+	    	timesAnswered = timesAnswered + 1;
+	    	if (QBUserData[i].correct == 'y') {
+	    		correctCount = correctCount + 1;
+	    	}
+	    }
+	}
+
+	//Get nice correct percentage
+	if (0 == timesAnswered) {
+		correctPercentage = 0;
+	}
+	else if (correctCount == timesAnswered) {
+		correctPercentage = 100;
+	}
+	else {
+		correctPercentage = Math.floor(correctCount/timesAnswered*100);
+	}
+
+	//Set everything Math.floor(correctCount/timesAnswered)
+	$('#timesAnswered').html(timesAnswered);
+	$('#correctPercentage').html(correctPercentage);
+}
 
 function addQuestion(questionId, questionNumber, question) {
 	//Create question sidebar element
@@ -44,7 +76,6 @@ function addQuestion(questionId, questionNumber, question) {
 	//Create question badge
 	var questionBadge = document.createElement("span");
 	questionBadge.setAttribute('style', 'width: 25px; vertical-align: top; margin-top: 3px; margin-right: 8px;');
-	console.log(question.difficulty);
 	questionBadge.setAttribute('class', 'badge badge-' + question.difficulty);
 	questionBadge.innerHTML = questionNumber;
     
@@ -57,12 +88,12 @@ function addQuestion(questionId, questionNumber, question) {
 
 	var questionParagraph = document.createElement("p");
 	questionParagraph.setAttribute("id", "thequestion");
-	questionParagraph.setAttribute("style", "display: block;");
+	questionParagraph.setAttribute("style", "display: block; padding: 5px;");
 	questionParagraph.innerHTML = question.text;
 
 	var solutionParagraph = document.createElement("p");
 	solutionParagraph.setAttribute("id", "thesolution");
-	solutionParagraph.setAttribute("style", "display: none;");
+	solutionParagraph.setAttribute("style", "display: none; padding: 5px;");
 	solutionParagraph.innerHTML = question.solution;
 
 	if (questionNumber == 1) {
@@ -78,6 +109,8 @@ function addQuestion(questionId, questionNumber, question) {
 
 		correctOptionGlobal = question.correctOption;
 		currentQuestionId = questionId;
+
+		updateQuestionStats(questionId);
 	}
 
 	//Append elements
@@ -103,35 +136,34 @@ function addQuestion(questionId, questionNumber, question) {
 
 		correctOptionGlobal = question.correctOption;
 		currentQuestionId = questionId;
+
+		updateQuestionStats(questionId);
 	});
 
     //If question is selected
 	$("#question-tab").click(function() {
-		questionParagraph.setAttribute("style", "display: block;");
-		solutionParagraph.setAttribute("style", "display: none;");
+		questionParagraph.setAttribute("style", "display: block; padding: 5px;");
+		solutionParagraph.setAttribute("style", "display: none; padding: 5px;");
 	});
 
 	//If solution is selected
 	$("#solution-tab").click(function() {
-		questionParagraph.setAttribute("style", "display: none;");
-		solutionParagraph.setAttribute("style", "display: block;");
+		questionParagraph.setAttribute("style", "display: none; padding: 5px;");
+		solutionParagraph.setAttribute("style", "display: block; padding: 5px;");
 	});
 }
+
 
 $(document).ready(function(){
 	var questionNumber = 1;
 
-	$.getJSON( "/static/js/jsondata.js", function( data ) {
+    get('/api/mathHLUserData', {}, function(data) {
+    	QBUserData = data;
+    	$.getJSON( "/static/js/jsondata.js", function( data ) {
     	$.each(data, function(key, val) {
     		addQuestion(key, questionNumber, val);
     		questionNumber = questionNumber + 1;
     	});
     });
-
-    // NEW
-    get('/api/questions', {}, function(questions) {
-    	if (Object.keys(questions).length > 0) {
-    		console.log('insert questions');
-    	}
     });
 });

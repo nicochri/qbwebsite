@@ -7,6 +7,8 @@ function main() {
 			console.log(user);
 			document.getElementById('body').classList.remove('d-none')
 			renderNavbar('in');
+
+			//Check if on the questions page
 			if (document.getElementById('questionspageloaded') != null) {
 				renderQuestions('in');				
 			}

@@ -4,14 +4,14 @@
 	{{!-- CHAPTER LINKS --}}
 	<nav>
 		<div class="nav nav-tabs" id="nav-tab" role="tablist">
-			<a class="nav-item nav-link active chapterHeader mathHL" id="nav-chapter1-tab" data-toggle="tab" href="#nav-chapter1" role="tab" aria-controls="nav-chapter1" aria-selected="true">Chapter 1</a>
-			<a class="nav-item nav-link chapterHeader mathHL" id="nav-chapter2-tab" data-toggle="tab" href="#nav-chapter2" role="tab" aria-controls="nav-chapter2" aria-selected="false">Chapter 2</a>
+			<a class="nav-item nav-link active chapterHeader mathHL chapter1" id="nav-chapter1-tab" data-toggle="tab" href="#nav-chapter1" role="tab" aria-controls="nav-chapter1" aria-selected="true">Chapter 1</a>
+			<a class="nav-item nav-link chapterHeader mathHL chapter2" id="nav-chapter2-tab" data-toggle="tab" href="#nav-chapter2" role="tab" aria-controls="nav-chapter2" aria-selected="false">Chapter 2</a>
 		</div>
 	</nav>
 	{{!-- CHAPTER SECTIONS --}}
 	<div class="tab-content" id="nav-tabContent-chapter">
 		{{!-- CHAPTER 1 --}}
-		<div class="tab-pane fade show active" id="nav-chapter1" role="tabpanel" aria-labelledby="nav-chapter1-tab">
+		<div class="tab-pane show active" id="nav-chapter1" role="tabpanel" aria-labelledby="nav-chapter1-tab">
 			{{!-- CHAPTER 1 HEADING --}}
 			<div class="p-0 mt-3 d-flex justify-content-start">
 				<div>
@@ -35,7 +35,7 @@
 				</div>
 				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
 				<div class="col-9" id="forceSignIn">
-					<div class="cn rounded" style="height: 100%; border: 2px solid #dfdfdf;">
+					<div class="cn rounded" style="height: 100%; border: 1px solid #dfdfdf;">
 						<div class="inner mb-3">
 							<p class="text-center mb-2">Sign in to see the questions.</p>
 							<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
@@ -76,32 +76,24 @@
 					{{!-- QUESTION STATS DIV --}}
 					<div class="card mt-3" id="questionStats">
 						<div class="card-header">
-							<h5 class="mb-0 text-center">Question Stats</h5>
+							<h5 class="mb-0 text-center">Your Question Stats</h5>
 						</div>
 						<ul class="list-group list-group-flush">
-							<li class="list-group-item">
-								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
-								Answered
+							<li class="list-group-item p-0 pt-2">
+								<div class="">
+									<p id="timesAnswered" class="lead text-center m-0" style="font-size: 34px;"><br></p>
+								</div>
+								<div class="">
+									<p class=" text-center mb-2" style="font-size">Times Answered</p>
+								</div>
 							</li>
-							<li class="list-group-item">
-								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
-								Correct
-							</li>
-							<li class="list-group-item">
-								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
-								Correct (Global)
-							</li>
-							<li class="list-group-item">
-								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
-								Time
-							</li>
-							<li class="list-group-item">
-								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
-								Time (Global)
-							</li>
-							<li class="list-group-item">
-								<img src="/static/logo.png" style="margin-top: 2px; margin-right: 5px;" width="20" height="20" class="d-inline-block align-top" alt="">
-								Difficulty
+							<li class="list-group-item p-0 pt-2">
+								<div class="">
+									<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
+								</div>
+								<div class="">
+									<p class="text-center mb-2" style="font-size">Answered Correctly</p>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -109,13 +101,47 @@
 			</div>
 		</div>
 		{{!-- CHAPTER 2 --}}
-		<div class="tab-pane fade" id="nav-chapter2" role="tabpanel" aria-labelledby="nav-chapter2-tab">This is the second chapter.</div>
+		<div class="tab-pane" id="nav-chapter2" role="tabpanel" aria-labelledby="nav-chapter2-tab">
+			{{!-- CHAPTER 2 HEADING --}}
+			<div class="p-0 mt-3 d-flex justify-content-start">
+				<div>
+					<img src="/static/algebra.png" class="d-flex rounded" style="width: 129px; height: 129px;">
+				</div>
+				<div class="rounded ml-3" style="width: 100%">
+					<div class="card text-center">
+						<div class="card-body">
+							<h2 class="card-title mb-0">Chapter 2: Trigonometry</h2>
+						</div>
+						<div class="card-footer text-muted" style="background-color: #f1f1f1">Sequences and Series | Logarithms | Functions</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container d-none" id="notPaidDiv">
+	<div class="row mt-3">
+		<div class="col-3 rounded" >
+			{{!-- <img src="/static/white.png" class="d-flex rounded" style="width: 129px; height: 129px;"> --}}
+			<div class="fillScreenHeight" style="border: 1px solid #dfdfdf; background-image: url('/static/blurred.png');"></div>
+		</div>
+		<div class="col-9" id="otherSignIn"></div>
 	</div>
 </div>
 <script>
 	$(window).bind("load", function() {
-document.getElementById('body').classList.remove('d-none');
-});
+		document.getElementById('body').classList.remove('d-none');
+	});
+	var currentChapterGlobal = 1;
+	$('.chapter1').click(function() {
+		currentChapterGlobal = 1;
+		$('#notPaidDiv').addClass('d-none');
+	});
+	$('.chapter2').click(function() {
+		currentChapterGlobal = 2;
+		$('#notPaidDiv').removeClass('d-none');
+		$('#forceSignIn').appendTo('#otherSignIn');
+	});
 </script>
 <script src="/static/js/questions.js"></script>
 <script src="/static/js/insertQuestions.js"></script>

@@ -38,7 +38,18 @@ router.get('/courses', function(req, res) {
 
 router.get('/questions', function(req, res) {
   module.exports.currentEndpoint = '/questions';
-  res.render('questions');
+
+  if (req.isAuthenticated()) {
+    if (req.user.mathHL == 'y') {
+        res.render('questions');
+    }
+    else {
+      res.render('questions');
+    }
+  }
+  else {
+    res.render('questions');
+  }
 });
 
 router.get('/logout', function(req, res) {

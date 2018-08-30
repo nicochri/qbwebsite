@@ -181,6 +181,29 @@ router.get('/questions', function(req, res) {
   }
 });
 
+
+
+
+router.get('/mathHLUserData', function(req, res) {
+  if (req.isAuthenticated()){
+    if (req.user.mathHL == 'y' || req.user.mathHL == 'n') { //TODO: remove the second if condition
+      // res.send({TODO: SEND THE MATHS HL QUESTIONS})
+      Story.find({ user_id: req.user._id },function(err,data) {
+        res.send(data);
+      });
+    }
+  }
+  else {
+    res.send([]);
+  }
+});
+
+
+
+
+
+
+
 router.get('/user', function(req, res) {
   User.findOne({ _id: req.query._id }, function(err, user) {
     res.send(user);
