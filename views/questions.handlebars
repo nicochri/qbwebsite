@@ -34,8 +34,8 @@
 					</div>
 				</div>
 				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
-				<div class="col-9" id="forceSignIn">
-					<div class="cn rounded" style="height: 100%; border: 1px solid #dfdfdf;">
+				<div class="col-9 forceSignIn" id="">
+					<div class="cn rounded" style="height: 100%; width: 100%; border: 1px solid #dfdfdf;">
 						<div class="inner mb-3">
 							<p class="text-center mb-2">Sign in to see the questions.</p>
 							<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
@@ -123,24 +123,28 @@
 	<div class="row mt-3">
 		<div class="col-3 rounded" >
 			{{!-- <img src="/static/white.png" class="d-flex rounded" style="width: 129px; height: 129px;"> --}}
-			<div class="fillScreenHeight" style="border: 1px solid #dfdfdf; background-image: url('/static/blurred.png');"></div>
+			<div class="fillScreenHeight rounded" style="border: 1px solid #dfdfdf; background-image: url('/static/blurred.png');"></div>
 		</div>
-		<div class="col-9" id="otherSignIn"></div>
+		<div class="col-9 px-0" id="otherSignIn"></div>
 	</div>
 </div>
 <script>
 	$(window).bind("load", function() {
 		document.getElementById('body').classList.remove('d-none');
 	});
+
+	//Login
 	var currentChapterGlobal = 1;
+	$('.forceSignIn').clone().appendTo('#otherSignIn');
 	$('.chapter1').click(function() {
 		currentChapterGlobal = 1;
 		$('#notPaidDiv').addClass('d-none');
+		$('.forceSignIn').removeClass('col-12').addClass('col-9');
 	});
 	$('.chapter2').click(function() {
 		currentChapterGlobal = 2;
 		$('#notPaidDiv').removeClass('d-none');
-		$('#forceSignIn').appendTo('#otherSignIn');
+		$('.forceSignIn').removeClass('#col-9').addClass('col-12');
 	});
 </script>
 <script src="/static/js/questions.js"></script>
