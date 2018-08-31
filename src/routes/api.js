@@ -121,7 +121,7 @@ router.get('/whoamimodv2', function(req, res) {
   }
 });
 
-router.get('/payment', function(req, res) {
+router.get('/newpayment', function(req, res) {
   if (req.isAuthenticated()) {
     if (req.user.mathHL == 'n') {
       apiResponse = {dbSave: 0, stripeCharge: 0, alreadyPaid: 0};
@@ -130,7 +130,7 @@ router.get('/payment', function(req, res) {
         email: 'foo-customer@example.com'
       }).then(function(customer){
         return stripe.customers.createSource(customer.id, {
-          source: req.params.stripeToken
+          source: req.query.stripeToken
         });
       }).then(function(source) {
         return stripe.charges.create({
@@ -145,12 +145,12 @@ router.get('/payment', function(req, res) {
         var myquery = { _id: req.user._id };
         var newvalues = { $set: {mathHL: "y"} };
         
-        User.updateOne(myquery, newvalues, function(err, res) {
+        User.updateOne(myquery, newvalues, function(err, response) {
           if (err) throw err;
           console.log("The user has successully bought a mathHL questionbank.");
           apiResponse.dbSave = 1;
-          res.send(apiResponse)
-        });
+          res.send(apiResponse);
+        })
       }).catch(function(err) {
         // Deal with an error
         console.log('dealt with an error in the chargeMoney method');

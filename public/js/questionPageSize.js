@@ -80,8 +80,9 @@ function updateHeights() {
 
         var element = document.getElementById('sidebarDiv');
         element.setAttribute("style", getNewHeightStyle(elements[0]));
+
         var element2 = document.getElementById('questionStats');
-        element2.setAttribute("style", getNewHeightStyle(elements[0]) + ' overflow-y: auto; max-height: 234px;');
+        element2.setAttribute("style", getNewHeightStyle(element2) + ' overflow-y: auto; max-height: 234px;');
 
         var signIns = document.getElementsByClassName('forceSignIn');
         for (var i = 0; i < signIns.length; i++) {

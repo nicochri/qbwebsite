@@ -20,7 +20,7 @@
 				<div class="rounded ml-3" style="width: 100%">
 					<div class="card text-center">
 						<div class="card-body">
-							<h2 class="card-title mb-0">Chapter 1: Algebra</h2>
+							<h2 class="card-title mb-0">Algebra</h2>
 						</div>
 						<div class="card-footer text-muted" style="background-color: #f1f1f1">Sequences and Series | Logarithms | Functions</div>
 					</div>
@@ -110,7 +110,7 @@
 				<div class="rounded ml-3" style="width: 100%">
 					<div class="card text-center">
 						<div class="card-body">
-							<h2 class="card-title mb-0">Chapter 2: Trigonometry</h2>
+							<h2 class="card-title mb-0">Trigonometry</h2>
 						</div>
 						<div class="card-footer text-muted" style="background-color: #f1f1f1">Sequences and Series | Logarithms | Functions</div>
 					</div>
@@ -126,13 +126,19 @@
 			<div class="fillScreenHeight rounded" style="border: 1px solid #dfdfdf; background-image: url('/static/blurred.png');"></div>
 		</div>
 		<div class="col-9 px-0" id="otherSignIn"></div>
+		<div class="col-9 d-none checkoutDiv">
+				<div class="cn rounded" style="height: 100%; width: 100%; border: 1px solid #dfdfdf;">
+					<div class="inner mb-3">
+						<a href="/payment" class="btn btn-outline-primary">Proceed to checkout</a>
+					</div>
+				</div>
+		</div>
 	</div>
 </div>
 <script>
 	$(window).bind("load", function() {
 		document.getElementById('body').classList.remove('d-none');
 	});
-
 	//Login
 	var currentChapterGlobal = 1;
 	$('.forceSignIn').clone().appendTo('#otherSignIn');

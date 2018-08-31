@@ -133,7 +133,7 @@ function registerElements(elements, exampleName) {
             stripeToken: result.token.id,
         };
 
-        get('/api/whoamimod', data, function(apiResponse) {
+        get('/api/newpayment', data, function(apiResponse) {
           console.log(apiResponse);
           if (apiResponse.dbSave && apiResponse.stripeCharge) {
             document.getElementById("statusCircle").setAttribute("style", "stroke: rgba(228,244,219,1);");

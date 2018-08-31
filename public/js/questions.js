@@ -2,7 +2,19 @@ function renderQuestions(logInsStatus) {
     if (logInsStatus == 'in') {
         document.getElementById('QandACol').classList.remove('d-none');
         document.getElementById('optionCol').classList.remove('d-none');
-        document.getElementsByClassName('forceSignIn')[0].classList.add('d-none');
+        
+         document.getElementById('otherSignIn').classList.add('d-none');
+        var signIns = document.getElementsByClassName('forceSignIn');
+        for (var i = 0; i < signIns.length; i++) {
+            signIns[i].classList.add('d-none');
+        }
+        
+        if (userGlobal.mathHL == 'n') {
+            var checkouts = document.getElementsByClassName('checkoutDiv');
+            for (var i = 0; i < checkouts.length; i++) {
+                checkouts[i].classList.remove('d-none');
+            }
+        }
     }
     else {
         document.getElementById('QandACol').classList.add('d-none');
