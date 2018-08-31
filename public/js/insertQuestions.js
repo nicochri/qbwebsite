@@ -1,30 +1,30 @@
 function resetOptionButtons() {
-    $('#optionA').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
-    $('#optionB').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
-    $('#optionC').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
-    $('#optionD').removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+    $('#optionA-chapter' + currentChapterGlobal).removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+    $('#optionB-chapter' + currentChapterGlobal).removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+    $('#optionC-chapter' + currentChapterGlobal).removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
+    $('#optionD-chapter' + currentChapterGlobal).removeClass('btn-secondary btn-success btn-danger').addClass('btn-outline-secondary');
 
-    $('#optionA').prop('disabled', false);
-    $('#optionB').prop('disabled', false);
-    $('#optionC').prop('disabled', false);
-    $('#optionD').prop('disabled', false);
+    $('#optionA-chapter' + currentChapterGlobal).prop('disabled', false);
+    $('#optionB-chapter' + currentChapterGlobal).prop('disabled', false);
+    $('#optionC-chapter' + currentChapterGlobal).prop('disabled', false);
+    $('#optionD-chapter' + currentChapterGlobal).prop('disabled', false);
 
-    $('#optionA').css('opacity', 1.00);
-    $('#optionB').css('opacity', 1.00);
-    $('#optionC').css('opacity', 1.00);
-    $('#optionD').css('opacity', 1.00);
+    $('#optionA-chapter' + currentChapterGlobal).css('opacity', 1.00);
+    $('#optionB-chapter' + currentChapterGlobal).css('opacity', 1.00);
+    $('#optionC-chapter' + currentChapterGlobal).css('opacity', 1.00);
+    $('#optionD-chapter' + currentChapterGlobal).css('opacity', 1.00);
 
-    $('#optionA').css('box-shadow', '0 0 0 0.2rem white');
-    $('#optionB').css('box-shadow', '0 0 0 0.2rem white');
-    $('#optionC').css('box-shadow', '0 0 0 0.2rem white');
-    $('#optionD').css('box-shadow', '0 0 0 0.2rem white');
+    $('#optionA-chapter' + currentChapterGlobal).css('box-shadow', '0 0 0 0.2rem white');
+    $('#optionB-chapter' + currentChapterGlobal).css('box-shadow', '0 0 0 0.2rem white');
+    $('#optionC-chapter' + currentChapterGlobal).css('box-shadow', '0 0 0 0.2rem white');
+    $('#optionD-chapter' + currentChapterGlobal).css('box-shadow', '0 0 0 0.2rem white');
 
-    $('#checkAnswer').prop('disabled', true);
-    $('#checkAnswer').css('opacity', 1.00);
+    $('#checkAnswer-chapter' + currentChapterGlobal).prop('disabled', true);
+    $('#checkAnswer-chapter' + currentChapterGlobal).css('opacity', 1.00);
 
-    $('#solution-tab').css("pointer-events","none");
-	$('#solution-tab').addClass('disabled');
-	$('#question-tab').trigger('click');
+    $('#solution-tab-chapter' + currentChapterGlobal).css("pointer-events","none");
+	$('#solution-tab-chapter' + currentChapterGlobal).addClass('disabled');
+	$('#question-tab-chapter' + currentChapterGlobal).trigger('click');
 }
 
 var currentQuestionId = 'undefined';
@@ -69,6 +69,7 @@ function addQuestion(questionId, questionNumber, question) {
 	questionSidebar.setAttribute("id", "list-" + questionId + "-list");
 	questionSidebar.setAttribute("data-toggle", "list");
 	questionSidebar.setAttribute("href", "#list-" + questionId);
+	questionSidebar.setAttribute("style", "border: 0px; padding-right: 12px; padding-left: 12px;");
 	questionSidebar.setAttribute("role", "tab");
 	questionSidebar.setAttribute("aria-controls", "settings");
 	questionSidebar.innerHTML = question.title;
@@ -102,10 +103,10 @@ function addQuestion(questionId, questionNumber, question) {
 		questionDiv.classList.add("show");
 
 		resetOptionButtons();
-		$('#optionA').html(question.options.A);
-		$('#optionB').html(question.options.B);
-		$('#optionC').html(question.options.C);
-		$('#optionD').html(question.options.D);
+		$('#optionA-chapter' + question.chapter).html(question.options.A);
+		$('#optionB-chapter' + question.chapter).html(question.options.B);
+		$('#optionC-chapter' + question.chapter).html(question.options.C);
+		$('#optionD-chapter' + question.chapter).html(question.options.D);
 
 		correctOptionGlobal = question.correctOption;
 		currentQuestionId = questionId;
@@ -114,8 +115,8 @@ function addQuestion(questionId, questionNumber, question) {
 	}
 
 	//Append elements
-    $('#list-tab').append(questionSidebar);
-    $('#nav-tabContent-questions').append(questionDiv);
+    $('#list-tab-chapter' + question.chapter).append(questionSidebar);
+    $('#nav-tabContent-questions-chapter' + question.chapter).append(questionDiv);
 	$('#list-' + questionId).append(questionParagraph);
 	$('#list-' + questionId).append(solutionParagraph);
 	$("#list-" + questionId + "-list").prepend(questionBadge);
@@ -129,10 +130,10 @@ function addQuestion(questionId, questionNumber, question) {
     	$('#thesolution').html(question.solution);
 
     	resetOptionButtons()
-	    $('#optionA').html(question.options.A);
-		$('#optionB').html(question.options.B);
-		$('#optionC').html(question.options.C);
-		$('#optionD').html(question.options.D);
+	    $('#optionA-chapter' + question.chapter).html(question.options.A);
+		$('#optionB-chapter' + question.chapter).html(question.options.B);
+		$('#optionC-chapter' + question.chapter).html(question.options.C);
+		$('#optionD-chapter' + question.chapter).html(question.options.D);
 
 		correctOptionGlobal = question.correctOption;
 		currentQuestionId = questionId;
@@ -141,13 +142,13 @@ function addQuestion(questionId, questionNumber, question) {
 	});
 
     //If question is selected
-	$("#question-tab").click(function() {
+	$("#question-tab-chapter" + question.chapter).click(function() {
 		questionParagraph.setAttribute("style", "display: block; padding: 5px;");
 		solutionParagraph.setAttribute("style", "display: none; padding: 5px;");
 	});
 
 	//If solution is selected
-	$("#solution-tab").click(function() {
+	$("#solution-tab-chapter" + question.chapter).click(function() {
 		questionParagraph.setAttribute("style", "display: none; padding: 5px;");
 		solutionParagraph.setAttribute("style", "display: block; padding: 5px;");
 	});
@@ -155,15 +156,25 @@ function addQuestion(questionId, questionNumber, question) {
 
 
 $(document).ready(function(){
-	var questionNumber = 1;
+	var questionNumbers = [1,1,1];
 
     get('/api/mathHLUserData', {}, function(data) {
     	QBUserData = data;
-    	$.getJSON( "/static/js/jsondata.js", function( data ) {
-    	$.each(data, function(key, val) {
-    		addQuestion(key, questionNumber, val);
-    		questionNumber = questionNumber + 1;
-    	});
-    });
+
+    	get('/api/questions', {}, function(questions) {
+    		for (var i = 0; i < questions.length; i++) {
+    			var chapterIndex = parseInt(questions[i].chapter) - 1;
+		        addQuestion(questions[i].id, questionNumbers[chapterIndex], questions[i]);
+    			questionNumbers[chapterIndex] = questionNumbers[chapterIndex] + 1;
+		    }
+			
+	    });
+
+    // 	$.getJSON( "/static/js/jsondata.js", function( data ) {
+	   //  	$.each(data, function(key, val) {
+	   //  		addQuestion(key, questionNumber, val);
+	   //  		questionNumber = questionNumber + 1;
+	   //  	});
+	   //  });
     });
 });

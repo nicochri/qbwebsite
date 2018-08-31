@@ -92,5 +92,5 @@ function updateHeights() {
     }
 }
 
-window.onload = function () { updateHeights(); }
-window.onresize = updateHeights;
+// window.onload = function () { updateHeights(); }
+// window.onresize = updateHeights;

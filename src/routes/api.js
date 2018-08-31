@@ -1,5 +1,6 @@
 // dependencies
 const express = require('express');
+const fs = require('fs');
 const connect = require('connect-ensure-login');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const MongoClient = require('mongodb').MongoClient;
@@ -149,6 +150,7 @@ router.get('/newpayment', function(req, res) {
           if (err) throw err;
           console.log("The user has successully bought a mathHL questionbank.");
           apiResponse.dbSave = 1;
+          req.session.passport.user.mathHL = 'y';
           res.send(apiResponse);
         })
       }).catch(function(err) {
@@ -170,14 +172,38 @@ router.get('/newpayment', function(req, res) {
 });
 
 router.get('/questions', function(req, res) {
-  if (req.isAuthenticated()){
-    if (req.user.mathHL == 'y') {
-      // res.send({TODO: SEND THE MATHS HL QUESTIONS})
+  if (req.isAuthenticated() && req.user.mathHL == 'y') {
+    fs.readFile('./public/js/jsondata2.js', function (err, data) {
+      if (err) throw err;
 
-    }
+      //Convert data to array
+      data = JSON.parse(data);
+      var data = Object.keys(data).map(function(k) { return data[k] });
+
+      //Send to frontend
+      res.send(data);
+    });
   }
+
   else {
-    res.send({});
+    fs.readFile('./public/js/jsondata2.js', function (err, data) {
+      if (err) throw err;
+
+      //Convert data to array
+      data = JSON.parse(data);
+      var data = Object.keys(data).map(function(k) { return data[k] });
+
+      //Take away sensitive data from other chapters if they dont have access
+      for (var i = 0; i < data.length; i++) {
+          if (data[i].chapter == '0') {
+            data[i].text = '';
+            data[i].solution = '';
+          }
+      }
+
+      //Send to frontend
+      res.send(data);
+    });
   }
 });
 
@@ -186,12 +212,9 @@ router.get('/questions', function(req, res) {
 
 router.get('/mathHLUserData', function(req, res) {
   if (req.isAuthenticated()){
-    if (req.user.mathHL == 'y' || req.user.mathHL == 'n') { //TODO: remove the second if condition
-      // res.send({TODO: SEND THE MATHS HL QUESTIONS})
-      Story.find({ user_id: req.user._id },function(err,data) {
+    Story.find({ user_id: req.user._id },function(err,data) {
         res.send(data);
-      });
-    }
+    });
   }
   else {
     res.send([]);
