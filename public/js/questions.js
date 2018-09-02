@@ -37,57 +37,23 @@ function renderQuestions(logInsStatus) {
 
 var selectedOptionGlobal = 'undefined';
 
-// Add functionality to the option buttons
-$('#optionA-chapter' + currentChapterGlobal).click(function() {
-    $('#optionA-chapter' + currentChapterGlobal).removeClass('btn-outline-secondary').addClass('btn-secondary');
-    $('#optionB-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionC-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionD-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
+//General option button click function
+function optionChapterClick(remove, add) {
+    $('#optionA-chapter' + currentChapterGlobal).removeClass(remove[0]).addClass(add[0]);
+    $('#optionB-chapter' + currentChapterGlobal).removeClass(remove[1]).addClass(add[1]);
+    $('#optionC-chapter' + currentChapterGlobal).removeClass(remove[2]).addClass(add[2]);
+    $('#optionD-chapter' + currentChapterGlobal).removeClass(remove[3]).addClass(add[3]);
 
-    selectedOptionGlobal = 'A';
     $('#checkAnswer-chapter' + currentChapterGlobal).prop('disabled', false);
     $('#checkAnswer-chapter' + currentChapterGlobal).css('opacity', 1.00);
-    console.log('yes mate')
-})
+}
 
-$('#optionB-chapter' + currentChapterGlobal).click(function() {
-    $('#optionB-chapter' + currentChapterGlobal).removeClass('btn-outline-secondary').addClass('btn-secondary');
-    $('#optionA-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionC-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionD-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-
-    selectedOptionGlobal = 'B';
-    $('#checkAnswer-chapter' + currentChapterGlobal).prop('disabled', false);
-    $('#checkAnswer-chapter' + currentChapterGlobal).css('opacity', 1.00);
-})
-
-$('#optionC-chapter' + currentChapterGlobal).click(function() {
-    $('#optionC-chapter' + currentChapterGlobal).removeClass('btn-outline-secondary').addClass('btn-secondary');
-    $('#optionA-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionB-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionD-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-
-    selectedOptionGlobal = 'C';
-    $('#checkAnswer-chapter' + currentChapterGlobal).prop('disabled', false);
-    $('#checkAnswer-chapter' + currentChapterGlobal).css('opacity', 1.00);
-})
-
-$('#optionD-chapter' + currentChapterGlobal).click(function() {
-    $('#optionD-chapter' + currentChapterGlobal).removeClass('btn-outline-secondary').addClass('btn-secondary');
-    $('#optionA-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionB-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-    $('#optionC-chapter' + currentChapterGlobal).removeClass('btn-secondary').addClass('btn-outline-secondary');
-
-    selectedOptionGlobal = 'D';
-    $('#checkAnswer-chapter' + currentChapterGlobal).prop('disabled', false);
-    $('#checkAnswer-chapter' + currentChapterGlobal).css('opacity', 1.00);
-})
-
-$('#checkAnswer-chapter' + currentChapterGlobal).click(function() {
+//General check Answer Click Function
+function checkAnswerClick() {
     if (selectedOptionGlobal != 'undefined' && correctOptionGlobal != 'undefined') {
         //Prepare db data
         const dbData = {
-            questionId: currentQuestionId,
+            questionId: currentQuestionIds[parseInt(currentChapterGlobal) - 1],
             correct: 'undefined',
         };       
 
@@ -127,8 +93,91 @@ $('#checkAnswer-chapter' + currentChapterGlobal).click(function() {
 
         //DB updates
         post('/api/story', dbData);
-        QBUserData.push({ question_id: currentQuestionId, correct: dbData.correct });
+        QBUserData.push({ question_id: currentQuestionIds[parseInt(currentChapterGlobal) - 1], correct: dbData.correct });
 
-        updateQuestionStats(currentQuestionId);
+        updateQuestionStats(currentQuestionIds[parseInt(currentChapterGlobal) - 1]);
     }
+}
+
+// Add functionality to the chapter 1 option buttons
+$('#optionA-chapter' + "1").click(function() {
+    optionChapterClick(
+        ['btn-outline-secondary', 'btn-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'A';
+})
+
+$('#optionB-chapter' + "1").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'B';
+})
+
+$('#optionC-chapter' + "1").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-ouline-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'C';
+})
+
+$('#optionD-chapter' + "1").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-secondary', 'btn-outline-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary']
+    )
+
+    selectedOptionGlobal = 'D';
+})
+
+// Add functionality to the chapter 2 option buttons
+$('#optionA-chapter' + "2").click(function() {
+    optionChapterClick(
+        ['btn-outline-secondary', 'btn-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'A';
+})
+
+$('#optionB-chapter' + "2").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'B';
+})
+
+$('#optionC-chapter' + "2").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-ouline-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'C';
+})
+
+$('#optionD-chapter' + "2").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-secondary', 'btn-outline-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary']
+    )
+
+    selectedOptionGlobal = 'D';
+})
+
+//Add functionality to the check answer
+$('#checkAnswer-chapter' + "1").click(function() {
+    checkAnswerClick();
+})
+
+$('#checkAnswer-chapter' + "2").click(function() {
+    checkAnswerClick();
 })

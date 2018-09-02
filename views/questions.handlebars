@@ -76,14 +76,11 @@
 					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD-chapter1"><br></button>
 					<button type="button" class="btn btn-dark btn-lg btn-block" id="checkAnswer-chapter1">Check answer</button>
 					{{!-- QUESTION STATS DIV --}}
-					<div class="card mt-3 d-none" id="questionStats">
-						<div class="card-header">
-							<h5 class="mb-0 text-center">Your Question Stats</h5>
-						</div>
+					<div class="card mt-3">
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item p-0 pt-2">
 								<div class="">
-									<p id="timesAnswered" class="lead text-center m-0" style="font-size: 34px;"><br></p>
+									<p id="timesAnswered-chapter1" class="lead text-center m-0" style="font-size: 34px;"><br></p>
 								</div>
 								<div class="">
 									<p class=" text-center mb-2" style="font-size">Times Answered</p>
@@ -91,7 +88,7 @@
 							</li>
 							<li class="list-group-item p-0 pt-2">
 								<div class="">
-									<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
+									<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage-chapter1"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
 								</div>
 								<div class="">
 									<p class="text-center mb-2" style="font-size">Answered Correctly</p>
@@ -167,14 +164,11 @@
 					<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD-chapter2"><br></button>
 					<button type="button" class="btn btn-dark btn-lg btn-block" id="checkAnswer-chapter2">Check answer</button>
 					{{!-- QUESTION STATS DIV --}}
-					<div class="card mt-3 d-none" id="questionStats">
-						<div class="card-header">
-							<h5 class="mb-0 text-center">Your Question Stats</h5>
-						</div>
+					<div class="card mt-3">
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item p-0 pt-2">
 								<div class="">
-									<p id="timesAnswered" class="lead text-center m-0" style="font-size: 34px;"><br></p>
+									<p id="timesAnswered-chapter2" class="lead text-center m-0" style="font-size: 34px;"><br></p>
 								</div>
 								<div class="">
 									<p class=" text-center mb-2" style="font-size">Times Answered</p>
@@ -182,7 +176,7 @@
 							</li>
 							<li class="list-group-item p-0 pt-2">
 								<div class="">
-									<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
+									<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage-chapter2"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
 								</div>
 								<div class="">
 									<p class="text-center mb-2" style="font-size">Answered Correctly</p>
@@ -228,25 +222,78 @@
 		</div>
 	</div>
 </div>
+<div class="container">
+	<div class="row mt-3 mb-5">
+		{{!-- SIDEBAR DIV --}}
+		<div class="col-3">
+			
+		</div>
+		{{!-- HERE COMES THE PAYMENT DIV --}}
+		<div class="col-9">
+			<div class="cn rounded" style="border: 1px solid #dfdfdf">
+				<div class="rounded p-5" style="width: 620px;">
+					<div class="row">
+						<div class="col-6">
+							<div class="mathCourse p-3" style="background-color: #333333; width: 247.5px; height: 356px;">
+								<a href="#" onclick="return false;" class="mainCourse">
+									<h3 class="text-center mt-1 mb-4" style="margin-bottom: 20px !important;">Mathematics Higher Level</h3>
+									<div class="d-flex justify-content-center">
+										<div class="flex flex-center justify-center" style="height 100px;">
+											<svg viewBox="0 0 100 100" width="180px" fill="none">
+											<path d="M50,0 L50,100" stroke="#FDE6E0" stroke-width="0.5"></path>
+										<path d="M0,50 L100,50" stroke="#FDE6E0" stroke-width="0.5"></path>
+										<circle id="circle" cx="50" cy="50" r="40" stroke="#89C2EF"></circle>
+										
+									<path id="line" d="M50,50 L90,50.00000000000001" stroke="#F79C82"></path>
+									<circle id="marker-1" cx="50" cy="50" r="1" stroke="#F79C82" fill="white"></circle>
+									<circle id="marker-2" cx="90" cy="50.00000000000001" r="3" stroke="#fff" fill="#F79C82"></circle>
+									
+									<text id="angle" x="55" y="58" font-family="monospace" font-size="0" fill="#8A90A4">θ = 360.00°</text>
+									<text id="radius" x="55" y="64" font-family="monospace" font-size="0" fill="#8A90A4">r = 40</text>
+								</svg>
+							</div>
+							<script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+							<script src="/static/js/mathLogo.js"></script>
+						</div>
+						<p class="mt-2 text-center lead" style="margin-top: 13px !important;">12 Chapters</p>
+					</a>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
 <script>
+	//Only used if not logged in
 	$(window).bind("load", function() {
 		document.getElementById('body').classList.remove('d-none');
 	});
-	// Login
+	// Global variables
+	var currentQuestionIds = ['',''];
+	var correctOptionGlobal = '';
+	var QBUserData = [];
 	var currentChapterGlobal = 1;
-	// var signInDiv =
-	// $('.forceSignIn').clone().appendTo('#otherSignIn');
+	//Update specific chapter data
 	$('.chapter1').click(function() {
 			currentChapterGlobal = 1;
 			resetOptionButtons();
-			// $('#notPaidDiv').addClass('d-none');
-			// $('.forceSignIn').removeClass('col-12').addClass('col-9');
+			updateQuestionStats(currentQuestionIds[0]);
 	});
 	$('.chapter2').click(function() {
 			currentChapterGlobal = 2;
 			resetOptionButtons();
-			// $('#notPaidDiv').removeClass('d-none');
-			// $('.forceSignIn').removeClass('#col-9').addClass('col-12');
+			updateQuestionStats(currentQuestionIds[1]);
 	});
 </script>
 <script src="/static/js/questions.js"></script>

@@ -27,10 +27,6 @@ function resetOptionButtons() {
 	$('#question-tab-chapter' + currentChapterGlobal).trigger('click');
 }
 
-var currentQuestionId = 'undefined';
-var correctOptionGlobal = 'undefined';
-var QBUserData = [];
-
 function updateQuestionStats(questionId) {
 	//Counters
 	timesAnswered = 0;
@@ -58,8 +54,8 @@ function updateQuestionStats(questionId) {
 	}
 
 	//Set everything Math.floor(correctCount/timesAnswered)
-	$('#timesAnswered').html(timesAnswered);
-	$('#correctPercentage').html(correctPercentage);
+	$('#timesAnswered-chapter' + currentChapterGlobal).html(timesAnswered);
+	$('#correctPercentage-chapter' + currentChapterGlobal).html(correctPercentage);
 }
 
 function addQuestion(questionId, questionNumber, question) {
@@ -109,9 +105,12 @@ function addQuestion(questionId, questionNumber, question) {
 		$('#optionD-chapter' + question.chapter).html(question.options.D);
 
 		correctOptionGlobal = question.correctOption;
-		currentQuestionId = questionId;
+		currentQuestionIds[parseInt(question.chapter) - 1] = questionId;
 
-		updateQuestionStats(questionId);
+		if (parseInt(question.chapter) == 1) {
+			updateQuestionStats(questionId);
+			console.log('yes');
+		}
 	}
 
 	//Append elements
@@ -136,7 +135,7 @@ function addQuestion(questionId, questionNumber, question) {
 		$('#optionD-chapter' + question.chapter).html(question.options.D);
 
 		correctOptionGlobal = question.correctOption;
-		currentQuestionId = questionId;
+		currentQuestionIds[parseInt(question.chapter) - 1] = questionId;
 
 		updateQuestionStats(questionId);
 	});
