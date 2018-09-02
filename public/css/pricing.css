@@ -272,5 +272,58 @@ html * {
 #chapter2 {
 }
 
+/*Link to Payments Page*/
+
+.pay {
+	box-shadow: 0px 0px 40px 1px #eee;
+	border-radius: 9px;
+}
+
+.total {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #808eab;
+	letter-spacing: .15rem;
+}
+
+.money {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #0b82f8;
+	font-family: "Roboto", sans-serif;
+	letter-spacing: .15rem;
+}
+
+.elementsLeft {
+	font-family: "Roboto", sans-serif;
+	color: rgb(81,88,96);
+}
+
+.elementsRight {
+	font-family: "Roboto", sans-serif;
+	color: #0b82f8;
+}
+
+.payNow {
+	font-family: "Open Sans", sans-serif;
+	color: #0b82f8;
+	border: 1px solid rgba(11,130,248,1);
+    text-transform: uppercase;
+    font-size: .97rem;
+    opacity: .8;
+    font-weight: lighter;
+    padding: 7px 40px;
+    border-radius:  1.6rem;
+    cursor: pointer;
+    outline: none;
+    transition: all .2s linear;
+}
+
+.payNow:hover {
+	transition: all .2s linear;
+	background-color: #0b82f8;
+	color: #FFF;
+}
 /*WORK ON CENTERING TEXT IN DIV IN COURSES*/
 
