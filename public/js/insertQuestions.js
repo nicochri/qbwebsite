@@ -109,7 +109,6 @@ function addQuestion(questionId, questionNumber, question) {
 
 		if (parseInt(question.chapter) == 1) {
 			updateQuestionStats(questionId);
-			console.log('yes');
 		}
 	}
 
@@ -138,6 +137,13 @@ function addQuestion(questionId, questionNumber, question) {
 		currentQuestionIds[parseInt(question.chapter) - 1] = questionId;
 
 		updateQuestionStats(questionId);
+
+		if (getScreenWidth() <= 3) {
+			document.getElementById('list-tab-chapter' + currentChapterGlobal).setAttribute('style', 'height: 50px;');
+			document.getElementById('list-' + questionId + '-list').scrollIntoView();
+			$('#questionDropdownButton-chapter' + currentChapterGlobal).attr('state','down');
+			$('#questionDropdownButton-chapter' + currentChapterGlobal).html('&darr;');
+		}
 	});
 
     //If question is selected

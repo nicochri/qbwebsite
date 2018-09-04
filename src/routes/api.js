@@ -172,7 +172,7 @@ router.get('/newpayment', function(req, res) {
 });
 
 router.get('/questions', function(req, res) {
-  if (req.isAuthenticated() && req.user.mathHL == 'n') {
+  if (req.isAuthenticated() && req.user.mathHL == 'y') {
     fs.readFile('./public/js/jsondata2.js', function (err, data) {
       if (err) throw err;
 
@@ -196,8 +196,8 @@ router.get('/questions', function(req, res) {
       //Take away sensitive data from other chapters if they dont have access
       for (var i = 0; i < data.length; i++) {
           if (data[i].chapter == '2') {
-            data[i].text = 'no access';
-            data[i].solution = 'no access';
+            data[i].text = 'Subscribe to unlock the full access text';
+            data[i].solution = 'Subscribe to unlock the full access solution';
           }
       }
 

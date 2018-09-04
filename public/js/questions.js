@@ -1,18 +1,25 @@
 function renderQuestions(logInsStatus) {
     if (logInsStatus == 'in') {
+        
+        //Check for user access
+        var chapterAccess = 1000;
+        if (userGlobal.mathHL == 'n') {
+            chapterAccess = 1;
+            $('#subscribeNowDiv').appendTo('#subscribeNow-chapter2');
+        }
+
         //Question and solution central div
         var QandACols = document.getElementsByClassName('QandACol');
-        for (var i = 0; i < QandACols.length; i++) {
+        for (var i = 0; i < QandACols.length && i < chapterAccess; i++) {
             QandACols[i].classList.remove('d-none');
         }
 
         //Right side multiple choice divs
         var optionCols = document.getElementsByClassName('optionCol');
-        for (var i = 0; i < optionCols.length; i++) {
+        for (var i = 0; i < optionCols.length && i < chapterAccess; i++) {
             optionCols[i].classList.remove('d-none');
         }
         
-        document.getElementById('otherSignIn').classList.add('d-none');
         var signIns = document.getElementsByClassName('forceSignIn');
         for (var i = 0; i < signIns.length; i++) {
             signIns[i].classList.add('d-none');

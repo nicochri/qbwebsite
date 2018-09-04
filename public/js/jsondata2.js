@@ -11,6 +11,72 @@
   },
 
   {
+    "id": "99",
+    "chapter": "1",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "success"
+  },
+
+  {
+    "id": "98",
+    "chapter": "1",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "success"
+  },
+
+  {
+    "id": "97",
+    "chapter": "1",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "success"
+  },
+
+  {
+    "id": "96",
+    "chapter": "1",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "success"
+  },
+
+  {
+    "id": "95",
+    "chapter": "1",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "success"
+  },
+
+  {
+    "id": "200",
+    "chapter": "1",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "success"
+  },
+
+  {
     "id": "2",
     "chapter": "1",
   	"title": "Quadratic equation", 
@@ -68,7 +134,7 @@
   {
     "id": "7",
     "chapter": "2",
-    "title": "Quadratic equation", 
+    "title": "Complex number", 
     "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
     "solution": ":)",
     "options": {"A": "10", "B": "2", "C": "3", "D": "1one"},
@@ -149,6 +215,94 @@
     "text": "It kinda works dude",
     "solution": "The SOLUUTION:)",
     "options": {"A": "10", "B": "2", "C": "3", "D": "jadda"},
+    "correctOption": "B",
+    "difficulty": "dark"
+  },
+
+  {
+    "id": "15",
+    "chapter": "2",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "danger"
+  },
+
+  {
+    "id": "16",
+    "chapter": "2",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "danger"
+  },
+
+  {
+    "id": "17",
+    "chapter": "2",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "danger"
+  },
+
+  {
+    "id": "18",
+    "chapter": "2",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "danger"
+  },
+
+  {
+    "id": "19",
+    "chapter": "2",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "danger"
+  },
+
+  {
+    "id": "20",
+    "chapter": "2",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "danger"
+  },
+
+  {
+    "id": "21",
+    "chapter": "2",
+    "title": "Quadratic equation", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
+    "correctOption": "B",
+    "difficulty": "dark"
+  },
+
+  {
+    "id": "22",
+    "chapter": "2",
+    "title": "Last one", 
+    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
+    "solution": ":)",
+    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
     "correctOption": "B",
     "difficulty": "dark"
   }
