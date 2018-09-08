@@ -17,6 +17,9 @@ function main() {
 				renderPayment('in');
 				document.getElementById('body').classList.remove('d-none');
 			}
+			else if (document.getElementById('accountpageloaded') != null) {
+				document.getElementById('body').classList.remove('d-none');
+			}
 		}
 		else {
 			renderNavbar('out');
@@ -28,6 +31,9 @@ function main() {
 			//If on payment page
 			else if (document.getElementById('paymentpageloaded') != null) {
 				renderPayment('out');
+				document.getElementById('body').classList.remove('d-none');
+			}
+			else if (document.getElementById('accountpageloaded') != null) {
 				document.getElementById('body').classList.remove('d-none');
 			}
 		}
