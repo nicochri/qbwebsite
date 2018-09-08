@@ -1,3 +1,254 @@
-<div id="accountBody"></div>
-<p>Hehe</p>
-<a href="/heythere">Link to heythere</a>
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-12 col-md-6">
+			<div class="card mb-5 mb-md-0">
+				<ul class="list-group list-group-flush">
+					<div class="row">
+						<div class="col-12 col-md-12">
+							<li class="list-group-item p-0 pt-2">
+								<p class="text-center mb-0" style="color: #b3b3b3">Name</p>
+								<p class="lead text-center m-0 mb-2" style="font-size: 34px;">Nicolas Ågnes<br></p>
+							</li>
+						</div>
+						<div class="col-12 col-md-12">
+							<li class="list-group-item p-0 pt-2" style="border-top: 1px solid #dfdfdf">
+								<p class="text-center mb-0" style="color: #b3b3b3;">Status</p>
+								<p class="lead text-center m-0 mb-2" style="font-size: 34px;">Not Subscribed </p>
+							</li>
+						</div>
+						<div class="col-12 col-md-12">
+							<li class="list-group-item p-0 pt-2" style="border-top: 1px solid #dfdfdf">
+								<p class="text-center mb-0" style="color: #b3b3b3;">Question Banks</p>
+								<p class="lead text-center m-0 mb-2" style="font-size: 34px;">None</p>
+							</li>
+						</div>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="col-12 col-md-6">
+			<div class="form-group">
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Contact us here..."></textarea>
+				<button class="btn btn-block btn-outline-primary mt-2">Send message</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row justify-content-center">
+          <!-- MATHEMATICS HL -->
+          <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center mt-3 mb-4 my-md-4 mb-md-5 mb-xl-4">
+            <div class="mathCourse p-3" style="background-color: #333333; width: 247.5px; height: 356px;">
+              <a href="#" onclick="return false;" class="mainCourse">
+                <h2 class="text-center mt-3 mb-3">Mathematics Higher Level</h2>
+                <div class="d-flex justify-content-center">
+                  <!-- START OF MATHS HL LOGO -->
+                  <!-- var red = '#F79C82';
+                  var lightRed = '#FDE6E0';
+                  var grey = '#8A90A4';
+                  var blue = '#89C2EF';
+                  var green = '#95D9AD';
+                  var lightGrey = '#969CAE'; -->
+                  <div class="flex flex-center justify-center" style="height 100px;">
+                    <svg viewBox="0 0 100 100" width="180px" fill="none">
+                      
+                      <path d="M50,0 L50,100" stroke="#FDE6E0" stroke-width="0.5"></path>
+                      <path d="M0,50 L100,50" stroke="#FDE6E0" stroke-width="0.5"></path>
+                      <circle id="circle" cx="50" cy="50" r="40" stroke="#89C2EF"></circle>
+                      
+                      <path id="line" d="M50,50 L86.95002934472222,65.31697592583637" stroke="#F79C82"></path>
+                        <circle id="marker-1" cx="50" cy="50" r="1" stroke="#F79C82" fill="white"></circle>
+                        <circle id="marker-2" cx="86.95002934472222" cy="65.31697592583637" r="3" stroke="#fff" fill="#F79C82"></circle>
+                        
+                        <text id="angle" x="55" y="58" font-family="monospace" font-size="0" fill="#8A90A4">θ = 336.77°</text>
+                        <text id="radius" x="55" y="64" font-family="monospace" font-size="0" fill="#8A90A4">r = 40</text>
+                      </svg>
+                    </div>
+                    <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+                    <script>var line = document.getElementById('line');
+                    var marker1 = document.getElementById('marker-1');
+                    var marker2 = document.getElementById('marker-2');
+                    var angle = document.getElementById('angle');
+                    var radius = document.getElementById('radius');
+                    var steps = new Array(32).fill(0);
+                    var tl = new TimelineMax({
+                    repeat: -1,
+                    yoyo: true,
+                    repeatDelay: 1 });
+                    steps.forEach(function (_, idx) {
+                    var t = -3 * Math.PI * (idx + 1) / (1.5 * steps.length);
+                    var l = getLoc(40, t);
+                    var tm = 3 / steps.length;
+                    var step = 360 / (steps.length - 1);
+                    tl.to(line, tm, {
+                    attr: { d: 'M50,50 L' + l.join(',') } },
+                    idx * tm).
+                    to(marker2, tm, {
+                    attr: { cx: l[0], cy: l[1] },
+                    onUpdate: function onUpdate() {
+                    angle.textContent = '\u03B8 = ' + (step * idx).toFixed(2) + '\xB0';
+                    } },
+                    idx * tm);
+                    });
+                    steps.forEach(function (_, idx) {
+                    var r = 40 - 30 * idx / steps.length;
+                    var l = getLoc(r, 0);
+                    var tm = 1 / steps.length;
+                    tl.to(line, tm, {
+                    attr: { d: 'M50,50 L' + l.join(',') } },
+                    3.5 + idx * tm).
+                    to(circle, tm, {
+                    attr: { r: r } },
+                    3.5 + idx * tm).
+                    to(marker2, tm, {
+                    attr: { cx: l[0], cy: l[1] },
+                    onUpdate: function onUpdate() {
+                    radius.textContent = 'r = ' + Math.round(r);
+                    } },
+                    3.5 + idx * tm);
+                    });
+                    function getLoc(r, t) {
+                    return [50 + r * Math.cos(t), 50 + r * Math.sin(t)];
+                    }
+                    //# sourceURL=pen.js
+                    </script>
+                    <!-- END OG MATHS HL LOGO -->
+                  </div>
+                  <p class="mt-3 text-center lead">12 Chapters</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+              <div class="mathCourse p-3" style="background-color: #e91a8f;  width: 247.5px; height: 356px;">
+                <a href="#" onclick="return false;" class="mainCourse">
+                  <h2 class="text-center mt-3 mb-3">Physics<br>Higher Level</h2>
+                  <div class="d-flex justify-content-center">
+                    <img src="/static/phylogo5.png" class="p-3" style="height: 180px; width: 180px;">
+                  </div>
+                  <p class="mt-3 text-center lead"></p>
+                  <div class="text-center align-text-bottom" style=" position: absolute;
+                    left: 0px;
+                    top: 285px;
+                    width: 247.5px;
+                    height: 55px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+              <div class="mathCourse p-3" style="background-color: #625cdb; width: 247.5px; height: 356px;">
+                <a href="#" onclick="return false;" class="mainCourse">
+                  <h2 class="text-center mt-3 mb-3">Chemistry<br>Higher Level</h2>
+                  <div class="d-flex justify-content-center">
+                    <img src="/static/chemlogo2.png" class="p-3" style="height: 180px; width: 180px;">
+                  </div>
+                  <p class="mt-3 text-center lead"></p>
+                  <div class="text-center align-text-bottom" style=" position: absolute;
+                    left: 0px;
+                    top: 285px;
+                    width: 247.5px;
+                    height: 55px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+              <div class="mathCourse p-3" style="background-color: #ec7300; width: 247.5px; height: 356px;">
+                <a href="#" onclick="return false;" class="mainCourse">
+                  <h2 class="text-center mt-3 mb-3">Economics Higher Level</h2>
+                  <div class="d-flex justify-content-center">
+                    <img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
+                  </div>
+                  <p class="mt-3 text-center lead"></p>
+                  <div class="text-center align-text-bottom" style=" position: absolute;
+                    left: 0px;
+                    top: 285px;
+                    width: 247.5px;
+                    height: 55px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+              <div class="mathCourse p-3" style="background-color: #20a900; width: 247.5px; height: 356px;">
+                <a href="#" onclick="return false;" class="mainCourse">
+                  <h2 class="text-center mt-3 mb-3">Mathematics Standard Level</h2>
+                  <div class="d-flex justify-content-center">
+                    <img src="/static/slmathlogo7.png" class="p-3" style="height: 180px; width: 180px;">
+                  </div>
+                  <p class="mt-3 text-center lead"></p>
+                  <div class="text-center align-text-bottom" style=" position: absolute;
+                    left: 0px;
+                    top: 285px;
+                    width: 247.5px;
+                    height: 55px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+              <div class="mathCourse p-3" style="background-color: #69047e; width: 247.5px; height: 356px;">
+                <a href="#" onclick="return false;" class="mainCourse">
+                  <h2 class="text-center mt-3 mb-3">Physics<br>Standard Level</h2>
+                  <div class="d-flex justify-content-center">
+                    <img src="/static/slphylogo7.png" class="p-3" style="height: 180px; width: 180px;">
+                  </div>
+                  <p class="mt-3 text-center lead"></p>
+                  <div class="text-center align-text-bottom" style=" position: absolute;
+                    left: 0px;
+                    top: 285px;
+                    width: 247.5px;
+                    height: 55px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+              <div class="mathCourse p-3" style="background-color: #d62007; width: 247.5px; height: 356px;">
+                <a href="#" onclick="return false;" class="mainCourse">
+                  <h2 class="text-center mt-3 mb-3">Chemistry Standard Level</h2>
+                  <div class="d-flex justify-content-center">
+                    <img src="/static/firstlogo1.png" class="p-3" style="height: 180px; width: 180px;">
+                  </div>
+                  <p class="mt-3 text-center lead"></p>
+                  <div class="text-center align-text-bottom" style=" position: absolute;
+                    left: 0px;
+                    top: 285px;
+                    width: 247.5px;
+                    height: 55px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+              <div class="mathCourse p-3" style="background-color: #0093a6; width: 247.5px; height: 356px;">
+                <a href="#" onclick="return false;" class="mainCourse">
+                  <h2 class="text-center mt-3 mb-3">Economics Standard Level</h2>
+                  <div class="d-flex justify-content-center">
+                    <img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
+                  </div>
+                  <p class="mt-3 text-center lead"></p>
+                  <div class="text-center align-text-bottom" style=" position: absolute;
+                    left: 0px;
+                    top: 285px;
+                    width: 247.5px;
+                    height: 55px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+</div>

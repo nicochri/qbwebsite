@@ -1,105 +1,124 @@
+<div id="paymentpageloaded"></div>
 <div class="container">
-  
-<link rel="stylesheet" type="text/css" href="/static/css/base.css" data-rel-css="">
-<link rel="stylesheet" type="text/css" href="/static/css/example4.css" data-rel-css="">
-
-{{!-- STRIPE BOX --}}
-<div class="globalContent">
-  <main>
-  <section class="container-lg" style="padding-top: 50px; padding-bottom: 80px;">
-    <!--Example 4-->
-    <div class="cell example example4">
-      <form action="/charge" form="POST" id="payment-form">
-        <div id="example4-paymentRequest">
-          <!--Stripe paymentRequestButton Element inserted here-->
-        </div>
-        <fieldset>
-          <legend class="card-only" data-tid="elements_examples.form.pay_with_card">
-            <div class="mathCourse p-3" style="background-color: #333333; width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h3 class="text-center mt-1 mb-4" style="margin-bottom: 20px !important;">Mathematics Higher Level</h3>
-                  <div class="d-flex justify-content-center">
-                    <div class="flex flex-center justify-center" style="height 100px;">
-                      <svg viewBox="0 0 100 100" width="180px" fill="none">
-                      <path d="M50,0 L50,100" stroke="#FDE6E0" stroke-width="0.5"></path>
-                    <path d="M0,50 L100,50" stroke="#FDE6E0" stroke-width="0.5"></path>
-                    <circle id="circle" cx="50" cy="50" r="40" stroke="#89C2EF"></circle>
-                    
-                  <path id="line" d="M50,50 L90,50.00000000000001" stroke="#F79C82"></path>
-                  <circle id="marker-1" cx="50" cy="50" r="1" stroke="#F79C82" fill="white"></circle>
-                  <circle id="marker-2" cx="90" cy="50.00000000000001" r="3" stroke="#fff" fill="#F79C82"></circle>
-                  
-                  <text id="angle" x="55" y="58" font-family="monospace" font-size="0" fill="#8A90A4">θ = 360.00°</text>
-                  <text id="radius" x="55" y="64" font-family="monospace" font-size="0" fill="#8A90A4">r = 40</text>
-                </svg>
-              </div>
-              <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
-              <script src="/static/js/mathLogo.js"></script>
+  {{!-- STYLE SHEETS   --}}
+  <link rel="stylesheet" type="text/css" href="/static/css/base.css" data-rel-css="">
+  <link rel="stylesheet" type="text/css" href="/static/css/example4.css" data-rel-css="">
+  <h1 class="display-3 text-center d-none d-md-block mt-3">Subscribe Now!</h1>
+  <h1 class="display-4 text-center d-block d-md-none mt-3" style="font-size: 46px;">Subscribe Now!</h1>
+  <p class="lead text-center mb-3 mt-2">Unluck full access to the Math HL question bank for only <span class="d-inline lead text-center m-0 my-4 strikethrough" style="font-size: 20px;"><span class="text-success">$4.99</span><span>/month.</span></span></p>
+  {{!-- SIGN IN BOX --}}
+  <div class="cn rounded" style="height: 100%; width: 100%" id="signInDiv">
+    <div class="inner mb-3">
+      <p class="text-center mt-1 mt-lg-0 mb-2">You must first sign in.</p>
+      <a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
+        <img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+        <div style="margin-left: 25px;">Sign in with Facebook</div>
+      </a>
+      <a class="d-flex align-items-center text-align-center btn btn-outline-primary mt-2 text-white google-signin-link" href="/auth/google">
+        <img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" alt="">
+        <div style="margin-left: 33px;">Sign in with Google</div>
+      </a>
+    </div>
+  </div>
+  {{!-- STRIPE BOX --}}
+  <div class="globalContent" id="stripePaymentDiv">
+    <main>
+      <section class="container-lg py-1" style="padding-top: 50px; padding-bottom: 80px;">
+        <!--Example 4-->
+        <div class="cell example example4 pb-5" style="padding-top: 20px;">
+          <form action="/charge" form="POST" id="payment-form">
+            <div id="example4-paymentRequest">
+              <!--Stripe paymentRequestButton Element inserted here-->
             </div>
-            <p class="mt-2 text-center lead" style="margin-top: 13px !important;">12 Chapters</p>
-          </a>
-        </div>
-            <h1 class="mb-3">Math HL QuestionBank</h1>
-              <img src="/static/google-logo-big.png" width="200" height="200" class="mb-3" alt="">
-            <p class="mb-1">5$ /month | Pay with card</p>
-          </legend>
-          <legend class="payment-request-available" data-tid="elements_examples.form.enter_card_manually">            <h1 class="mb-3">Math HL QuestionBank</h1>
-              <img src="/static/google-logo-big.png" width="200" height="200" class="mb-3" alt="">
-            <p class="mb-1">5$ /month | Pay with card</p></legend>
-          <div class="container">
-            <div id="example4-card"></div>
-            <button type="submit" data-tid="elements_examples.form.donate_button">Get Premium Access</button>
+            <fieldset style="margin-top: 0px;">
+              <legend class="card-only" data-tid="elements_examples.form.pay_with_card" style="color: #333333;">
+                {{!-- <h1 class="mb-3">Math HL QuestionBank</h1> --}}
+                {{!-- <h1 class="display-3 text-center d-none d-md-block mt-3">Subscribe Now!</h1> --}}
+                {{!-- <img src="/static/google-logo-big.png" width="200" height="200" class="mb-3" alt=""> --}}
+                {{!-- <p class="lead text-center m-0 my-3 strikethrough" style="font-size: 24px;"><span class="text-success">$4.99</span><span style="font-size: 18px;">/month</span></p> --}}
+                {{!-- START LOGO --}}
+                <div class="mb-3" align="center">
+                  <div class="mathCourse-static p-3" style="background-color: #333333; width: 247.5px; height: 356px;">
+                    <div class="mainCourse">
+                      <h3 class="text-center mt-1 mb-4" style="margin-bottom: 20px !important;">Mathematics Higher Level</h3>
+                      <div class="d-flex justify-content-center">
+                        <div class="flex flex-center justify-center" style="height 100px;">
+                          <svg viewBox="0 0 100 100" width="180px" fill="none">
+                          <path d="M50,0 L50,100" stroke="#FDE6E0" stroke-width="0.5"></path>
+                        <path d="M0,50 L100,50" stroke="#FDE6E0" stroke-width="0.5"></path>
+                        <circle id="circle" cx="50" cy="50" r="40" stroke="#89C2EF"></circle>
+                      <path id="line" d="M50,50 L90,50.00000000000001" stroke="#F79C82"></path>
+                      <circle id="marker-1" cx="50" cy="50" r="1" stroke="#F79C82" fill="white"></circle>
+                      <circle id="marker-2" cx="90" cy="50.00000000000001" r="3" stroke="#fff" fill="#F79C82"></circle>
+                      <text id="angle" x="55" y="58" font-family="monospace" font-size="0" fill="#8A90A4">θ = 360.00°</text>
+                      <text id="radius" x="55" y="64" font-family="monospace" font-size="0" fill="#8A90A4">r = 40</text>
+                    </svg>
+                  </div>
+                </div>
+                <p class="mt-2 text-center lead" style="margin-top: 13px !important;">12 Chapters</p>
+              </div>
+            </div>
           </div>
-        </fieldset>
-        <div class="error" role="alert"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
-            <path class="base" fill="#000" d="M8.5,17 C3.80557963,17 0,13.1944204 0,8.5 C0,3.80557963 3.80557963,0 8.5,0 C13.1944204,0 17,3.80557963 17,8.5 C17,13.1944204 13.1944204,17 8.5,17 Z"/>
-            <path class="glyph" fill="#FFF" d="M8.5,7.29791847 L6.12604076,4.92395924 C5.79409512,4.59201359 5.25590488,4.59201359 4.92395924,4.92395924 C4.59201359,5.25590488 4.59201359,5.79409512 4.92395924,6.12604076 L7.29791847,8.5 L4.92395924,10.8739592 C4.59201359,11.2059049 4.59201359,11.7440951 4.92395924,12.0760408 C5.25590488,12.4079864 5.79409512,12.4079864 6.12604076,12.0760408 L8.5,9.70208153 L10.8739592,12.0760408 C11.2059049,12.4079864 11.7440951,12.4079864 12.0760408,12.0760408 C12.4079864,11.7440951 12.4079864,11.2059049 12.0760408,10.8739592 L9.70208153,8.5 L12.0760408,6.12604076 C12.4079864,5.79409512 12.4079864,5.25590488 12.0760408,4.92395924 C11.7440951,4.59201359 11.2059049,4.59201359 10.8739592,4.92395924 L8.5,7.29791847 L8.5,7.29791847 Z"/>
-          </svg>
-          <span class="message"></span></div>
-      </form>
-      <div class="success">
-        <div class="icon">
-          <svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-            <circle id="statusCircle" class="border" cx="42" cy="42" r="40" stroke-linecap="round" stroke-width="4" stroke="#000" fill="none"/>
-            <path id="myPath" class="checkmark" stroke-linecap="round" stroke-linejoin="round" d="M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338" stroke-width="4" stroke="#000" fill="none"/>
-          </svg>
+          {{!-- END LOGO --}}
+          <p class="mb-1">You can cancel your subscription at any time.</p>
+        </legend>
+        <legend class="payment-request-available" data-tid="elements_examples.form.enter_card_manually">
+          <h1 class="mb-3">Math HL QuestionBank</h1>
+          <img src="/static/google-logo-big.png" width="200" height="200" class="mb-3" alt="">
+          <p class="mb-1">5$ /month | Pay with card</p>
+        </legend>
+        <div class="container">
+          <div id="example4-card"></div>
+          <button type="submit" data-tid="elements_examples.form.donate_button">Subscribe Now</button>
         </div>
-        <h3 id="paymentTitle" class="title" data-tid="elements_examples.success.title">Payment successful</h3>
-        <p class="message"><span data-tid="elements_examples.success.message">Thanks for using Stripe. No money was charged, but we generated a token:</span><span class="token">tok_189gMN2eZvKYlo2CwTBv9KKh</span></p>
-        {{!-- CUSTUM BUTTON --}}
-        <a class="btn mt-2" id="getstarted" href="/questions" style="color: rgba(165,220,134,1);">
-          <h1 style="font-size: 24px;" class="title">Go to Questionbank
-            <img src="/static/right-arrow.png" width="25" height="21" style="padding-left:5px; padding-bottom: 2px;" alt="">
-          </h1>
-        </a>
-        <a id="resetButton" class="reset" href="#">
-          <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-            <path fill="#000000" d="M15,7.05492878 C10.5000495,7.55237307 7,11.3674463 7,16 C7,20.9705627 11.0294373,25 16,25 C20.9705627,25 25,20.9705627 25,16 C25,15.3627484 24.4834055,14.8461538 23.8461538,14.8461538 C23.2089022,14.8461538 22.6923077,15.3627484 22.6923077,16 C22.6923077,19.6960595 19.6960595,22.6923077 16,22.6923077 C12.3039405,22.6923077 9.30769231,19.6960595 9.30769231,16 C9.30769231,12.3039405 12.3039405,9.30769231 16,9.30769231 L16,12.0841673 C16,12.1800431 16.0275652,12.2738974 16.0794108,12.354546 C16.2287368,12.5868311 16.5380938,12.6540826 16.7703788,12.5047565 L22.3457501,8.92058924 L22.3457501,8.92058924 C22.4060014,8.88185624 22.4572275,8.83063012 22.4959605,8.7703788 C22.6452866,8.53809377 22.5780351,8.22873685 22.3457501,8.07941076 L22.3457501,8.07941076 L16.7703788,4.49524351 C16.6897301,4.44339794 16.5958758,4.41583275 16.5,4.41583275 C16.2238576,4.41583275 16,4.63969037 16,4.91583275 L16,7 L15,7 L15,7.05492878 Z M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z"/>
-          </svg>
-        </a>
+      </fieldset>
+      <div class="error" role="alert" style="margin-top: 10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+          <path class="base" fill="#000" d="M8.5,17 C3.80557963,17 0,13.1944204 0,8.5 C0,3.80557963 3.80557963,0 8.5,0 C13.1944204,0 17,3.80557963 17,8.5 C17,13.1944204 13.1944204,17 8.5,17 Z"/>
+          <path class="glyph" fill="#FFF" d="M8.5,7.29791847 L6.12604076,4.92395924 C5.79409512,4.59201359 5.25590488,4.59201359 4.92395924,4.92395924 C4.59201359,5.25590488 4.59201359,5.79409512 4.92395924,6.12604076 L7.29791847,8.5 L4.92395924,10.8739592 C4.59201359,11.2059049 4.59201359,11.7440951 4.92395924,12.0760408 C5.25590488,12.4079864 5.79409512,12.4079864 6.12604076,12.0760408 L8.5,9.70208153 L10.8739592,12.0760408 C11.2059049,12.4079864 11.7440951,12.4079864 12.0760408,12.0760408 C12.4079864,11.7440951 12.4079864,11.2059049 12.0760408,10.8739592 L9.70208153,8.5 L12.0760408,6.12604076 C12.4079864,5.79409512 12.4079864,5.25590488 12.0760408,4.92395924 C11.7440951,4.59201359 11.2059049,4.59201359 10.8739592,4.92395924 L8.5,7.29791847 L8.5,7.29791847 Z"/>
+        </svg>
+        <span class="message"></span>
       </div>
-      <div class="caption">
-        <span data-tid="elements_examples.caption.no_charge" class="no-charge">Your card won&apos;t be saved</span>
+    </form>
+    <div class="success">
+      <div class="icon" style="margin-bottom: 15px;">
+        <svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+          <circle id="statusCircle" class="border" cx="42" cy="42" r="40" stroke-linecap="round" stroke-width="4" stroke="#000" fill="none"/>
+          <path id="myPath" class="checkmark" stroke-linecap="round" stroke-linejoin="round" d="M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338" stroke-width="4" stroke="#000" fill="none"/>
+        </svg>
+      </div>
+      <h3 id="paymentTitle" class="title" data-tid="elements_examples.success.title">Payment successful</h3>
+      <p class="message"><span data-tid="elements_examples.success.message" id="paymentMessage">Thanks for using Stripe. No money was charged, but we generated a token:</span></p>
+      {{!-- CUSTUM BUTTON --}}
+      <a class="btn mt-2" id="getstarted" href="/questions" style="color: rgba(165,220,134,1);">
+        <h1 style="font-size: 24px;" class="title" id="questionbanklink">Go to the question bank 
+        </h1>
+      </a>
+      <a id="resetButton" class="reset" href="#">
+        <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+          <path fill="#000000" d="M15,7.05492878 C10.5000495,7.55237307 7,11.3674463 7,16 C7,20.9705627 11.0294373,25 16,25 C20.9705627,25 25,20.9705627 25,16 C25,15.3627484 24.4834055,14.8461538 23.8461538,14.8461538 C23.2089022,14.8461538 22.6923077,15.3627484 22.6923077,16 C22.6923077,19.6960595 19.6960595,22.6923077 16,22.6923077 C12.3039405,22.6923077 9.30769231,19.6960595 9.30769231,16 C9.30769231,12.3039405 12.3039405,9.30769231 16,9.30769231 L16,12.0841673 C16,12.1800431 16.0275652,12.2738974 16.0794108,12.354546 C16.2287368,12.5868311 16.5380938,12.6540826 16.7703788,12.5047565 L22.3457501,8.92058924 L22.3457501,8.92058924 C22.4060014,8.88185624 22.4572275,8.83063012 22.4959605,8.7703788 C22.6452866,8.53809377 22.5780351,8.22873685 22.3457501,8.07941076 L22.3457501,8.07941076 L16.7703788,4.49524351 C16.6897301,4.44339794 16.5958758,4.41583275 16.5,4.41583275 C16.2238576,4.41583275 16,4.63969037 16,4.91583275 L16,7 L15,7 L15,7.05492878 Z M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z"/>
+        </svg>
+      </a>
+    </div>
+    <div class="d-none d-md-block">
+      <div class="caption mb-4 ">
+        <span data-tid="elements_examples.caption.no_charge" class="no-charge">No credit card information is saved</span>
         <a class="source" href="https://github.com/stripe/elements-examples/#example-4">
-          <svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+          <svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" style="margin-right: 7px;" xlink="http://www.w3.org/1999/xlink">
             <path d="M1,8 L12,8 C12.5522847,8 13,8.44771525 13,9 C13,9.55228475 12.5522847,10 12,10 L1,10 C0.44771525,10 6.76353751e-17,9.55228475 0,9 C-6.76353751e-17,8.44771525 0.44771525,8 1,8 L1,8 Z M1,4 L8,4 C8.55228475,4 9,4.44771525 9,5 C9,5.55228475 8.55228475,6 8,6 L1,6 C0.44771525,6 6.76353751e-17,5.55228475 0,5 C-6.76353751e-17,4.44771525 0.44771525,4 1,4 L1,4 Z M1,0 L15,0 C15.5522847,-1.01453063e-16 16,0.44771525 16,1 L16,1 C16,1.55228475 15.5522847,2 15,2 L1,2 C0.44771525,2 6.76353751e-17,1.55228475 0,1 L0,1 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 L1,0 Z" fill="#AAB7C4"/>
           </svg>
-          <span data-tid="elements_examples.caption.view_source">View privacy policy</span>
+          <span data-tid="elements_examples.caption.view_source">View our privacy policy</span>
         </a>
       </div>
     </div>
-  </section>
-  </main>
+  </div>
+</section>
+</main>
 </div>
-
 <!-- Load Stripe's JS -->
 <script src="/static/js/l10n.js" data-rel-js=""></script>
 <script src="/static/js/example4.js" data-rel-js=""></script>
-
+<script src="/static/js/payment.js" data-rel-js=""></script>
 </div>
 
-<div class="container">
-  People also bought...
-</div>
-
-
+<div class="mb-4 mb-md-0"></div>

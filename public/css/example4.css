@@ -143,5 +143,9 @@
 }
 
 .example.example4 .success .reset path {
-  fill: #d782d9;
+  fill: rgba(242,116,116,1);
+}
+
+#questionbanklink:hover {
+  text-decoration: underline;
 }

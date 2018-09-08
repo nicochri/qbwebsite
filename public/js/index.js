@@ -12,13 +12,23 @@ function main() {
 			if (document.getElementById('questionspageloaded') != null) {
 				renderQuestions('in');				
 			}
+			//If on payment page
+			else if (document.getElementById('paymentpageloaded') != null) {
+				renderPayment('in');
+				document.getElementById('body').classList.remove('d-none');
+			}
 		}
 		else {
-			// document.getElementById('body').classList.remove('d-none');
 			renderNavbar('out');
+
+			//If on questions page
 			if (document.getElementById('questionspageloaded') != null) {
 				renderQuestions('out');	
-				console.log('rendering questions when not logged in');			
+			}
+			//If on payment page
+			else if (document.getElementById('paymentpageloaded') != null) {
+				renderPayment('out');
+				document.getElementById('body').classList.remove('d-none');
 			}
 		}
   	});

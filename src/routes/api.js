@@ -128,17 +128,23 @@ router.get('/newpayment', function(req, res) {
       apiResponse = {dbSave: 0, stripeCharge: 0, alreadyPaid: 0};
       //Charge the custumer
       stripe.customers.create({
-        email: 'foo-customer@example.com'
+        email: req.user.email
       }).then(function(customer){
         return stripe.customers.createSource(customer.id, {
           source: req.query.stripeToken
         });
       }).then(function(source) {
         return stripe.charges.create({
-          amount: 1600,
+          amount: 499,
           currency: 'usd',
           customer: source.customer
         });
+
+        // return stripe.subscriptions.create({
+        //   custumer: source.custumer,
+        //   billing_cycle_anchor: 'now',
+        //   prorate: false
+        // });
       }).then(function() {
         // Store info
         apiResponse.stripeCharge = 1;

@@ -98,6 +98,7 @@ function registerElements(elements, exampleName) {
 
     // Show a loading screen...
     example.classList.add('submitting');
+    document.getElementById("statusCircle").setAttribute("style", "stroke: #333333;");
 
     // Disable all inputs.
     disableInputs();
@@ -124,7 +125,7 @@ function registerElements(elements, exampleName) {
 
       if (result.token) {
         // If we received a token, show the token ID.
-        example.querySelector('.token').innerText = result.token.id;
+        // example.querySelector('.token').innerText = result.token.id;
         // Send token and handle result
 
         const data = {
@@ -136,18 +137,25 @@ function registerElements(elements, exampleName) {
         get('/api/newpayment', data, function(apiResponse) {
           console.log(apiResponse);
           if (apiResponse.dbSave && apiResponse.stripeCharge) {
+            document.getElementById("myPath").setAttribute("d", "M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338");
             document.getElementById("statusCircle").setAttribute("style", "stroke: rgba(228,244,219,1);");
             document.getElementById("myPath").setAttribute("style", "stroke: rgba(165,220,134,1);");
             document.getElementById("resetButton").remove();
+            $('#paymentMessage').html('You have been successfully subscribed to the question bank.');
+            $('#getstarted').removeClass('d-none');
             // document.getElementById("resetLink").setAttribute("href", "/account");
             example.classList.remove('submitting');
             example.classList.add('submitted');
           }
           else {
             document.getElementById("myPath").setAttribute("d", "M25 25 60 60 M60 25 25 60");
+            document.getElementById("statusCircle").setAttribute("style", "stroke: rgba(242,116,116,1);");
+            document.getElementById("myPath").setAttribute("style", "stroke: rgba(242,116,116,1);");
             document.getElementById("paymentTitle").innerText = "Payment unsuccessful";
             example.classList.remove('submitting');
             example.classList.add('submitted');
+            $('#paymentMessage').html('There was an error with the payment.<br> Try again.');
+            $('#getstarted').addClass('d-none');
           }
         });
       } 

@@ -16,7 +16,6 @@ function renderNavbar(status) {
 		}
 	}
 	else {
-		console.log('I AM FULLY AWAARE THAT I AM OUT');
 		// remove logged in elements  
 		var loggedInElements = document.getElementsByClassName('LoggedIn');
 		var numElements = loggedInElements.length;
