@@ -129,12 +129,11 @@ function registerElements(elements, exampleName) {
         // Send token and handle result
 
         const data = {
-            content: 'hey disable',
-            tok: 'fdgdfgdfgdfgsfsfdfgibberish',
+            currency: userCurrency,
             stripeToken: result.token.id,
         };
 
-        get('/api/newpayment', data, function(apiResponse) {
+        get('/api/supernewpayment', data, function(apiResponse) {
           console.log(apiResponse);
           if (apiResponse.dbSave && apiResponse.stripeCharge) {
             document.getElementById("myPath").setAttribute("d", "M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338");
@@ -186,5 +185,3 @@ function registerElements(elements, exampleName) {
     example.classList.remove('submitted');
   });
 }
-
-console.log('custumstripe.js: 424242424242424242');

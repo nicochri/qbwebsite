@@ -394,6 +394,11 @@ html * {
 	text-decoration: none;
 }
 
+#unsubscribeLink:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 
 
 /*Link to Payments Page*/

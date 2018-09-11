@@ -1,6 +1,19 @@
 <div id="accountpageloaded"></div>
 <div class="container">
-	<div class="row mt-5">
+	<div class="cn rounded mt-4 d-none" style="height: 100%; width: 100%" id="signInDiv">
+		<div class="inner mb-3">
+			<p class="text-center mt-1 mt-lg-0 mb-2">You must first sign in.</p>
+			<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
+				<img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+				<div style="margin-left: 25px;">Sign in with Facebook</div>
+			</a>
+			<a class="d-flex align-items-center text-align-center btn btn-outline-primary mt-2 text-white google-signin-link" href="/auth/google">
+				<img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" alt="">
+				<div style="margin-left: 33px;">Sign in with Google</div>
+			</a>
+		</div>
+	</div>
+	<div class="row mt-5 d-none" id="accountPageContent">
 		<div class="col-12 col-md-6">
 			<div class="card mb-5 mb-md-0">
 				<ul class="list-group list-group-flush">
@@ -8,19 +21,19 @@
 						<div class="col-12 col-md-12">
 							<li class="list-group-item p-0 pt-2">
 								<p class="text-center mb-0" style="color: #b3b3b3">Name</p>
-								<p class="lead text-center m-0 mb-2" style="font-size: 34px;">Nicolas Ågnes<br></p>
+								<p class="lead text-center m-0 mb-2" style="font-size: 34px;" id="displayName"><br></p>
 							</li>
 						</div>
 						<div class="col-12 col-md-12">
 							<li class="list-group-item p-0 pt-2" style="border-top: 1px solid #dfdfdf">
 								<p class="text-center mb-0" style="color: #b3b3b3;">Status</p>
-								<p class="lead text-center m-0 mb-2" style="font-size: 34px;">Not Subscribed </p>
+								<p class="lead text-center m-0 mb-2" style="font-size: 34px;" id="subscribedStatus"><br></p>
 							</li>
 						</div>
 						<div class="col-12 col-md-12">
 							<li class="list-group-item p-0 pt-2" style="border-top: 1px solid #dfdfdf">
 								<p class="text-center mb-0" style="color: #b3b3b3;">Question Banks</p>
-								<p class="lead text-center m-0 mb-2" style="font-size: 34px;">None</p>
+								<p class="lead text-center m-0 mb-0" style="font-size: 34px;" id="qbOwned"><br></p>
 							</li>
 						</div>
 					</div>
@@ -30,144 +43,151 @@
 		<div class="col-12 col-md-6">
 			<div class="form-group">
 				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Contact us here..."></textarea>
-				<button class="btn btn-block btn-outline-primary mt-2">Send message</button>
+				<button class="btn btn-block btn-outline-primary mt-2" id="sendMessage">Send message</button>
+				<div class="alert alert-success mt-2 d-none" role="alert" id="sendMessageSuccess">
+					<strong>Success!</strong> We will send you an email back as soon as possible.
+				</div>
+				<div class="alert alert-success mt-2 d-none" role="alert" id="sendMessageSuccess">
+					<strong>Success!</strong> We will send you an email back as soon as possible.
+				</div>
+				<div class="alert alert-warning mt-2 d-none" role="alert" id="sendMessageWarning">
+					<strong>Error!</strong> Your message can't be blank.
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="alert alert-danger mt-4">
+				<h2 class="text-center mt-3 alert alert-danger mb-0" style="font-weight: 300;"><strong>Save 50%</strong> on one of these question banks when it comes out. Pick one!</h2>
+				<div class="row justify-content-center">
+					<div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+						<div class="mathCourse p-3" style="background-color: #e91a8f;  width: 247.5px; height: 356px;" id="physicsHL" state="unselected">
+							<a href="#" onclick="return false;" class="mainCourse">
+								<h2 class="text-center mt-1 mb-1">Physics<br>HL</h2>
+								<div class="d-flex justify-content-center">
+									<img src="/static/phylogo5.png" class="p-3" style="height: 180px; width: 180px;">
+								</div>
+								<p class="text-center" style="font-size: 24px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+						<div class="mathCourse p-3" style="background-color: #625cdb; width: 247.5px; height: 356px;" id="chemistryHL" state="unselected">
+							<a href="#" onclick="return false;" class="mainCourse">
+								<h2 class="text-center mt-1 mb-1">Chemistry<br>HL</h2>
+								<div class="d-flex justify-content-center">
+									<img src="/static/chemlogo2.png" class="p-3" style="height: 180px; width: 180px;">
+								</div>
+								<p class="text-center align-text-bottom" style="font-size: 24px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+						<div class="mathCourse p-3" style="background-color: #ec7300; width: 247.5px; height: 356px;"  id="economicsHL" state="unselected">
+							<a href="#" onclick="return false;" class="mainCourse">
+								<h2 class="text-center mt-1 mb-1">Economics <br>HL</h2>
+								<div class="d-flex justify-content-center">
+									<img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
+								</div>
+								<p class="text-center align-text-bottom" style="font-size: 24px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+						<div class="mathCourse p-3" style="background-color: #20a900; width: 247.5px; height: 356px;" id="mathsSL" state="unselected">
+							<a href="#" onclick="return false;" class="mainCourse">
+								<h2 class="text-center mt-1 mb-1">Mathematics <br>SL</h2>
+								<div class="d-flex justify-content-center">
+									<img src="/static/slmathlogo7.png" class="p-3" style="height: 180px; width: 180px;">
+								</div>
+								<p class="text-center align-text-bottom" style="font-size: 24px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+						<div class="mathCourse p-3" style="background-color: #69047e; width: 247.5px; height: 356px;" id="physicsSL" state="unselected">
+							<a href="#" onclick="return false;" class="mainCourse">
+								<h2 class="text-center mt-1 mb-1">Physics<br>SL</h2>
+								<div class="d-flex justify-content-center">
+									<img src="/static/slphylogo7.png" class="p-3" style="height: 180px; width: 180px;">
+								</div>
+								<p class="text-center align-text-bottom" style="font-size: 24px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+						<div class="mathCourse p-3" style="background-color: #d62007; width: 247.5px; height: 356px;" id="chemistrySL" state="unselected">
+							<a href="#" onclick="return false;" class="mainCourse">
+								<h2 class="text-center mt-1 mb-1">Chemistry <br>SL</h2>
+								<div class="d-flex justify-content-center">
+									<img src="/static/firstlogo1.png" class="p-3" style="height: 180px; width: 180px;">
+								</div>
+								<p class="text-center align-text-bottom" style="font-size: 24px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+						<div class="mathCourse p-3" style="background-color: #0093a6; width: 247.5px; height: 356px;" id="economicsSL" state="unselected">
+							<a href="#" onclick="return false;" class="mainCourse">
+								<h2 class="text-center mt-1 mb-1">Economics <br>SL</h2>
+								<div class="d-flex justify-content-center">
+									<img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
+								</div>
+								<p class="text-center align-text-bottom" style="font-size: 24px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="row justify-content-center">
-            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
-              <div class="mathCourse p-3" style="background-color: #e91a8f;  width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h2 class="text-center mt-3 mb-3">Physics<br>Higher Level</h2>
-                  <div class="d-flex justify-content-center">
-                    <img src="/static/phylogo5.png" class="p-3" style="height: 180px; width: 180px;">
-                  </div>
-                  <p class="mt-3 text-center lead"></p>
-                  <div class="text-center align-text-bottom" style=" position: absolute;
-                    left: 0px;
-                    top: 285px;
-                    width: 247.5px;
-                    height: 55px;
-                    background-color: rgba(255, 255, 255, 0.4);
-                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
-              <div class="mathCourse p-3" style="background-color: #625cdb; width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h2 class="text-center mt-3 mb-3">Chemistry<br>Higher Level</h2>
-                  <div class="d-flex justify-content-center">
-                    <img src="/static/chemlogo2.png" class="p-3" style="height: 180px; width: 180px;">
-                  </div>
-                  <p class="mt-3 text-center lead"></p>
-                  <div class="text-center align-text-bottom" style=" position: absolute;
-                    left: 0px;
-                    top: 285px;
-                    width: 247.5px;
-                    height: 55px;
-                    background-color: rgba(255, 255, 255, 0.4);
-                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
-              <div class="mathCourse p-3" style="background-color: #ec7300; width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h2 class="text-center mt-3 mb-3">Economics Higher Level</h2>
-                  <div class="d-flex justify-content-center">
-                    <img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
-                  </div>
-                  <p class="mt-3 text-center lead"></p>
-                  <div class="text-center align-text-bottom" style=" position: absolute;
-                    left: 0px;
-                    top: 285px;
-                    width: 247.5px;
-                    height: 55px;
-                    background-color: rgba(255, 255, 255, 0.4);
-                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
-              <div class="mathCourse p-3" style="background-color: #20a900; width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h2 class="text-center mt-3 mb-3">Mathematics Standard Level</h2>
-                  <div class="d-flex justify-content-center">
-                    <img src="/static/slmathlogo7.png" class="p-3" style="height: 180px; width: 180px;">
-                  </div>
-                  <p class="mt-3 text-center lead"></p>
-                  <div class="text-center align-text-bottom" style=" position: absolute;
-                    left: 0px;
-                    top: 285px;
-                    width: 247.5px;
-                    height: 55px;
-                    background-color: rgba(255, 255, 255, 0.4);
-                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
-              <div class="mathCourse p-3" style="background-color: #69047e; width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h2 class="text-center mt-3 mb-3">Physics<br>Standard Level</h2>
-                  <div class="d-flex justify-content-center">
-                    <img src="/static/slphylogo7.png" class="p-3" style="height: 180px; width: 180px;">
-                  </div>
-                  <p class="mt-3 text-center lead"></p>
-                  <div class="text-center align-text-bottom" style=" position: absolute;
-                    left: 0px;
-                    top: 285px;
-                    width: 247.5px;
-                    height: 55px;
-                    background-color: rgba(255, 255, 255, 0.4);
-                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
-              <div class="mathCourse p-3" style="background-color: #d62007; width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h2 class="text-center mt-3 mb-3">Chemistry Standard Level</h2>
-                  <div class="d-flex justify-content-center">
-                    <img src="/static/firstlogo1.png" class="p-3" style="height: 180px; width: 180px;">
-                  </div>
-                  <p class="mt-3 text-center lead"></p>
-                  <div class="text-center align-text-bottom" style=" position: absolute;
-                    left: 0px;
-                    top: 285px;
-                    width: 247.5px;
-                    height: 55px;
-                    background-color: rgba(255, 255, 255, 0.4);
-                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
-              <div class="mathCourse p-3" style="background-color: #0093a6; width: 247.5px; height: 356px;">
-                <a href="#" onclick="return false;" class="mainCourse">
-                  <h2 class="text-center mt-3 mb-3">Economics Standard Level</h2>
-                  <div class="d-flex justify-content-center">
-                    <img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
-                  </div>
-                  <p class="mt-3 text-center lead"></p>
-                  <div class="text-center align-text-bottom" style=" position: absolute;
-                    left: 0px;
-                    top: 285px;
-                    width: 247.5px;
-                    height: 55px;
-                    background-color: rgba(255, 255, 255, 0.4);
-                    color: white;"><p style="font-size: 28px; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
 </div>
+<script type="text/javascript">
+	function setDesiredQB(qbTitle) {
+		var courses = ['physicsHL','chemistryHL','economicsHL', 'mathsSL', 'physicsSL', 'chemistrySL', 'economicsSL'];
+		for (var i = 0; i < courses.length; i++) {
+			if ($('#' + courses[i]).attr('state') == 'selected') {
+				$('#' + courses[i]).attr('state', 'unselected');
+				$('#' + courses[i]).css('border', 'none');
+			}
+		}
+		$('#' + qbTitle).attr('state', 'selected');
+		$('#' + qbTitle).css('border', '5px solid #d2a807');
+		get('/api/getDesiredQB', {desiredQB: qbTitle}, function(response) {
+			console.log(response);
+		});
+	}
+	$('#physicsHL').click(function() {
+		setDesiredQB('physicsHL');
+	});
+	$('#chemistryHL').click(function() {
+		setDesiredQB('chemistryHL');
+	});
+	$('#economicsHL').click(function() {
+		setDesiredQB('economicsHL');
+	});
+	$('#mathsSL').click(function() {
+		setDesiredQB('mathsSL');
+	});
+	$('#physicsSL').click(function() {
+		setDesiredQB('physicsSL');
+	});
+	$('#chemistrySL').click(function() {
+		setDesiredQB('chemistrySL');
+	});
+	$('#economicsSL').click(function() {
+		setDesiredQB('economicsSL');
+	});
+	$('#sendMessage').click(function() {
+		var formText = document.getElementById('exampleFormControlTextarea1').value;
+		if (formText == "") {
+			$('#sendMessageSuccess').addClass('d-none');
+			$('#sendMessageWarning').removeClass('d-none');
+		}
+		else {
+			$('#sendMessageSuccess').removeClass('d-none');
+			$('#sendMessageWarning').addClass('d-none');
+			get('/api/sendEmail', {text: formText}, function(res) {});
+		}
+	});
+	
+</script>

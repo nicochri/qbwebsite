@@ -35,6 +35,9 @@ passport.use(new GoogleStrategy({
         email: profile.emails[0].value,
         method: 'google',
         mathHL: 'n',
+        mathHLSubID: 'none',
+        desiredQB: 'none',
+        stripeID: 'none',
       });
 
       user.save(function(err) {
@@ -52,7 +55,7 @@ passport.use(new fbp.Strategy({
   clientID: process.env.FACEBOOK_CLIENT_ID,
   clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
   callbackURL: facebookCallbackURL,
-  profileFields: ['emails'] // TODO: CHECK USER ACTUALLY HAS EMAIL
+  profileFields: ['id', 'emails', 'displayName'] // TODO: CHECK USER ACTUALLY HAS EMAIL
 }, function(accessToken, BrefreshToken, profile, done) {
   User.findOne({'uid': profile.id }, function(err, user) {
     if (err) return done(err);
@@ -64,6 +67,9 @@ passport.use(new fbp.Strategy({
         email: profile.emails[0].value,
         method: 'facebook',
         mathHL: 'n',
+        mathHLSubID: 'none',
+        desiredQB: 'none',
+        stripeID: 'none',
       });
 
       user.save(function(err) {

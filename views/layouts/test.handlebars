@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{!-- STRIPE PAYMENT --}}
     <script src="https://js.stripe.com/v3/"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"/>
     
     <script src="/static/js/api.js"></script>
     <script src="/static/js/custumstripe.js" data-rel-js=""></script>
@@ -19,11 +19,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({messageStyle: "none",tex2jax: {preview: "none"}});</script>
+    {{!-- SWAL --}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.28/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.28/sweetalert2.min.css"></script>
     {{!-- CUSTUM --}}
-    <title>QuestionBanks</title>
-    <link rel="shortcut icon" href="/static/logo.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/pricing.css"> {{!-- FOR CHRI --}}
+    <title>IB QuestionBanks</title>
+    <link rel="shortcut icon" href="/static/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/pricing.css"/> {{!-- FOR CHRI --}}
   </head>
   <body id="body" class="d-none" style="background-color: #f7f7f7f;">
     {{!-- COMPUTER NAVBAR --}}
@@ -57,13 +60,13 @@
           <div class="dropdown-menu dropdown-menu-right mt-0 LoggedOut d-none">
             <div class="mt-2 mx-2">
               <a class="d-flex align-items-center text-align-center btn btn-outline-primary mx-2 mt-1 mb-1 text-white facebook-signin-link" href="/auth/facebook"><img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
-                <div style="margin-left: 25px;">Log in with Facebook</div>
+                <div style="margin-left: 25px;">Sign in with Facebook</div>
               </a>
             </div>
             <div class="mt-2 mx-2">
-              <div class="mt-3 mb-2">
+              <div class="mt-2 mb-2">
                 <a class="d-flex align-items-center text-align-center btn btn-outline-primary mx-2 mt-1 mb-1 text-white google-signin-link" href="/auth/google"><img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
-                  <div style="margin-left: 33px;">Log in with Google</div>
+                  <div style="margin-left: 33px;">Sign in with Google</div>
                 </a>
               </div>
             </div>
@@ -93,13 +96,13 @@
             </button>
           </a>
           <div class="mt-2 mx-0 LoggedOut">
-            <a class="d-flex align-items-center text-align-center btn btn-outline-primary mx-0 mt-1 mb-1 text-white google-signin-link" href="/auth/google"><img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
-              <div style="margin-left: 33px;">Log in with Google</div>
+            <a class="d-flex align-items-center text-align-center btn btn-outline-primary mx-0 mt-0 mb-1 text-white facebook-signin-link" href="/auth/facebook">  <img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+              <div style="margin-left: 25px;">Sign in with Facebook</div>
             </a>
           </div>
           <div class="mt-2 mb-2 LoggedOut">
-            <a class="d-flex align-items-center text-align-center btn btn-outline-primary mx-0 mt-0 mb-1 text-white facebook-signin-link" href="/auth/facebook">  <img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
-              <div style="margin-left: 25px;">Log in with Facebook</div>
+            <a class="d-flex align-items-center text-align-center btn btn-outline-primary mx-0 mt-1 mb-1 text-white google-signin-link" href="/auth/google"><img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+              <div style="margin-left: 33px;">Sign in with Google</div>
             </a>
           </div>
         </div>

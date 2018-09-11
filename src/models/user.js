@@ -8,6 +8,9 @@ const UserModelSchema = new mongoose.Schema ({
   email			: String,
   method		: String,
   mathHL		: String,
+  mathHLSubID	: String,
+  desiredQB		: String,
+  stripeID		: String,
 });
 
 // compile model from schema

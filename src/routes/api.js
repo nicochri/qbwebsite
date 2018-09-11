@@ -6,6 +6,16 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const MongoClient = require('mongodb').MongoClient;
 const db = require('../db');
 
+// setup email
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'ibquestionbankscontact@gmail.com',
+    pass: 'emailpassword'
+  }
+});
+
 // models
 const User = require('../models/user');
 const Story = require('../models/story');
@@ -177,6 +187,100 @@ router.get('/newpayment', function(req, res) {
   }
 });
 
+const currencyToPlan = {'EUR': 'plan_Da49r1ikx6mqEs', 'NOK': 'plan_Da48gCbRqg41yy', 'USD': 'plan_Da4TE5zqrcDh7w'};
+
+router.get('/supernewpayment', function(req, res) {
+  console.log(currencyToPlan[req.query.currency]);
+  if (req.isAuthenticated()) {
+    if (req.user.mathHL == 'n') {
+      //Prepares result response
+      apiResponse = {dbSave: 0, stripeCharge: 0, alreadyPaid: 0};
+
+      //Create + charge custumer
+      stripe.customers.create({
+        email: req.user.uid + '@' + req.user.method + '.com',
+        source: req.query.stripeToken
+      }).then(function(mycustomer) {
+        const { id } = mycustomer;
+
+        return stripe.subscriptions.create({
+          customer: id,
+          items: [{ plan: currencyToPlan[req.query.currency]}]
+        })
+      }).then(function(subscription) {
+        // Store info
+        apiResponse.stripeCharge = 1;
+
+        var myquery = { _id: req.user._id };
+        var newvalues = { $set: {mathHL: "n", mathHLSubID: subscription.id, stripeID: req.user.stripeID + '.' + subscription.customer} }; //TODO revert to y
+        
+        User.updateOne(myquery, newvalues, function(err, response) {
+          if (err) throw err;
+          console.log("The user has successully bought a mathHL questionbank.");
+          apiResponse.dbSave = 1;
+          req.session.passport.user.mathHL = 'n'; //TODO: revert back to y, also in set new values
+          res.send(apiResponse);
+        })
+      }).catch(function(err) {
+        // Deal with an error
+        console.log('dealt with an error when processing the payment');
+        console.log(err);
+        res.send(apiResponse);
+      });
+    }
+    else {
+      console.log('User already has access to this questionbank');
+      res.send({dbSave: 0, stripeCharge: 0, alreadyPaid: 1});
+    }
+  }
+  else {
+    console.log('User has to log in to pay');
+    res.send({dbSave: 0, stripeCharge: 0, alreadyPaid: 0});
+  }
+});
+
+
+
+
+router.get('/cancelSubscription', function(req, res) {
+  if (req.isAuthenticated() || req.user.mathHL == 'y') { //TODO FIX IF
+    stripe.subscriptions.del(req.user.mathHLSubID);
+
+    var myquery = { _id: req.user._id };
+    var newvalues = { $set: {mathHL: "n", mathHLSubID: 'none'} }; //TODO revert to y
+    
+    User.updateOne(myquery, newvalues, function(err, response) {
+      if (err) throw err;
+      req.session.passport.user.mathHL = 'n';
+      res.send({});
+    })
+
+    console.log('successully canceled subscribtion');
+  }
+  else {
+    console.log("Wasn't able to cancel the subscribtion");
+    res.send({});
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.get('/questions', function(req, res) {
   if (req.isAuthenticated() && req.user.mathHL == 'y') {
     fs.readFile('./public/js/jsondata2.js', function (err, data) {
@@ -235,7 +339,7 @@ router.get('/mathHLUserData', function(req, res) {
 
 router.get('/user', function(req, res) {
   User.findOne({ _id: req.query._id }, function(err, user) {
-    res.send(user);
+    res.send(req.user);
   });
 });
 
@@ -259,6 +363,70 @@ router.post(
     });
 
     res.send({});
+  }
+);
+
+router.get('/getDesiredQB', function(req, res) {
+  if (req.isAuthenticated()) {
+    var myquery = { _id: req.user._id };
+    var newvalues = { $set: {desiredQB: req.query.desiredQB} };
+
+    User.updateOne(myquery, newvalues, function(err, response) {
+      if (err) throw err;
+      req.session.passport.user.desiredQB = req.query.desiredQB;
+      console.log("Updated user desired question bank to", req.query.desiredQB);
+      res.send(req.session.passport.user);
+    });
+  }
+  else {
+    res.send({});
+  }
+});
+
+
+
+
+  
+
+router.get('/sendEmail', function(req, res) {
+
+  var emailHeading = 'name: ' + req.user.name + '\nemail: ' + req.user.email + '\nuid: ' + req.user.uid + '\nhost: ' + req.user.method;
+  var emailBody = req.query.text;
+
+  var mailOptions = {
+    from: 'ibquestionbankscontact@gmail.com',
+    to: 'ibquestionbankscontact@gmail.com',
+    subject: 'IB QUESTIONBANKS SUPPORT NEEDED',
+    text: emailHeading + '\n\n' + emailBody
+  };
+
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
+  res.send({});
+});
+
+
+router.post(
+  '/desiredQB',
+  connect.ensureLoggedIn(),
+  function(req, res) {
+    if (req.isAuthenticated()) {
+
+      var myquery = { _id: req.user._id };
+      var newvalues = { $set: {desiredQB: req.query.desiredQB} };
+
+      User.updateOne(myquery, newvalues, function(err, response) {
+        if (err) throw err;
+        req.session.passport.user.mathHL = req.query.desiredQB;
+        console.log("Updated user desired question bank to", req.query.desiredQB);
+      });
+    }
   }
 );
 
