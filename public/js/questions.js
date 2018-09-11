@@ -1,7 +1,6 @@
 function setLocalPriceTags() {
     var priceTag = '';
     $.get("http://ipinfo.io", function (response) {
-        console.log(response);
         if (response.country in countryCodeToData && true) {
             var priceTag = '';
             if (countryCodeToData[response.country].d != "") {
@@ -54,7 +53,6 @@ function renderQuestions(logInsStatus) {
         for (var i = 0; i < signIns.length; i++) {
             signIns[i].classList.add('d-none');
         }
-        console.log('fuck me');
         setLocalPriceTags();
     }
     else {

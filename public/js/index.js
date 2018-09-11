@@ -96,7 +96,6 @@ var countryCodeToData = {
 
 function setPaymentPrice() {
 	$.get("http://ipinfo.io", function (response) {
-		response.country = 'NG';
 		if (response.country in countryCodeToData && true) {
 			userCurrency = countryCodeToData[response.country].c;
 			console.log(userCurrency);
