@@ -1,3 +1,33 @@
+function setLocalPriceTags() {
+    var priceTag = '';
+    $.get("http://ipinfo.io", function (response) {
+        console.log(response);
+        if (response.country in countryCodeToData && true) {
+            var priceTag = '';
+            if (countryCodeToData[response.country].d != "") {
+                if (countryCodeToData[response.country].d.charAt(0) == " ") {
+                    priceTag = countryCodeToData[response.country].p + countryCodeToData[response.country].d;
+                }
+                else {
+                    priceTag = countryCodeToData[response.country].d + countryCodeToData[response.country].p;
+                }
+            }
+            else {
+                priceTag = countryCodeToData[response.country].p + ' ' + countryCodeToData[response.country].c;
+            }
+        }
+        else {
+            priceTag = "3,99 USD";
+        }
+
+        var setLocalCurrencies = document.getElementsByClassName('setLocalcurrency');
+        for (var i = 0; i < setLocalCurrencies.length; i++) {
+            setLocalCurrencies[i].innerHTML = priceTag;
+        }
+
+    }, "jsonp");
+}
+
 function renderQuestions(logInsStatus) {
     if (logInsStatus == 'in') {
         
@@ -24,6 +54,8 @@ function renderQuestions(logInsStatus) {
         for (var i = 0; i < signIns.length; i++) {
             signIns[i].classList.add('d-none');
         }
+        console.log('fuck me');
+        setLocalPriceTags();
     }
     else {
         //Question and solution central div
