@@ -395,8 +395,8 @@ router.get('/sendEmail', function(req, res) {
   var emailBody = req.query.text;
 
   var mailOptions = {
-    from: 'ibquestionbankscontact@gmail.com',
-    to: 'ibquestionbankscontact@gmail.com',
+    from: 'ibquestionbanks@gmail.com',
+    to: 'ibquestionbanks@gmail.com',
     subject: 'IB QUESTIONBANKS SUPPORT NEEDED',
     text: emailHeading + '\n\n' + emailBody
   };

@@ -165,7 +165,6 @@ function modernUpdateHeights() {
     }
 
     updateQuestionStatsBorder();
-    consoleWidth();
 }
 
 window.onload = function () { modernUpdateHeights(); }

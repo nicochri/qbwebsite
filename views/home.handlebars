@@ -1,135 +1,117 @@
 <div id="homepageloaded"></div>
-<div class="container">
-  <h3>Welcome to the home page</h3>
-  <a href="/questions">Questions page</a>
-  <a href="/features">Features page</a>
-  <a href="/account">Account page</a>
-</div>
-
-<section class="jumbotron text-center m-0 pt-3 pb-3">
-	<div class="container">
-	  <h1 class="jumbotron-heading">Courses</h1>
-	  <p class="lead text-muted">Try our free course to find out more about the structure and difficulty of our main IB courses, including maths, economics and sciences, now available in both standard and higher level.</p>
-	  <p>
-	    <a href="#" class="btn btn-primary mb-2">Try our free course</a>
-	  </p>
-	</div>
-</section>
-
-<div class="bg-light pt-4">
-<div class="container">
-
-<div class="row">
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/lowResolution.png">	
-    <div class="card-body p-4">
-      <h3 class="card-title mb-2">Mathematics HL</h3>
-        <p class="card-text text-muted pb-2">7 Chapters</p>
-        <a href="/courses" class="btn btn-lg btn-block btn-mathHL">Start Course</a>
+<div class="container mb-4 ">
+  <h1 class="display-3 text-center mt-4 d-none d-md-block">Question Banks</h1>
+  <h1 class="display-4 text-center mt-4 d-block d-md-none">Question Banks</h1>
+  <p class="lead text-center">
+    Ace your IB exams with these guided and interactive question banks.
+  </p>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: #333333; width: 247px; height: 356px;" id="mathsHL" state="unselected">
+        <a href="/questions" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Mathematics<br>Higher Level</h2>
+          <div class="d-flex justify-content-center" style="height: 180px;">
+                  <div class="flex flex-center justify-center" style="height 100px;">
+                    <svg class="p-3" viewBox="0 0 100 100" width="180px" fill="none">
+                      
+                      <path d="M50,0 L50,100" stroke="#FDE6E0" stroke-width="0.5"></path>
+                      <path d="M0,50 L100,50" stroke="#FDE6E0" stroke-width="0.5"></path>
+                      <circle id="circle" cx="50" cy="50" r="40" stroke="#89C2EF"></circle>
+                      
+                      <path id="line" d="M50,50 L72.19207388955303,83.27521292236307" stroke="#F79C82"></path>
+                        <circle id="marker-1" cx="50" cy="50" r="1" stroke="#F79C82" fill="white"></circle>
+                        <circle id="marker-2" cx="72.19207388955303" cy="83.27521292236307" r="3" stroke="#fff" fill="#F79C82"></circle>
+                        
+                        <text id="angle" x="55" y="58" font-family="monospace" font-size="0" fill="#8A90A4">θ = 301.94°</text>
+                        <text id="radius" x="55" y="64" font-family="monospace" font-size="0" fill="#8A90A4">r = 40</text>
+                      </svg>
+                    </div>
+                  </div>
+          <p class="text-center" style="font-size: 22px; margin-top: 6px; opacity: 1.0">6 Chapters</p>
+        </a>
+      </div>
     </div>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/lowResolutionBest.png">	
-    <div class="card-body p-4">   
-      <h3 class="card-title mb-2">Physics HL</h3>
-		          <p class="card-text text-muted pb-2">10 Chapters</p>
-        <a href="/courses" class="btn btn-lg btn-block btn-mathHL">Start Course</a>
-    </div>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/newColour.png">	
-    <div class="card-body p-4">
-      <h3 class="card-title mb-2">Chemistry HL</h3>
-        <p class="card-text text-muted pb-2">9 Chapters</p>
-		          <a href="/courses" class="btn btn-lg btn-block btn-chemHL">Start Course</a>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/homeLogo.png">	
-    <div class="card-body">
-      <h3 class="card-text mb-3">Mathematics SL</h3>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: rgb(233, 26, 143); width: 247px; height: 356px;" id="physicsHL" state="unselected">
+        <div href="#" onclick="return false;" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Physics<br>Higher Level</h2>
+          <div class="d-flex justify-content-center">
+            <img src="/static/phylogo5.png" class="p-3" style="height: 180px; width: 180px;">
+          </div>
+          <p class="text-center" style="font-size: 22px; font-weight: 200; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
         </div>
-        <small class="text-muted">9 mins</small>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: #625cdb; width: 247px; height: 356px;" id="chemistryHL" state="unselected">
+        <div href="#" onclick="return false;" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Chemistry<br>Higher Level</h2>
+          <div class="d-flex justify-content-center">
+            <img src="/static/chemlogo2.png" class="p-3" style="height: 180px; width: 180px;">
+          </div>
+          <p class="text-center" style="font-size: 22px; font-weight: 200; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: #ec7300; width: 247px; height: 356px;" id="economicsHL" state="unselected">
+        <div href="#" onclick="return false;" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Economics <br>Higher Level</h2>
+          <div class="d-flex justify-content-center">
+            <img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
+          </div>
+          <p class="text-center" style="font-size: 22px; font-weight: 200; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: #20a900; width: 247px; height: 356px;" id="mathsSL" state="unselected">
+        <div href="#" onclick="return false;" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Mathematics <br>Standard Level</h2>
+          <div class="d-flex justify-content-center">
+            <img src="/static/slmathlogo7.png" class="p-3" style="height: 180px; width: 180px;">
+          </div>
+          <p class="text-center" style="font-size: 22px; font-weight: 200; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: #69047e; width: 247px; height: 356px;" id="physicsSL" state="unselected">
+        <div href="#" onclick="return false;" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Physics<br>Standard Level</h2>
+          <div class="d-flex justify-content-center">
+            <img src="/static/slphylogo7.png" class="p-3" style="height: 180px; width: 180px;">
+          </div>
+          <p class="text-center" style="font-size: 22px; font-weight: 200; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: #d62007; width: 247px; height: 356px;" id="chemistrySL" state="unselected">
+        <div href="#" onclick="return false;" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Chemistry <br>Standard Level</h2>
+          <div class="d-flex justify-content-center">
+            <img src="/static/firstlogo1.png" class="p-3" style="height: 180px; width: 180px;">
+          </div>
+          <p class="text-center" style="font-size: 22px; font-weight: 200; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 col-lg-4 col-xl-3 d-flex justify-content-center  my-4 my-md-4 mb-md-5 mb-xl-4">
+      <div class="mathCourse p-3" style="background-color: #0093a6; width: 247px; height: 356px;" id="economicsSL" state="unselected">
+        <div href="#" onclick="return false;" class="mainCourse">
+          <h2 class="text-center mt-3 mb-3" style="font-size: 28px;">Economics <br>Standard Level</h2>
+          <div class="d-flex justify-content-center">
+            <img src="/static/hleconlogo6.png" class="p-3" style="height: 180px; width: 180px;">
+          </div>
+          <p class="text-center" style="font-size: 22px; font-weight: 200; margin-top: 6px; opacity: 1.0">Coming Soon!</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/homeLogo.png">	
-    <div class="card-body">
-      <h3 class="card-text mb-3">Physics SL</h3>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-        </div>
-        <small class="text-muted">9 mins</small>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/homeLogo.png">	
-    <div class="card-body">
-      <h3 class="card-text mb-3">Chemistry SL</h3>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-        </div>
-        <small class="text-muted">9 mins</small>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4 offset-md-2">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/homeLogo.png">	
-    <div class="card-body">
-      <h3 class="card-text mb-3">Economics HL</h3>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-        </div>
-        <small class="text-muted">9 mins</small>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top rounded-top" src="/static/homeLogo.png">	
-    <div class="card-body">
-      <h3 class="card-text mb-3">Economics SL</h3>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-        </div>
-        <small class="text-muted">9 mins</small>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
-  $(window).bind("load", function() {
-   document.getElementById('body').classList.remove('d-none');
+$(window).bind("load", function() {
+document.getElementById('body').classList.remove('d-none');
 });
 </script>
