@@ -1,3 +1,116 @@
+//PREPARE THE QUESTIONS PAGE
+//Update specific chapter data
+$('.chapter1').click(function() {
+        currentChapterGlobal = 1;
+        resetOptionButtons();
+        updateQuestionStats(currentQuestionIds[0]);
+        updateQuestionStatsBorder();
+});
+$('.chapter2').click(function() {
+        currentChapterGlobal = 2;
+        resetOptionButtons();
+        updateQuestionStats(currentQuestionIds[1]);
+        updateQuestionStatsBorder();
+});
+$('.chapter3').click(function() {
+        currentChapterGlobal = 3;
+        resetOptionButtons();
+        updateQuestionStats(currentQuestionIds[2]);
+        updateQuestionStatsBorder();
+});
+$('.chapter4').click(function() {
+        currentChapterGlobal = 4;
+        resetOptionButtons();
+        updateQuestionStats(currentQuestionIds[3]);
+        updateQuestionStatsBorder();
+});
+$('.chapter5').click(function() {
+        currentChapterGlobal = 5;
+        resetOptionButtons();
+        updateQuestionStats(currentQuestionIds[4]);
+        updateQuestionStatsBorder();
+});
+$('.chapter6').click(function() {
+        currentChapterGlobal = 6;
+        resetOptionButtons();
+        updateQuestionStats(currentQuestionIds[5]);
+        updateQuestionStatsBorder();
+});
+$('#questionDropdownButton-chapter1').click(function() {
+    if ($(this).attr('state') == 'down') {
+        document.getElementById('list-tab-chapter1').setAttribute('style', 'height: 400px;');
+        $(this).attr('state','up');
+        $(this).html('&uarr;');
+    }
+    else {
+        document.getElementById('list-tab-chapter1').setAttribute('style', 'height: 50px;');
+        $(this).attr('state','down');
+        $(this).html('&darr;');
+    }
+});
+$('#questionDropdownButton-chapter2').click(function() {
+    if ($(this).attr('state') == 'down') {
+        document.getElementById('list-tab-chapter2').setAttribute('style', 'height: 400px;');
+        $(this).attr('state','up');
+        $(this).html('&uarr;');
+    }
+    else {
+        document.getElementById('list-tab-chapter2').setAttribute('style', 'height: 50px;');
+        $(this).attr('state','down');
+        $(this).html('&darr;');
+    }
+});
+$('#questionDropdownButton-chapter3').click(function() {
+    if ($(this).attr('state') == 'down') {
+        document.getElementById('list-tab-chapter3').setAttribute('style', 'height: 400px;');
+        $(this).attr('state','up');
+        $(this).html('&uarr;');
+    }
+    else {
+        document.getElementById('list-tab-chapter3').setAttribute('style', 'height: 50px;');
+        $(this).attr('state','down');
+        $(this).html('&darr;');
+    }
+});
+$('#questionDropdownButton-chapter4').click(function() {
+    if ($(this).attr('state') == 'down') {
+        document.getElementById('list-tab-chapter4').setAttribute('style', 'height: 400px;');
+        $(this).attr('state','up');
+        $(this).html('&uarr;');
+    }
+    else {
+        document.getElementById('list-tab-chapter4').setAttribute('style', 'height: 50px;');
+        $(this).attr('state','down');
+        $(this).html('&darr;');
+    }
+});
+$('#questionDropdownButton-chapter5').click(function() {
+    if ($(this).attr('state') == 'down') {
+        document.getElementById('list-tab-chapter5').setAttribute('style', 'height: 400px;');
+        $(this).attr('state','up');
+        $(this).html('&uarr;');
+    }
+    else {
+        document.getElementById('list-tab-chapter5').setAttribute('style', 'height: 50px;');
+        $(this).attr('state','down');
+        $(this).html('&darr;');
+    }
+});
+$('#questionDropdownButton-chapter6').click(function() {
+    if ($(this).attr('state') == 'down') {
+        document.getElementById('list-tab-chapter6').setAttribute('style', 'height: 400px;');
+        $(this).attr('state','up');
+        $(this).html('&uarr;');
+    }
+    else {
+        document.getElementById('list-tab-chapter6').setAttribute('style', 'height: 50px;');
+        $(this).attr('state','down');
+        $(this).html('&darr;');
+    }
+});
+
+
+// Start preparing the functions needed
 function setLocalPriceTags() {
     var priceTag = '';
     $.get("http://ipinfo.io", function (response) {
@@ -34,7 +147,11 @@ function renderQuestions(logInsStatus) {
         var chapterAccess = 1000;
         if (userGlobal.mathHL == 'n') {
             chapterAccess = 1;
-            $('#subscribeNowDiv').appendTo('#subscribeNow-chapter2');
+            $('#subscribeNowDiv').clone().appendTo('#subscribeNow-chapter2');
+            $('#subscribeNowDiv').clone().appendTo('#subscribeNow-chapter3');
+            $('#subscribeNowDiv').clone().appendTo('#subscribeNow-chapter4');
+            $('#subscribeNowDiv').clone().appendTo('#subscribeNow-chapter5');
+            $('#subscribeNowDiv').clone().appendTo('#subscribeNow-chapter6');
         }
 
         //Question and solution central div
@@ -210,6 +327,154 @@ $('#optionD-chapter' + "2").click(function() {
     selectedOptionGlobal = 'D';
 })
 
+// Add functionality to the chapter 3 option buttons
+$('#optionA-chapter' + "3").click(function() {
+    optionChapterClick(
+        ['btn-outline-secondary', 'btn-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'A';
+})
+
+$('#optionB-chapter' + "3").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'B';
+})
+
+$('#optionC-chapter' + "3").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-ouline-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'C';
+})
+
+$('#optionD-chapter' + "3").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-secondary', 'btn-outline-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary']
+    )
+
+    selectedOptionGlobal = 'D';
+})
+
+// Add functionality to the chapter 3 option buttons
+$('#optionA-chapter' + "4").click(function() {
+    optionChapterClick(
+        ['btn-outline-secondary', 'btn-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'A';
+})
+
+$('#optionB-chapter' + "4").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'B';
+})
+
+$('#optionC-chapter' + "4").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-ouline-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'C';
+})
+
+$('#optionD-chapter' + "4").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-secondary', 'btn-outline-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary']
+    )
+
+    selectedOptionGlobal = 'D';
+})
+
+// Add functionality to the chapter 3 option buttons
+$('#optionA-chapter' + "5").click(function() {
+    optionChapterClick(
+        ['btn-outline-secondary', 'btn-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'A';
+})
+
+$('#optionB-chapter' + "5").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'B';
+})
+
+$('#optionC-chapter' + "5").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-ouline-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'C';
+})
+
+$('#optionD-chapter' + "5").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-secondary', 'btn-outline-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary']
+    )
+
+    selectedOptionGlobal = 'D';
+})
+
+// Add functionality to the chapter 3 option buttons
+$('#optionA-chapter' + "6").click(function() {
+    optionChapterClick(
+        ['btn-outline-secondary', 'btn-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'A';
+})
+
+$('#optionB-chapter' + "6").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'B';
+})
+
+$('#optionC-chapter' + "6").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-ouline-secondary', 'btn-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary']
+    )
+
+    selectedOptionGlobal = 'C';
+})
+
+$('#optionD-chapter' + "6").click(function() {
+    optionChapterClick(
+        ['btn-secondary', 'btn-secondary', 'btn-secondary', 'btn-outline-secondary'], 
+        ['btn-outline-secondary', 'btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary']
+    )
+
+    selectedOptionGlobal = 'D';
+})
+
 //Add functionality to the check answer
 $('#checkAnswer-chapter' + "1").click(function() {
     checkAnswerClick();
@@ -218,3 +483,21 @@ $('#checkAnswer-chapter' + "1").click(function() {
 $('#checkAnswer-chapter' + "2").click(function() {
     checkAnswerClick();
 })
+
+$('#checkAnswer-chapter' + "3").click(function() {
+    checkAnswerClick();
+})
+
+$('#checkAnswer-chapter' + "4").click(function() {
+    checkAnswerClick();
+})
+
+$('#checkAnswer-chapter' + "5").click(function() {
+    checkAnswerClick();
+})
+
+$('#checkAnswer-chapter' + "6").click(function() {
+    checkAnswerClick();
+})
+
+

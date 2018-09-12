@@ -144,6 +144,10 @@ function addQuestion(questionId, questionNumber, question) {
 			$('#questionDropdownButton-chapter' + currentChapterGlobal).attr('state','down');
 			$('#questionDropdownButton-chapter' + currentChapterGlobal).html('&darr;');
 		}
+
+		//Render them nicely
+	    MathJax.Hub.Queue(["Typeset",MathJax.Hub,questionParagraph]);
+	    MathJax.Hub.Queue(["Typeset",MathJax.Hub,solutionParagraph]);
 	});
 
     //If question is selected
@@ -161,7 +165,7 @@ function addQuestion(questionId, questionNumber, question) {
 
 
 $(document).ready(function(){
-	var questionNumbers = [1,1,1];
+	var questionNumbers = [1,1,1,1,1,1]; //currently support MAX 6 chapters
 
     get('/api/mathHLUserData', {}, function(data) {
     	QBUserData = data;

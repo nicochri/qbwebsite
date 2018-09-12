@@ -187,10 +187,14 @@ router.get('/newpayment', function(req, res) {
   }
 });
 
-const currencyToPlan = {'EUR': 'plan_Da49r1ikx6mqEs', 'NOK': 'plan_Da48gCbRqg41yy', 'USD': 'plan_Da4TE5zqrcDh7w'};
+//TODO: PLACE THE NEW PLANS
+const currencyToPlan = {
+'EUR': 'plan_Da49r1ikx6mqEs',
+'NOK': 'plan_Da48gCbRqg41yy',
+'USD': 'plan_Da4TE5zqrcDh7w',
+};
 
 router.get('/supernewpayment', function(req, res) {
-  console.log(currencyToPlan[req.query.currency]);
   if (req.isAuthenticated()) {
     if (req.user.mathHL == 'n') {
       //Prepares result response
@@ -212,13 +216,13 @@ router.get('/supernewpayment', function(req, res) {
         apiResponse.stripeCharge = 1;
 
         var myquery = { _id: req.user._id };
-        var newvalues = { $set: {mathHL: "n", mathHLSubID: subscription.id, stripeID: req.user.stripeID + '.' + subscription.customer} }; //TODO revert to y
+        var newvalues = { $set: {mathHL: "y", mathHLSubID: subscription.id, stripeID: req.user.stripeID + '.' + subscription.customer} }; //TODO revert to y
         
         User.updateOne(myquery, newvalues, function(err, response) {
           if (err) throw err;
           console.log("The user has successully bought a mathHL questionbank.");
           apiResponse.dbSave = 1;
-          req.session.passport.user.mathHL = 'n'; //TODO: revert back to y, also in set new values
+          req.session.passport.user.mathHL = 'y'; //TODO: revert back to y, also in set new values
           res.send(apiResponse);
         })
       }).catch(function(err) {
@@ -243,22 +247,19 @@ router.get('/supernewpayment', function(req, res) {
 
 
 router.get('/cancelSubscription', function(req, res) {
-  if (req.isAuthenticated() || req.user.mathHL == 'y') { //TODO FIX IF
+  if (req.isAuthenticated() && req.user.mathHL == 'y') {
     stripe.subscriptions.del(req.user.mathHLSubID);
 
     var myquery = { _id: req.user._id };
-    var newvalues = { $set: {mathHL: "n", mathHLSubID: 'none'} }; //TODO revert to y
+    var newvalues = { $set: {mathHL: "n", mathHLSubID: 'none'} };
     
     User.updateOne(myquery, newvalues, function(err, response) {
       if (err) throw err;
       req.session.passport.user.mathHL = 'n';
       res.send({});
     })
-
-    console.log('successully canceled subscribtion');
   }
   else {
-    console.log("Wasn't able to cancel the subscribtion");
     res.send({});
   }
 });

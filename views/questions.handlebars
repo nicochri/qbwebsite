@@ -5,11 +5,11 @@
 	<nav>
 		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist" style="border-bottom: 0px;">
 			<a class="nav-item nav-link active chapterHeader chapter1" id="nav-chapter1-tab" data-toggle="tab" href="#nav-chapter1" role="tab" aria-controls="nav-chapter1" aria-selected="true">Chapter 1</a>
-			<a class="nav-item nav-link chapterHeader  chapter2" id="nav-chapter2-tab" data-toggle="tab" href="#nav-chapter2" role="tab" aria-controls="nav-chapter2" aria-selected="false">Chapter 2</a>
-			<a class="nav-item nav-link chapterHeader  chapter3" id="nav-chapter3-tab" data-toggle="tab" href="#nav-chapter3" role="tab" aria-controls="nav-chapter3" aria-selected="false">Chapter 3</a>
-			<a class="nav-item nav-link chapterHeader  chapter3" id="nav-chapter3-tab" data-toggle="tab" href="#nav-chapter3" role="tab" aria-controls="nav-chapter3" aria-selected="false">Chapter 4</a>
-			<a class="nav-item nav-link chapterHeader  chapter3" id="nav-chapter3-tab" data-toggle="tab" href="#nav-chapter3" role="tab" aria-controls="nav-chapter3" aria-selected="false">Chapter 5</a>
-			<a class="nav-item nav-link chapterHeader  chapter3" id="nav-chapter3-tab" data-toggle="tab" href="#nav-chapter3" role="tab" aria-controls="nav-chapter3" aria-selected="false">Chapter 6</a>
+			<a class="nav-item nav-link chapterHeader chapter2" id="nav-chapter2-tab" data-toggle="tab" href="#nav-chapter2" role="tab" aria-controls="nav-chapter2" aria-selected="false">Chapter 2</a>
+			<a class="nav-item nav-link chapterHeader chapter3" id="nav-chapter3-tab" data-toggle="tab" href="#nav-chapter3" role="tab" aria-controls="nav-chapter3" aria-selected="false">Chapter 3</a>
+			<a class="nav-item nav-link chapterHeader chapter4" id="nav-chapter4-tab" data-toggle="tab" href="#nav-chapter4" role="tab" aria-controls="nav-chapter4" aria-selected="false">Chapter 4</a>
+			<a class="nav-item nav-link chapterHeader chapter5" id="nav-chapter5-tab" data-toggle="tab" href="#nav-chapter5" role="tab" aria-controls="nav-chapter5" aria-selected="false">Chapter 5</a>
+			<a class="nav-item nav-link chapterHeader chapter6" id="nav-chapter6-tab" data-toggle="tab" href="#nav-chapter6" role="tab" aria-controls="nav-chapter6" aria-selected="false">Chapter 6</a>
 		</div>
 	</nav>
 	{{!-- CHAPTER SECTIONS --}}
@@ -206,17 +206,384 @@
 		{{!-- CHAPTER 3 --}}
 		<div class="tab-pane" id="nav-chapter3" role="tabpanel" aria-labelledby="nav-chapter3-tab">
 			{{!-- CHAPTER 3 HEADING --}}
-			<div class="p-0 mt-3 d-flex justify-content-start">
-				<div>
-					<img src="/static/chapterLogo.png" class="d-flex rounded" style="width: 129px; height: 129px;">
+			<div class="p-0 mt-0 d-flex justify-content-start" style="background-color: #fff; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #dfdfdf;">
+				<div class="rounded" style="width: 100%;border-radius: 4px;border-bottom-left-radius: 3px;">
+					<h2 class="text mt-3 text-center">Trigonometry</h2>
+					<p class="text text-center mt-1" style="margin-bottom: 13px;">Complex numbers | Trigonometric Identities</p>
 				</div>
-				<div class="rounded ml-3" style="width: 100%">
-					<div class="card text-center">
-						<div class="card-body">
-							<h2 class="card-title mb-0">Circular Functions and Trigonometry</h2>
-						</div>
-						<div class="card-footer text-muted" style="background-color: #f1f1f1">Sequences and Series | Logarithms | Functions</div>
+			</div>
+			{{!-- CHAPTER 3 CONTENT --}}
+			<div class="row mt-3">
+				<div class="col-10 col-lg-3 mb-3 mb-lg-0">
+					<div class="list-group rounded scrollingQuestionsList" id="list-tab-chapter3" role="tablist">
+						{{!-- INSERTING THE SIDERBAR QUESTIONS HERE --}}
 					</div>
+				</div>
+				<div class="col-2 mb-3 mb-lg-0 d-md-block d-lg-none">
+					<button class="btn btn-block btn-outline-dark px-0" id="questionDropdownButton-chapter3" style="height: 50px;" state="down">&darr;</button>
+				</div>
+				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
+				<div class="col-12 col-lg-9 forceSignIn" id="forceSignIn">
+					<div class="cn rounded" style="height: 100%; width: 100%; border: 1px solid #dfdfdf;">
+						<div class="inner mb-3">
+							<p class="text-center mt-2 mt-lg-0 mb-2">Sign in to see the questions.</p>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
+								<img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 25px;">Sign in with Facebook</div>
+							</a>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary mt-2 text-white google-signin-link" href="/auth/google">
+								<img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 33px;">Sign in with Google</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				{{!-- IF THE USER IS SIGNED IN DISPLAY QANDACOL AND OPTIONCOL --}}
+				<div class="col-12 col-md-8 col-lg-6 bg-grey d-none QandACol">
+					<div class="tab-content" id="nav-tabContent-questions-chapter3">
+						{{!-- INSERTING THE QUESTION PARAGRAPHS HERE --}}
+						<ul class="nav nav-fill nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active chapterHeader qanda" id="question-tab-chapter3" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link chapterHeader qanda" id="solution-tab-chapter3" data-toggle="tab" href="#solution" role="tab" aria-controls="solution" aria-selected="false">Solution</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="question" role="tabpanel" aria-labelledby="question-tab-chapter3"></div>
+							<div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab-chapter3"></div>
+						</div>
+					</div>
+				</div>
+				{{!-- OPTIONS AND STATS DIV --}}
+				<div class="col-12 col-md-4 col-lg-3 d-none optionCol">
+					<div class="row">
+						<div class="col-6 col-md-12 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionA-chapter3"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-0 mt-lg-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionB-chapter3"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionC-chapter3"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD-chapter3"><br></button>
+						</div>
+					</div>
+					<button type="button" class="btn btn-dark btn-lg btn-block mt-1" id="checkAnswer-chapter3">Check answer</button>
+					{{!-- QUESTION STATS DIV --}}
+					<div class="card mt-3 mb-5 mb-md-0">
+						<ul class="list-group list-group-flush">
+							<div class="row">
+								<div class="col-6 col-md-12" id="timesAnseredListElement-chapter3">
+									<li class="list-group-item p-0 pt-2">
+										<p id="timesAnswered-chapter3" class="lead text-center m-0" style="font-size: 34px;"><br></p>
+										<p class="text-center mb-2" style="font-size">Times Answered</p>
+									</li>
+									<div id="statBorderBottom-chapter3"></div>
+								</div>
+								<div class="col-6 col-md-12">
+									<li class="list-group-item p-0 pt-2">
+										<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage-chapter3"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
+										<p class="text-center mb-2" style="font-size">Answered Correctly</p>
+									</li>
+								</div>
+							</div>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-lg-9 cn" id="subscribeNow-chapter3" style="overflow-x: auto;">
+					{{!-- THE SUBSCRIBE NOW DIV IS INSERTED HERE IF NOT PAID --}}
+				</div>
+			</div>
+		</div>
+		{{!-- CHAPTER 4 --}}
+		<div class="tab-pane" id="nav-chapter4" role="tabpanel" aria-labelledby="nav-chapter4-tab">
+			{{!-- CHAPTER 4 HEADING --}}
+			<div class="p-0 mt-0 d-flex justify-content-start" style="background-color: #fff; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #dfdfdf;">
+				<div class="rounded" style="width: 100%;border-radius: 4px;border-bottom-left-radius: 3px;">
+					<h2 class="text mt-3 text-center">Functions & Equations</h2>
+					<p class="text text-center mt-1" style="margin-bottom: 13px;">Complex numbers | Trigonometric Identities</p>
+				</div>
+			</div>
+			{{!-- CHAPTER 4 CONTENT --}}
+			<div class="row mt-3">
+				<div class="col-10 col-lg-3 mb-3 mb-lg-0">
+					<div class="list-group rounded scrollingQuestionsList" id="list-tab-chapter4" role="tablist">
+						{{!-- INSERTING THE SIDERBAR QUESTIONS HERE --}}
+					</div>
+				</div>
+				<div class="col-2 mb-3 mb-lg-0 d-md-block d-lg-none">
+					<button class="btn btn-block btn-outline-dark px-0" id="questionDropdownButton-chapter4" style="height: 50px;" state="down">&darr;</button>
+				</div>
+				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
+				<div class="col-12 col-lg-9 forceSignIn" id="forceSignIn">
+					<div class="cn rounded" style="height: 100%; width: 100%; border: 1px solid #dfdfdf;">
+						<div class="inner mb-3">
+							<p class="text-center mt-2 mt-lg-0 mb-2">Sign in to see the questions.</p>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
+								<img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 25px;">Sign in with Facebook</div>
+							</a>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary mt-2 text-white google-signin-link" href="/auth/google">
+								<img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 33px;">Sign in with Google</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				{{!-- IF THE USER IS SIGNED IN DISPLAY QANDACOL AND OPTIONCOL --}}
+				<div class="col-12 col-md-8 col-lg-6 bg-grey d-none QandACol">
+					<div class="tab-content" id="nav-tabContent-questions-chapter4">
+						{{!-- INSERTING THE QUESTION PARAGRAPHS HERE --}}
+						<ul class="nav nav-fill nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active chapterHeader qanda" id="question-tab-chapter4" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link chapterHeader qanda" id="solution-tab-chapter4" data-toggle="tab" href="#solution" role="tab" aria-controls="solution" aria-selected="false">Solution</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="question" role="tabpanel" aria-labelledby="question-tab-chapter4"></div>
+							<div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab-chapter4"></div>
+						</div>
+					</div>
+				</div>
+				{{!-- OPTIONS AND STATS DIV --}}
+				<div class="col-12 col-md-4 col-lg-3 d-none optionCol">
+					<div class="row">
+						<div class="col-6 col-md-12 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionA-chapter4"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-0 mt-lg-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionB-chapter4"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionC-chapter4"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD-chapter4"><br></button>
+						</div>
+					</div>
+					<button type="button" class="btn btn-dark btn-lg btn-block mt-1" id="checkAnswer-chapter4">Check answer</button>
+					{{!-- QUESTION STATS DIV --}}
+					<div class="card mt-3 mb-5 mb-md-0">
+						<ul class="list-group list-group-flush">
+							<div class="row">
+								<div class="col-6 col-md-12" id="timesAnseredListElement-chapter4">
+									<li class="list-group-item p-0 pt-2">
+										<p id="timesAnswered-chapter4" class="lead text-center m-0" style="font-size: 34px;"><br></p>
+										<p class="text-center mb-2" style="font-size">Times Answered</p>
+									</li>
+									<div id="statBorderBottom-chapter4"></div>
+								</div>
+								<div class="col-6 col-md-12">
+									<li class="list-group-item p-0 pt-2">
+										<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage-chapter4"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
+										<p class="text-center mb-2" style="font-size">Answered Correctly</p>
+									</li>
+								</div>
+							</div>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-lg-9 cn" id="subscribeNow-chapter4" style="overflow-x: auto;">
+					{{!-- THE SUBSCRIBE NOW DIV IS INSERTED HERE IF NOT PAID --}}
+				</div>
+			</div>
+		</div>
+		{{!-- CHAPTER 5 --}}
+		<div class="tab-pane" id="nav-chapter5" role="tabpanel" aria-labelledby="nav-chapter5-tab">
+			{{!-- CHAPTER 5 HEADING --}}
+			<div class="p-0 mt-0 d-flex justify-content-start" style="background-color: #fff; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #dfdfdf;">
+				<div class="rounded" style="width: 100%;border-radius: 4px;border-bottom-left-radius: 3px;">
+					<h2 class="text mt-3 text-center">Functions & Equations</h2>
+					<p class="text text-center mt-1" style="margin-bottom: 13px;">Complex numbers | Trigonometric Identities</p>
+				</div>
+			</div>
+			{{!-- CHAPTER 5 CONTENT --}}
+			<div class="row mt-3">
+				<div class="col-10 col-lg-3 mb-3 mb-lg-0">
+					<div class="list-group rounded scrollingQuestionsList" id="list-tab-chapter5" role="tablist">
+						{{!-- INSERTING THE SIDERBAR QUESTIONS HERE --}}
+					</div>
+				</div>
+				<div class="col-2 mb-3 mb-lg-0 d-md-block d-lg-none">
+					<button class="btn btn-block btn-outline-dark px-0" id="questionDropdownButton-chapter5" style="height: 50px;" state="down">&darr;</button>
+				</div>
+				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
+				<div class="col-12 col-lg-9 forceSignIn" id="forceSignIn">
+					<div class="cn rounded" style="height: 100%; width: 100%; border: 1px solid #dfdfdf;">
+						<div class="inner mb-3">
+							<p class="text-center mt-2 mt-lg-0 mb-2">Sign in to see the questions.</p>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
+								<img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 25px;">Sign in with Facebook</div>
+							</a>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary mt-2 text-white google-signin-link" href="/auth/google">
+								<img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 33px;">Sign in with Google</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				{{!-- IF THE USER IS SIGNED IN DISPLAY QANDACOL AND OPTIONCOL --}}
+				<div class="col-12 col-md-8 col-lg-6 bg-grey d-none QandACol">
+					<div class="tab-content" id="nav-tabContent-questions-chapter5">
+						{{!-- INSERTING THE QUESTION PARAGRAPHS HERE --}}
+						<ul class="nav nav-fill nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active chapterHeader qanda" id="question-tab-chapter5" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link chapterHeader qanda" id="solution-tab-chapter5" data-toggle="tab" href="#solution" role="tab" aria-controls="solution" aria-selected="false">Solution</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="question" role="tabpanel" aria-labelledby="question-tab-chapter5"></div>
+							<div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab-chapter5"></div>
+						</div>
+					</div>
+				</div>
+				{{!-- OPTIONS AND STATS DIV --}}
+				<div class="col-12 col-md-4 col-lg-3 d-none optionCol">
+					<div class="row">
+						<div class="col-6 col-md-12 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionA-chapter5"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-0 mt-lg-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionB-chapter5"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionC-chapter5"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD-chapter5"><br></button>
+						</div>
+					</div>
+					<button type="button" class="btn btn-dark btn-lg btn-block mt-1" id="checkAnswer-chapter5">Check answer</button>
+					{{!-- QUESTION STATS DIV --}}
+					<div class="card mt-3 mb-5 mb-md-0">
+						<ul class="list-group list-group-flush">
+							<div class="row">
+								<div class="col-6 col-md-12" id="timesAnseredListElement-chapter5">
+									<li class="list-group-item p-0 pt-2">
+										<p id="timesAnswered-chapter5" class="lead text-center m-0" style="font-size: 34px;"><br></p>
+										<p class="text-center mb-2" style="font-size">Times Answered</p>
+									</li>
+									<div id="statBorderBottom-chapter5"></div>
+								</div>
+								<div class="col-6 col-md-12">
+									<li class="list-group-item p-0 pt-2">
+										<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage-chapter5"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
+										<p class="text-center mb-2" style="font-size">Answered Correctly</p>
+									</li>
+								</div>
+							</div>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-lg-9 cn" id="subscribeNow-chapter5" style="overflow-x: auto;">
+					{{!-- THE SUBSCRIBE NOW DIV IS INSERTED HERE IF NOT PAID --}}
+				</div>
+			</div>
+		</div>
+		{{!-- CHAPTER 6 --}}
+		<div class="tab-pane" id="nav-chapter6" role="tabpanel" aria-labelledby="nav-chapter6-tab">
+			{{!-- CHAPTER 6 HEADING --}}
+			<div class="p-0 mt-0 d-flex justify-content-start" style="background-color: #fff; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #dfdfdf;">
+				<div class="rounded" style="width: 100%;border-radius: 4px;border-bottom-left-radius: 3px;">
+					<h2 class="text mt-3 text-center">Functions & Equations</h2>
+					<p class="text text-center mt-1" style="margin-bottom: 13px;">Complex numbers | Trigonometric Identities</p>
+				</div>
+			</div>
+			{{!-- CHAPTER 6 CONTENT --}}
+			<div class="row mt-3">
+				<div class="col-10 col-lg-3 mb-3 mb-lg-0">
+					<div class="list-group rounded scrollingQuestionsList" id="list-tab-chapter6" role="tablist">
+						{{!-- INSERTING THE SIDERBAR QUESTIONS HERE --}}
+					</div>
+				</div>
+				<div class="col-2 mb-3 mb-lg-0 d-md-block d-lg-none">
+					<button class="btn btn-block btn-outline-dark px-0" id="questionDropdownButton-chapter6" style="height: 50px;" state="down">&darr;</button>
+				</div>
+				{{!-- IF USER IS NOT SIGNED IN DISPLAY THIS --}}
+				<div class="col-12 col-lg-9 forceSignIn" id="forceSignIn">
+					<div class="cn rounded" style="height: 100%; width: 100%; border: 1px solid #dfdfdf;">
+						<div class="inner mb-3">
+							<p class="text-center mt-2 mt-lg-0 mb-2">Sign in to see the questions.</p>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary text-white facebook-signin-link" href="/auth/facebook">
+								<img src="/static/facebook-white-logo.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 25px;">Sign in with Facebook</div>
+							</a>
+							<a class="d-flex align-items-center text-align-center btn btn-outline-primary mt-2 text-white google-signin-link" href="/auth/google">
+								<img class="bg-white rounded" src="/static/google-logo-white.jpg" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+								<div style="margin-left: 33px;">Sign in with Google</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				{{!-- IF THE USER IS SIGNED IN DISPLAY QANDACOL AND OPTIONCOL --}}
+				<div class="col-12 col-md-8 col-lg-6 bg-grey d-none QandACol">
+					<div class="tab-content" id="nav-tabContent-questions-chapter6">
+						{{!-- INSERTING THE QUESTION PARAGRAPHS HERE --}}
+						<ul class="nav nav-fill nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active chapterHeader qanda" id="question-tab-chapter6" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link chapterHeader qanda" id="solution-tab-chapter6" data-toggle="tab" href="#solution" role="tab" aria-controls="solution" aria-selected="false">Solution</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="question" role="tabpanel" aria-labelledby="question-tab-chapter6"></div>
+							<div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab-chapter6"></div>
+						</div>
+					</div>
+				</div>
+				{{!-- OPTIONS AND STATS DIV --}}
+				<div class="col-12 col-md-4 col-lg-3 d-none optionCol">
+					<div class="row">
+						<div class="col-6 col-md-12 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionA-chapter6"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-0 mt-lg-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionB-chapter6"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionC-chapter6"><br></button>
+						</div>
+						<div class="col-6 col-md-12 mt-1 mb-2">
+							<button type="button" class="btn btn-outline-secondary btn-lg btn-block optionButton" id="optionD-chapter6"><br></button>
+						</div>
+					</div>
+					<button type="button" class="btn btn-dark btn-lg btn-block mt-1" id="checkAnswer-chapter6">Check answer</button>
+					{{!-- QUESTION STATS DIV --}}
+					<div class="card mt-3 mb-5 mb-md-0">
+						<ul class="list-group list-group-flush">
+							<div class="row">
+								<div class="col-6 col-md-12" id="timesAnseredListElement-chapter6">
+									<li class="list-group-item p-0 pt-2">
+										<p id="timesAnswered-chapter6" class="lead text-center m-0" style="font-size: 34px;"><br></p>
+										<p class="text-center mb-2" style="font-size">Times Answered</p>
+									</li>
+									<div id="statBorderBottom-chapter6"></div>
+								</div>
+								<div class="col-6 col-md-12">
+									<li class="list-group-item p-0 pt-2">
+										<p class="lead text-center m-0" style="font-size: 34px;"><span id="correctPercentage-chapter6"></span><span style="font-size: 16px; font-weight: lighter;">%</span></p>
+										<p class="text-center mb-2" style="font-size">Answered Correctly</p>
+									</li>
+								</div>
+							</div>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-lg-9 cn" id="subscribeNow-chapter6" style="overflow-x: auto;">
+					{{!-- THE SUBSCRIBE NOW DIV IS INSERTED HERE IF NOT PAID --}}
 				</div>
 			</div>
 		</div>
@@ -256,15 +623,8 @@
 		</div>
 		<div class="col-12 col-md-6 justify-content-center">
 			<div class="card border-success mb-3" style="max-width: 18rem; border-radius: 9px; height: 356px; width: 247px;">
-				<div class="alert alert-success mb-0" role="alert" style="
-					border-top-left-radius: 9px;
-					border-top-right-radius: 9px;
-					border-bottom-left-radius: 0px;
-					border-bottom-right-radius: 0px;
-					">
-					<h4 class="alert-heading text-center" style="
-					margin-top: 9px;
-					">Subscribe Now!</h4>
+				<div class="alert alert-success mb-0" role="alert" style="border-top-left-radius: 9px; border-top-right-radius: 9px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
+					<h4 class="alert-heading text-center" style="margin-top: 9px;">Subscribe Now!</h4>
 				</div>
 				<div class="card-header d-none text-center"><h3 class="text-center mt-2">Subscribe Now</h3></div>
 				<div class="card-body">
@@ -286,47 +646,11 @@
 		document.getElementById('body').classList.remove('d-none');
 	});
 	// Global variables
-	var currentQuestionIds = ['',''];
+	var currentQuestionIds = ['','','','','',''];
 	var correctOptionGlobal = '';
 	var QBUserData = [];
 	var currentChapterGlobal = 1;
-	//Update specific chapter data
-	$('.chapter1').click(function() {
-			currentChapterGlobal = 1;
-			resetOptionButtons();
-			updateQuestionStats(currentQuestionIds[0]);
-			updateQuestionStatsBorder();
-	});
-	$('.chapter2').click(function() {
-			currentChapterGlobal = 2;
-			resetOptionButtons();
-			updateQuestionStats(currentQuestionIds[1]);
-			updateQuestionStatsBorder();
-	});
-	$('#questionDropdownButton-chapter1').click(function() {
-		if ($(this).attr('state') == 'down') {
-			document.getElementById('list-tab-chapter1').setAttribute('style', 'height: 400px;');
-			$(this).attr('state','up');
-			$(this).html('&uarr;');
-		}
-		else {
-			document.getElementById('list-tab-chapter1').setAttribute('style', 'height: 50px;');
-			$(this).attr('state','down');
-			$(this).html('&darr;');
-		}
-	});
-	$('#questionDropdownButton-chapter2').click(function() {
-		if ($(this).attr('state') == 'down') {
-			document.getElementById('list-tab-chapter2').setAttribute('style', 'height: 400px;');
-			$(this).attr('state','up');
-			$(this).html('&uarr;');
-		}
-		else {
-			document.getElementById('list-tab-chapter2').setAttribute('style', 'height: 50px;');
-			$(this).attr('state','down');
-			$(this).html('&darr;');
-		}
-	});
+
 	function getScreenWidth() {
 		if (window.innerWidth >= 1200) {
 			return 5; //xl
@@ -343,7 +667,7 @@
 		else if (window.innerWidth < 576) {
 			return 1; //xs
 		}
-	}
+	};
 </script>
 <script src="/static/js/questions.js"></script>
 <script src="/static/js/insertQuestions.js"></script>

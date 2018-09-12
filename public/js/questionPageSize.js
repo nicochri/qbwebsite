@@ -149,11 +149,19 @@ function modernUpdateHeights() {
 
         document.getElementById('list-tab-chapter1').setAttribute("style", newHeightStyle);
         document.getElementById('list-tab-chapter2').setAttribute("style", newHeightStyle);
+        document.getElementById('list-tab-chapter3').setAttribute("style", newHeightStyle);
+        document.getElementById('list-tab-chapter4').setAttribute("style", newHeightStyle);
+        document.getElementById('list-tab-chapter5').setAttribute("style", newHeightStyle);
+        document.getElementById('list-tab-chapter6').setAttribute("style", newHeightStyle);
     }
 
     else {
         document.getElementById('list-tab-chapter1').setAttribute("style", "height: 50px;");
         document.getElementById('list-tab-chapter2').setAttribute("style", "height: 50px;");
+        document.getElementById('list-tab-chapter3').setAttribute("style", "height: 50px;");
+        document.getElementById('list-tab-chapter4').setAttribute("style", "height: 50px;");
+        document.getElementById('list-tab-chapter5').setAttribute("style", "height: 50px;");
+        document.getElementById('list-tab-chapter6').setAttribute("style", "height: 50px;");
     }
 
     updateQuestionStatsBorder();
