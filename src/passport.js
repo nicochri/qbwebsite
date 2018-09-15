@@ -7,7 +7,7 @@ const fbp = require('passport-facebook');
 const User = require('./models/user');
 
 // different callbacks if on localhost
-const onLocalhost = 1;
+const onLocalhost = 0;
 if (onLocalhost) {
   googleCallbackURL = 'http://localhost:3000/auth/google/callback';
   facebookCallbackURL = 'http://localhost:3000/auth/facebook/callback';
