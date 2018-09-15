@@ -85,12 +85,12 @@ function addQuestion(questionId, questionNumber, question) {
 
 	var questionParagraph = document.createElement("p");
 	questionParagraph.setAttribute("id", "thequestion");
-	questionParagraph.setAttribute("style", "display: block; padding: 5px;");
+	questionParagraph.setAttribute("style", "display: block; padding: 5px; line-height: 3;");
 	questionParagraph.innerHTML = question.text;
 
 	var solutionParagraph = document.createElement("p");
 	solutionParagraph.setAttribute("id", "thesolution");
-	solutionParagraph.setAttribute("style", "display: none; padding: 5px;");
+	solutionParagraph.setAttribute("style", "display: none; padding: 5px; line-height: 3;");
 	solutionParagraph.innerHTML = question.solution;
 
 	if (questionNumber == 1) {
@@ -104,10 +104,10 @@ function addQuestion(questionId, questionNumber, question) {
 		$('#optionC-chapter' + question.chapter).html(question.options.C);
 		$('#optionD-chapter' + question.chapter).html(question.options.D);
 
-		correctOptionGlobal = question.correctOption;
 		currentQuestionIds[parseInt(question.chapter) - 1] = questionId;
 
 		if (parseInt(question.chapter) == 1) {
+			correctOptionGlobal = question.correctOption;
 			updateQuestionStats(questionId);
 		}
 	}
@@ -152,15 +152,17 @@ function addQuestion(questionId, questionNumber, question) {
 
     //If question is selected
 	$("#question-tab-chapter" + question.chapter).click(function() {
-		questionParagraph.setAttribute("style", "display: block; padding: 5px;");
-		solutionParagraph.setAttribute("style", "display: none; padding: 5px;");
+		questionParagraph.setAttribute("style", "display: block; padding: 5px; line-height: 3;");
+		solutionParagraph.setAttribute("style", "display: none; padding: 5px; line-height: 3;");
 	});
 
 	//If solution is selected
 	$("#solution-tab-chapter" + question.chapter).click(function() {
-		questionParagraph.setAttribute("style", "display: none; padding: 5px;");
-		solutionParagraph.setAttribute("style", "display: block; padding: 5px;");
+		questionParagraph.setAttribute("style", "display: none; padding: 5px; line-height: 3;");
+		solutionParagraph.setAttribute("style", "display: block; padding: 5px; line-height: 3;");
 	});
+
+	console.log(correctOptionGlobal);
 }
 
 
