@@ -27,6 +27,7 @@ router.get('/user', function(req, res) {
 router.get('/earlyAccess', function(req, res) {
 	const newAccess = new Early({
 		'email': req.query.email,
+    'course': req.query.course,
 	});
 
 	newAccess.save(function(err,story) {
