@@ -3,7 +3,7 @@
     "id": "1",
     "chapter": "1",
   	"title": "Infinite series", 
-  	"text": "Find the value of k if $$\\sum_{r=1}^{\\infty} k(\\frac{1}{3})^r = 7$$ [Suggested time: 4 minutes]",
+  	"text": "Find the value of k if $$\\sum_{r=1}^{\\infty} k(\\frac{1}{3})^r = 7$$[Suggested time: 4 minutes]",
     "solution": "$u_1 = \\frac{1}{3}, r = \\frac{1}{3}$ <br>$7 = \\frac{\\frac{1}{3}k}{1-\\frac{1}{3}}$<br>$k = 14$",
   	"options": {"A": "10", "B": "12", "C": "13", "D": "14"},
     "correctOption": "D",
@@ -36,11 +36,11 @@
     "id": "4",
     "chapter": "1",
     "title": "Logarithms", 
-    "text": "Second questions hey dude my dude ey When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and theydgfgdfgdgSFDSFSDFSFDSFSDAWEW are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$yes boy de ey When $a \\ne 0$, AAAAAAAAAAAA are two solutions to \\(ax^2 + bx + c = 0\\) and they are$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$sdfyes boy",
-    "solution": ":)",
-    "options": {"A": "10", "B": "2", "C": "3", "D": "4"},
-    "correctOption": "B",
-    "difficulty": "success"
+    "text": "Solve for x: $$2-\\log_3 (x+7) = \\log_\\frac{1}{3} (2x)$$A: $\\frac{7}{17}$<br>B: $\\frac{7}{17}$<br>C: $\\frac{7}{17}$<br>D: $\\frac{7}{17}$<br>[Suggested time: 5 minutes]",
+    "solution": "$\\log_3 (\\frac{9}{x+7}) = \\log_3 (\\frac{1}{2x})$<br>$x+7=18x$<br>$x=\\frac{7}{17}$",
+    "options": {"A": "A", "B": "B", "C": "C", "D": "D"},
+    "correctOption": "C",
+    "difficulty": "warning"
   },
 
   {

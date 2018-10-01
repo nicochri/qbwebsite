@@ -274,7 +274,7 @@ $('#optionB-chapter' + "1").click(function() {
 
 $('#optionC-chapter' + "1").click(function() {
     optionChapterClick(
-        ['btn-secondary', 'btn-secondary', 'btn-ouline-secondary', 'btn-secondary'], 
+        ['btn-secondary', 'btn-secondary', 'btn-outline-secondary', 'btn-secondary'], 
         ['btn-outline-secondary', 'btn-outline-secondary', 'btn-secondary', 'btn-outline-secondary']
     )
 
