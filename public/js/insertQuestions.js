@@ -83,6 +83,12 @@ function addQuestion(questionId, questionNumber, question) {
 	questionDiv.setAttribute("role", "tabpanel");
 	questionDiv.setAttribute("aria-controls", "list-" + questionId + "-list");
 
+	// NEW questionImage
+	var questionImage = document.createElement("img");
+	questionImage.setAttribute("id", "theimage");
+	questionImage.setAttribute("style", "display: block; width: -webkit-fill-available; padding: 5px;");
+	questionImage.setAttribute("src", "/static/dataplot.png");
+
 	var questionParagraph = document.createElement("p");
 	questionParagraph.setAttribute("id", "thequestion");
 	questionParagraph.setAttribute("style", "display: block; padding: 5px; line-height: 3;");
@@ -115,6 +121,7 @@ function addQuestion(questionId, questionNumber, question) {
 	//Append elements
     $('#list-tab-chapter' + question.chapter).append(questionSidebar);
     $('#nav-tabContent-questions-chapter' + question.chapter).append(questionDiv);
+    $('#list-' + questionId).append(questionImage);
 	$('#list-' + questionId).append(questionParagraph);
 	$('#list-' + questionId).append(solutionParagraph);
 	$("#list-" + questionId + "-list").prepend(questionBadge);
@@ -152,12 +159,14 @@ function addQuestion(questionId, questionNumber, question) {
 
     //If question is selected
 	$("#question-tab-chapter" + question.chapter).click(function() {
+		questionImage.setAttribute("style", "display: block; width: -webkit-fill-available; padding: 5px;");
 		questionParagraph.setAttribute("style", "display: block; padding: 5px; line-height: 3;");
 		solutionParagraph.setAttribute("style", "display: none; padding: 5px; line-height: 3;");
 	});
 
 	//If solution is selected
 	$("#solution-tab-chapter" + question.chapter).click(function() {
+		questionImage.setAttribute("style", "display: none; padding: 5px; line-height: 3;");
 		questionParagraph.setAttribute("style", "display: none; padding: 5px; line-height: 3;");
 		solutionParagraph.setAttribute("style", "display: block; padding: 5px; line-height: 3;");
 	});
